@@ -1,0 +1,1021 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Abordando - Menu</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+  <!--<link rel="icon" type="image/png" href="https://tichy05.github.io/Biolum-match/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://tichy05.github.io/Biolum-match/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152"
+    href="https://tichy05.github.io/Biolum-match/apple-touch-icon-152x152.png"> -->
+ 
+</head>
+<style>
+
+    body { font-family: Arial, sans-serif; text-align: center;  
+    background-color: white; margin-top: 20px; color: black; font-size: 12pt; font-style: heavy }
+
+
+  #card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      max-width: 1500px;
+      max-height: 150px;
+      font-size: 12pt;
+      font-weight: bold;
+      color: black;
+      background-color: #ffbf00;
+      border-radius: 0px;
+      border-color: #ffbf00;
+      border-width: 3px;
+      border-style: solid;
+      margin: 1rem auto;
+      padding: 0.5rem;
+      display: block;
+  }
+
+ nav.main-nav {
+      background-color: #333;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 0px;
+      margin: 1rem auto;
+      max-width: 1500px;
+      padding: 0.5rem;
+    }
+
+    nav.main-nav a {
+      color: white;
+      padding: 0.25rem 1rem;
+      text-decoration: none;
+      flex: 0 1 auto;
+      text-align: center;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    nav.main-nav a:hover,
+    nav.main-nav a:active {
+      background-color: #555;
+    }
+
+    
+
+
+ #footer {
+  	display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* optional spacing between buttons */
+  max-width: 768px; /* optional, controls line wrap based on width */
+  Margin: 0px auto; /* centers and adds top space. */
+  font-size: 14pt;
+  font-weight: bold;
+
+   }
+    @media only screen and (min-width: 600px)
+{#rotateWarning {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #000000cc;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 10vh;
+  z-index: 9999;
+  
+}}
+
+
+ 
+ 
+
+
+</style>
+
+
+
+<body>
+  <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
+  <h1 id="card-container">Asientos de Avión - Nivel 1</h1>
+  <?xml version="1.0" standalone="no"?>
+  <div id="map">
+ 
+
+<svg id=”map” width="805" height="340" xmlns="http://www.w3.org/2000/svg"
+style="z-index:99999">
+  <style>
+    .seat { fill: #ffffff; stroke: #000; stroke-width: 1; }
+    .extra-space { fill: #99d8e0; }
+    .premium { fill: #e1b4d3; }
+    .selected-good { fill: rgb(18, 203, 18); }
+    .selected-bad { fill: rgb(219, 13, 13); }
+   
+  </style>
+  <rect y="0" x="0" rx="0" width="805" height="340" fill="white" id="flickerBackground"/>
+  <line x1="0" y1="40" x2="850" y2="40" style="stroke:black;stroke-width:3" />
+  <line x1="0" y1="320" x2="850" y2="320" style="stroke:black;stroke-width:3"/>
+ 
+  <path id="lineAC" d="M 260 320 q 5 25 300 0" stroke="black" stroke-width="3" fill="none"/>
+ 
+  <path id="lineBD" d="M 260 40 q 5 -25 300 0" stroke="black" stroke-width="3" fill="none"/>
+  
+ <text id="mytextLine" x="250" y="185" fill="black"></text>
+
+  <!-- SEAT GENERATION START -->
+  <!-- Each row is spaced by 40px vertically -->
+  <!-- Each seat is 30x30, with 10px spacing -->
+  <!-- A-C on left, D-F on right, aisle between -->
+
+  <!-- Function to draw rows -->
+  <!-- Rows 1–9 (Coach, with Row 1 as More Space) -->
+  <!-- Row 1 -->
+
+
+
+  <g id="seatGroup">
+
+  
+
+  <rect y="50" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1F"/>
+  <rect y="90" x=" 0" rx="8" width="30" height="30" class="seat extra-space" id="1E"/>
+  <rect y="130" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1D"/>
+  <rect y="200" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1C"/>
+  <rect y="240" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1B"/>
+  <rect y="280" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1A"/>
+
+  <!-- Rows 2 to 8 -->
+  <!-- Each row adds 40px on Y axis -->
+  <!-- Coach seats (white) -->
+  <!-- Use loop concept manually -->
+  <!-- Example: rowNumber * 40 + 50 -->
+
+  <!-- Rows 2-8 (Standard) -->
+
+  <!-- Rows 2–8 -->
+  <!-- Looping from row 2 to 8 -->
+  <!-- Increment y by 40 for each row -->
+  <!-- 2 to 8: 7 rows -->
+  <!-- Row 2 (x=35) -->
+  <rect y="50" x="35" rx="8" width="30" height="30" class="seat" id="2F"/>
+  <rect y="90" x="35" rx="8" width="30" height="30" class="seat" id="2E"/>
+  <rect y="130" x="35" rx="8" width="30" height="30" class="seat" id="2D"/>
+  <rect y="200" x="35" rx="8" width="30" height="30" class="seat" id="2C"/>
+  <rect y="240" x="35" rx="8" width="30" height="30" class="seat" id="2B"/>
+  <rect y="280" x="35" rx="8" width="30" height="30" class="seat" id="2A"/>
+
+  <!-- Repeat for Rows 3-8 -->
+
+  <!-- Row 3 (y=130) -->
+  <rect y="50" x="70" rx="8" width="30" height="30" class="seat" id="3F"/>
+  <rect y="90" x="70" rx="8" width="30" height="30" class="seat" id="3E"/>
+  <rect y="130" x="70" rx="8" width="30" height="30" class="seat" id="3D"/>
+  <rect y="200" x="70" rx="8" width="30" height="30" class="seat" id="3C"/>
+  <rect y="240" x="70" rx="8" width="30" height="30" class="seat" id="3B"/>
+  <rect y="280" x="70" rx="8" width="30" height="30" class="seat" id="3A"/>
+
+  <!-- Row 4 (-->
+<rect y="50" x="105" rx="8" width="30" height="30" class="seat" id="4F"/>
+  <rect y="90" x="105" rx="8" width="30" height="30" class="seat" id="4E"/>
+  <rect y="130" x="105" rx="8" width="30" height="30" class="seat" id="4D"/>
+  <rect y="200" x="105" rx="8" width="30" height="30" class="seat" id="4C"/>
+  <rect y="240" x="105" rx="8" width="30" height="30" class="seat" id="4B"/>
+  <rect y="280" x="105" rx="8" width="30" height="30" class="seat" id="4A"/>
+
+  <!-- Row 5 (y=210) -->
+  <rect y="50" x="140" rx="8" width="30" height="30" class="seat" id="5F"/>
+  <rect y="90" x="140" rx="8" width="30" height="30" class="seat" id="5E"/>
+  <rect y="130" x="140" rx="8" width="30" height="30" class="seat" id="5D"/>
+  <rect y="200" x="140" rx="8" width="30" height="30" class="seat" id="5C"/>
+  <rect y="240" x="140" rx="8" width="30" height="30" class="seat" id="5B"/>
+  <rect y="280" x="140" rx="8" width="30" height="30" class="seat" id="5A"/>
+
+  <!-- Row 6 (y=250) -->
+  <rect y="50" x="175" rx="8" width="30" height="30" class="seat" id="6F"/>
+  <rect y="90" x="175" rx="8" width="30" height="30" class="seat" id="6E"/>
+  <rect y="130" x="175" rx="8" width="30" height="30" class="seat" id="6D"/>
+  <rect y="200" x="175" rx="8" width="30" height="30" class="seat" id="6C"/>
+  <rect y="240" x="175" rx="8" width="30" height="30" class="seat" id="6B"/>
+  <rect y="280" x="175" rx="8" width="30" height="30" class="seat" id="6A"/>
+
+  <!-- Row 7 (y=290) -->
+  <rect y="50" x="210" rx="8" width="30" height="30" class="seat" id="7F"/>
+  <rect y="90" x="210" rx="8" width="30" height="30" class="seat" id="7E"/>
+  <rect y="130" x="210" rx="8" width="30" height="30" class="seat" id="7D"/>
+  <rect y="200" x="210" rx="8" width="30" height="30" class="seat" id="7C"/>
+  <rect y="240" x="210" rx="8" width="30" height="30" class="seat" id="7B"/>
+  <rect y="280" x="210" rx="8" width="30" height="30" class="seat" id="7A"/>
+
+  <!-- Row 8 (y=330) -->
+  <rect y="50" x="245" rx="8" width="30" height="30" class="seat" id="8F"/>
+  <rect y="90" x="245" rx="8" width="30" height="30" class="seat" id="8E"/>
+  <rect y="130" x="245" rx="8" width="30" height="30" class="seat" id="8D"/>
+  <rect y="200" x="245" rx="8" width="30" height="30" class="seat" id="8C"/>
+  <rect y="240" x="245" rx="8" width="30" height="30" class="seat" id="8B"/>
+  <rect y="280" x="245" rx="8" width="30" height="30" class="seat" id="8A"/>
+
+  <!-- Row 9 (Premium) -->
+  <!-- y = 370 -->
+  <rect y="50" x="280" rx="8" width="30" height="30" class="seat premium" id="9F"/>
+  <rect y="90" x="280" rx="8" width="30" height="30" class="seat premium" id="9E"/>
+  <rect y="130" x="280" rx="8" width="30" height="30" class="seat premium" id="9D"/>
+  <rect y="200" x="280" rx="8" width="30" height="30" class="seat premium" id="9C"/>
+  <rect y="240" x="280" rx="8" width="30" height="30" class="seat premium" id="9B"/>
+  <rect y="280" x="280" rx="8" width="30" height="30" class="seat premium" id="9A"/>
+
+  <!-- Repeat similar pattern for rows 10 to 25 -->
+  <!-- Row 10 is More Space again -->
+  <!-- Row 25 is Premium again -->
+  <!-- Just continue incrementing y by 40px -->
+
+  <!-- Example: Row 10 (y=410), More Space -->
+  <rect y="50" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10F"/>
+  <rect y="90" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10E"/>
+  <rect y="130" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10D"/>
+  <rect y="200" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10C"/>
+  <rect y="240" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10B"/>
+  <rect y="280" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10A"/>
+
+  <!-- Rows 11 to 24 would continue using class="seat" (standard) -->
+  <!-- Row 11 (y=450) -->
+  <rect y="50" x="350" rx="8" width="30" height="30" class="seat" id="11F"/>
+  <rect y="90" x="350" rx="8" width="30" height="30" class="seat" id="11E"/>
+  <rect y="130" x="350" rx="8" width="30" height="30" class="seat" id="11D"/>
+  <rect y="200" x="350" rx="8" width="30" height="30" class="seat" id="11C"/>
+  <rect y="240" x="350" rx="8" width="30" height="30" class="seat" id="11B"/>
+  <rect y="280" x="350" rx="8" width="30" height="30" class="seat" id="11A"/>
+  <!-- Row 12 (y=490) -->
+  <rect y="50" x="385" rx="8" width="30" height="30" class="seat" id="12F"/>
+  <rect y="90" x="385" rx="8" width="30" height="30" class="seat" id="12E"/>
+  <rect y="130" x="385" rx="8" width="30" height="30" class="seat" id="12D"/>
+  <rect y="200" x="385" rx="8" width="30" height="30" class="seat" id="12C"/>
+  <rect y="240" x="385" rx="8" width="30" height="30" class="seat" id="12B"/>
+  <rect y="280" x="385" rx="8" width="30" height="30" class="seat" id="12A"/>
+
+<!-- Row 13 (y=530) -->
+  <rect y="50" x="420" rx="8" width="30" height="30" class="seat" id="13F"/>
+  <rect y="90" x="420" rx="8" width="30" height="30" class="seat" id="13E"/>
+  <rect y="130" x="420" rx="8" width="30" height="30" class="seat" id="13D"/>
+  <rect y="200" x="420" rx="8" width="30" height="30" class="seat" id="13C"/>
+  <rect y="240" x="420" rx="8" width="30" height="30" class="seat" id="13B"/>
+  <rect y="280" x="420" rx="8" width="30" height="30" class="seat" id="13A"/>
+
+<!-- Row 14 (y=570) -->
+  <rect y="50" x="455" rx="8" width="30" height="30" class="seat" id="14F"/>
+  <rect y="90" x="455" rx="8" width="30" height="30" class="seat" id="14E"/>
+  <rect y="130" x="455" rx="8" width="30" height="30" class="seat" id="14D"/>
+  <rect y="200" x="455" rx="8" width="30" height="30" class="seat" id="14C"/>
+  <rect y="240" x="455" rx="8" width="30" height="30" class="seat" id="14B"/>
+  <rect y="280" x="455" rx="8" width="30" height="30" class="seat" id="14A"/>
+
+<!-- Row 15 (y=610) -->
+  <rect y="50" x="490" rx="8" width="30" height="30" class="seat" id="15F"/>
+  <rect y="90" x="490" rx="8" width="30" height="30" class="seat" id="15E"/>
+  <rect y="130" x="490" rx="8" width="30" height="30" class="seat" id="15D"/>
+  <rect y="200" x="490" rx="8" width="30" height="30" class="seat" id="15C"/>
+  <rect y="240" x="490" rx="8" width="30" height="30" class="seat" id="15B"/>
+  <rect y="280" x="490" rx="8" width="30" height="30" class="seat" id="15A"/>
+
+<!-- Row 16 (y=650) -->
+  <rect y="50" x="525" rx="8" width="30" height="30" class="seat" id="16F"/>
+  <rect y="90" x="525" rx="8" width="30" height="30" class="seat" id="16E"/>
+  <rect y="130" x="525" rx="8" width="30" height="30" class="seat" id="16D"/>
+  <rect y="200" x="525" rx="8" width="30" height="30" class="seat" id="16C"/>
+  <rect y="240" x="525" rx="8" width="30" height="30" class="seat" id="16B"/>
+  <rect y="280" x="525" rx="8" width="30" height="30" class="seat" id="16A"/>
+
+<!-- Row 17 (y=690) -->
+  <rect y="50" x="560" rx="8" width="30" height="30" class="seat" id="17F"/>
+  <rect y="90" x="560" rx="8" width="30" height="30" class="seat" id="17E"/>
+  <rect y="130" x="560" rx="8" width="30" height="30" class="seat" id="17D"/>
+  <rect y="200" x="560" rx="8" width="30" height="30" class="seat" id="17C"/>
+  <rect y="240" x="560" rx="8" width="30" height="30" class="seat" id="17B"/>
+  <rect y="280" x="560" rx="8" width="30" height="30" class="seat" id="17A"/>
+
+<!-- Row 18 (y=730) -->
+  <rect y="50" x="595" rx="8" width="30" height="30" class="seat" id="18F"/>
+  <rect y="90" x="595" rx="8" width="30" height="30" class="seat" id="18E"/>
+  <rect y="130" x="595" rx="8" width="30" height="30" class="seat" id="18D"/>
+  <rect y="200" x="595" rx="8" width="30" height="30" class="seat" id="18C"/>
+  <rect y="240" x="595" rx="8" width="30" height="30" class="seat" id="18B"/>
+  <rect y="280" x="595" rx="8" width="30" height="30" class="seat" id="18A"/>
+
+<!-- Row 19 (y=770) -->
+  <rect y="50" x= "630" rx="8" width="30" height="30" class="seat" id="19F"/>
+  <rect y="90" x="630" rx="8" width="30" height="30" class="seat" id="19E"/>
+  <rect y="130" x="630" rx="8" width="30" height="30" class="seat" id="19D"/>
+  <rect y="200" x="630" rx="8" width="30" height="30" class="seat" id="19C"/>
+  <rect y="240" x="630" rx="8" width="30" height="30" class="seat" id="19B"/>
+  <rect y="280" x="630" rx="8" width="30" height="30" class="seat" id="19A"/>
+
+<!-- Row 20 (y=810) -->
+  <rect y="50" x="665" rx="8" width="30" height="30" class="seat" id="20F"/>
+  <rect y="90" x="665" rx="8" width="30" height="30" class="seat" id="20E"/>
+  <rect y="130" x="665" rx="8" width="30" height="30" class="seat" id="20D"/>
+  <rect y="200" x="665" rx="8" width="30" height="30" class="seat" id="20C"/>
+  <rect y="240" x="665" rx="8" width="30" height="30" class="seat" id="20B"/>
+  <rect y="280" x="665" rx="8" width="30" height="30" class="seat" id="20A"/>
+
+<!-- Row 21 (y=850) -->
+  <rect y="50" x="700" rx="8" width="30" height="30" class="seat" id="21F"/>
+  <rect y="90" x="700" rx="8" width="30" height="30" class="seat" id="21E"/>
+  <rect y="130" x="700" rx="8" width="30" height="30" class="seat" id="21D"/>
+  <rect y="200" x="700" rx="8" width="30" height="30" class="seat" id="21C"/>
+  <rect y="240" x="700" rx="8" width="30" height="30" class="seat" id="21B"/>
+  <rect y="280" x="700" rx="8" width="30" height="30" class="seat" id="21A"/>
+
+<!-- Row 22 (y=890) -->
+  <rect y="50" x="735" rx="8" width="30" height="30" class="seat" id="22F"/>
+  <rect y="90" x="735" rx="8" width="30" height="30" class="seat" id="22E"/>
+  <rect y="130" x="735" rx="8" width="30" height="30" class="seat" id="22D"/>
+  <rect y="200" x="735" rx="8" width="30" height="30" class="seat" id="22C"/>
+  <rect y="240" x="735" rx="8" width="30" height="30" class="seat" id="22B"/>
+  <rect y="280" x="735" rx="8" width="30" height="30" class="seat" id="22A"/>
+
+<!-- Row 23 (y=930) -->
+  <rect y="50" x="770" rx="8" width="30" height="30" class="seat premium" id="23F"/>
+  <rect y="90" x="770" rx="8" width="30" height="30" class="seat premium" id="23E"/>
+  <rect y="130" x="770" rx="8" width="30" height="30" class="seat premium" id="23D"/>
+  <rect y="200" x="770" rx="8" width="30" height="30" class="seat premium" id="23C"/>
+  <rect y="240" x="770" rx="8" width="30" height="30" class="seat premium" id="23B"/>
+  <rect y="280" x="770" rx="8" width="30" height="30" class="seat premium" id="23A"/>
+</g>
+<!-- Row 24 (y=970) -->
+ <!-- <rect y="50" x="805" rx="8" width="30" height="30" class="seat premium" id="24F"/> 
+  <rect y="90" x="805" rx="8" width="30" height="30" class="seat premium" id="24E"/>
+  <rect y="130" x="805" rx="8" width="30" height="30" class="seat premium" id="24D"/>
+  <rect y="200" x="805" rx="8" width="30" height="30" class="seat premium" id="24C"/>
+  <rect y="240" x="805" rx="8" width="30" height="30" class="seat premium" id="24B"/>
+  <rect y="280" x="805" rx="8" width="30" height="30" class="seat premium" id="24A"/>-->
+
+  <!-- Row 25 (y=1010), Premium -->
+ <!-- <rect y="50" x="840" rx="8" width="30" height="30" class="seat premium" id="25F"/>
+  <rect y="90" x="840" rx="8" width="30" height="30" class="seat premium" id="25E"/>
+  <rect y="130" x="840" rx="8" width="30" height="30" class="seat premium" id="25D"/>
+  <rect y="200" x="840" rx="8" width="30" height="30" class="seat premium" id="25C"/>
+  <rect y="240" x="840" rx="8" width="30" height="30" class="seat premium" id="25B"/>
+  <rect y="280" x="840" rx="8" width="30" height="30" class="seat premium" id="25A"/> -->
+
+
+ <line id="lights" x1="0" y1="165" x2="850" y2="165" style="stroke:rgb(233, 191, 39);stroke-width:2" />
+  <line id="lights" x1="0" y1="195" x2="850" y2="195" style="stroke:rgb(233, 191, 39);stroke-width:2"/> 
+</svg>
+  </div>
+
+
+<div id="tooltip" style="
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  display: none;
+  z-index: 10;
+"></div>
+
+<img id="stw1" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw2" src="https://tichy05.github.io/Lonesome-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw3" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing down.png" alt="Steward pointing down" style="width:120px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw4" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing up.png" alt="Steward pointing up" style="width:128px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+  <img id="stw5" src="https://tichy05.github.io/Lonesome-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
+  position:fixed; display:none; margin-left:200px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw6" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:142px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw7" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing up left 2.png" alt="Steward pointing up left 2" style="width:300px;height:280px;
+  position:fixed; display:none; margin-left:420px; margin-top:-300px; 
+  z-index:99995">
+
+
+<button onclick="simulateTurbulence('seatGroup')">Simulate Turbulence</button>
+ <script>
+
+//Start by checking the device orientation
+checkOrientation();
+
+const msg = document.createElement('div');
+  msg.id = "victoryMessage";
+  msg.style.cssText = `
+    position:fixed; top:240px; left:0; width:100%;
+    text-align:center; font-size:2em; font-weight:bold;
+    color:black; text-shadow: 0px 0px #000; z-index:9999;`
+  
+
+
+ 
+//Initialize variables
+
+
+let goodOnes = 0;
+let badOnes = 0;
+let selectionMade = false;
+let timeExpired = false
+//preparar boton o menu para escoger el nivel de dificultad y para presentar o no la intro
+let difficultyLevel = 1; // Set externally (1–4)
+let currentCorrect = [];
+let clickCount = 0;
+let timeInMs=0;
+let firstStrike = false;
+
+//Success and failure msgs
+const successMessages = [
+  "¡Bien hecho!",
+  "¡Correcto!",
+  "¡Excelente!",
+  "¡Lo lograste!",
+  "¡Buen trabajo!"
+];
+
+const failureMessages = [
+  "Intenta otra vez",
+  "No te rindas",
+  "Casi lo logras",
+  "Sigue practicando.",
+  "En serio?!"
+];
+
+
+if (difficultyLevel === 1) {
+  timeInMs = 4000
+}
+if (difficultyLevel === 2) {
+  timeInMs = 7000
+}
+if (difficultyLevel === 3) {
+  timeInMs = 10000
+}
+if (difficultyLevel === 4) {
+  timeInMs = 13000
+}
+
+
+  // Generate seat IDs: 1A to 23F
+  const seatRows = 23;
+  const seatCols = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const RegSeats = [];
+
+  for (let row = 1; row <= seatRows; row++) {
+    for (let col of seatCols) {
+      RegSeats.push(`${row}${col}`);
+    }
+  }
+
+
+
+  //Verify DOM loaded before making any changes
+ 
+  document.addEventListener('DOMContentLoaded', e => {
+  const h1 = document.querySelector("h1")
+  h1.innerText = "Asientos de Avión - Nivel " + difficultyLevel
+  })
+
+nextQuestion();
+
+  function shuffle(arr) {
+    console.log ("shuffle");
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+
+
+// Attach click listeners to all seats
+function enableSeatClicks() {
+  console.log ("enableSeatClicks")
+  RegSeats.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("click", () => handleSeatClick(id, el));
+     /* const bbox = el.getBoundingClientRect();
+      const name = el.id;
+        tooltip.style.left = `${bbox.left + bbox.width / 2}px`;
+        tooltip.style.top = `${bbox.top + window.scrollY - 30}px`;
+        tooltip.textContent = id;
+        tooltip.style.display = "none";*/
+
+
+}
+})
+}
+
+  function nextQuestion() {
+    console.log ("nextQuestion")
+    // Reset clicks and styles
+    clickCount = 0;
+    clearAllSeatStyles();
+
+    // Randomly pick `difficultyLevel` seats
+    const shuffled = shuffle([...RegSeats]);
+    currentCorrect = shuffled.slice(0, difficultyLevel);
+
+
+    // Re-enable seat clicks
+   /* enableSeatClicks();*/
+  }
+
+  function handleSeatClick(id, el) {
+    console.log ("handleSeatClick")
+
+    if (clickCount > difficultyLevel) {
+      msg.textContent = "Limite de selecciones alcanzado ("+ difficultyLevel + ")" ;
+      document.body.appendChild(msg);
+      console.log("⛔ Limit reached");
+  
+    }
+
+    if (currentCorrect.includes(id)) {
+      
+    el.classList.add("selected-good");
+    goodOnes = goodOnes + 1;
+
+    console.log("✅ Correct seat:", id);
+
+  } else {
+    el.classList.add("selected-bad");
+    badOnes = badOnes + 1;
+    firstStrike = true;
+    console.log("❌ Wrong seat:", id);
+    disableAllSeats() 
+    checkifEOD(firstStrike)
+    
+  }
+    clickCount++;
+    
+
+    
+
+ 
+    }
+
+    
+    // Prevent re-clicking same seat
+    /*element.style.pointerEvents = "none";*/
+
+   /* if (clickCount >= difficultyLevel) {
+      disableAllSeats();
+    }
+    checkifEOD()
+  */
+
+ /* function enableSeatClicks() {
+    console.log ("enableSeatClicks")
+    RegSeats.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.pointerEvents = "auto";
+        el.addEventListener("click", () => handleSeatClick(id, el),) /*{ once: true }); */
+      /*  const bbox = el.getBoundingClientRect();
+        tooltip.style.left = `${bbox.left + bbox.width / 2}px`;
+        tooltip.style.top = `${bbox.top + window.scrollY - 30}px`;
+        tooltip.textContent = name;
+        tooltip.style.display = "block"; */
+
+
+
+    /*  }
+    });
+  }*/
+
+  function disableAllSeats() {
+    console.log ("disableAllSeats")
+    RegSeats.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.pointerEvents = "none";
+    });
+  }
+
+  function clearAllSeatStyles() {
+    console.log ("clearAllSeatStyles")
+    RegSeats.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove("selected-good", "selected-bad");
+        el.style.pointerEvents = "auto";
+
+
+      }
+    });
+  }
+
+ 
+
+//reward
+function confettiExplosion() {
+  console.log ("confettiExplosion")
+  const duration = 5 * 1000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+
+ 
+  msg.textContent = "   ";
+  
+  msg.textContent = getRandomMessage(successMessages);
+  document.body.appendChild(msg);
+  selectionMade = true;
+
+}
+
+
+    if (difficultyLevel === 1) {
+    titleVar = "Asiento"
+    titleVar2 = "el asiento"
+  } else {
+    titleVar = "Asientos"
+    titleVar2 = "los asientos"
+  }
+  // mensajes iniciales
+
+
+
+ /* msg.textContent = "<---- El frente es hacia allá";
+  document.body.appendChild(msg);
+  stw1.style.display = "block";
+
+  setTimeout(() => {
+      msg.textContent = "Filas van de la 1 a la 23 ";
+      document.body.appendChild(msg);
+      stw1.style.display = "none";
+      stw2.style.display = "block";
+  }, 3000);
+  setTimeout(() => {
+      msg.textContent = "Asientos van de la A a la F ";
+      document.body.appendChild(msg);
+      stw2.style.display = "none";
+      stw3.style.display = "block";
+  }, 6000);
+  setTimeout(() => {
+   msg.textContent = "de abajo hacia arriba ";
+  document.body.appendChild(msg);
+      stw3.style.display = "none";
+      stw4.style.display = "block";
+  }, 9000);
+   setTimeout(() => {
+   msg.textContent = titleVar2 + " estará en el pasillo y luego en la banda chinita";
+  document.body.appendChild(msg);
+      stw4.style.display = "none";
+      stw7.style.display = "block";
+  }, 12000);*/
+  
+   msg.textContent = "Tiene " + (timeInMs/1000) + " seg. para localizar " + titleVar2;
+  document.body.appendChild(msg);
+      stw7.style.display = "none";
+      stw5.style.display = "block";
+  
+setTimeout(() => {
+   msg.textContent =  "Espere el GO! ";
+  document.body.appendChild(msg);
+      stw5.style.display = "none";
+      stw6.style.display = "block";
+  }, 3000); //18000
+setTimeout(() => {
+   stw6.style.display = "none";
+   msg.textContent =  titleVar + ": " + currentCorrect; ;
+   document.body.appendChild(msg);
+   const h1 = document.querySelector("h1");
+   h1.innerText= "Asientos de Avión - Nivel: " + difficultyLevel + "  " + titleVar + ": " + currentCorrect + " Tiempo:" + (timeInMs / 1000) + " segundos"; 
+  stw6.style.display = "none";
+  }, 6000); 
+
+  setTimeout(() => {
+  enableSeatClicks()
+  msg.textContent = "GO!";
+  document.body.appendChild(msg);
+simulateTurbulence('seatGroup');
+flickerLights('seatGroup');
+  }, 9000) //6000
+   
+setTimeout(() => { 
+ msg.textContent = ""; 
+if   (firstStrike === false) {
+  if (clickCount < difficultyLevel) {
+    timeExpired = true}
+  else {timeExpired = false}
+    checkifEOD(timeExpired)}
+},  (timeInMs+9000))   //timeInMs + 24000
+
+
+
+/* if (clickCount < difficultyLevel) {
+    timeExpired = true
+  } else {
+      timeExpired = false}
+
+checkifEOD()
+
+} */
+
+/*}, 1000);*/
+ /* setTimeout(() => {
+   msg.textContent =  "";
+  document.body.appendChild(msg);
+ /*  checkforWinner(); */
+  /* setTimeout(() => {
+    console.log ("selectionMadeb: ", selectionMade);
+       if (selectionMade === false) {
+      msg.textContent =  "Se le acabo el tiempo";
+      document.body.appendChild(msg);*/
+   
+ /* console.log ("selectionMadea: ", selectionMade);
+    };  }, timeInMs);
+  }, 21000);*/
+/*  }, 2000);*/
+/*checkifEOD(); */
+/*}*/
+
+
+//logica para ver si lo logro
+/*function checkforWinner() {
+console.log ("checkforWinner");
+
+  selectionMade = true;
+
+
+}
+
+*/
+
+
+//Verify if there are more things to select 
+function checkifEOD(){
+console.log ("checkifEOD");
+console.log (firstStrike, timeExpired,badOnes,goodOnes);
+ if (firstStrike === false) {
+    if (timeExpired === true) { 
+    setTimeout(() => {
+      msg.textContent =  "Se le acabo el tiempo"
+      document.body.appendChild(msg)
+      disableAllSeats() 
+    }, 3000);
+    setTimeout(() => {
+      msg.textContent = "Oprima Reintentar o Salir";
+      document.body.appendChild(msg);
+    }, 6000);
+  
+}
+  
+
+
+
+
+
+} else {
+  if (timeExpired === false) {
+    if (firstStrike === true) {
+     if (badOnes > 0) { 
+        setTimeout(() => {
+       
+        msg.textContent = getRandomMessage(failureMessages)
+        document.body.appendChild(msg);
+        disableAllSeats() ;
+        firstStrike = true;
+      }, 1000);
+      
+      setTimeout(() => {
+        msg.textContent = "Oprima Reintentar o Salir";
+        document.body.appendChild(msg);
+       
+      }, 3000);
+} }}}
+if (difficultyLevel === (goodOnes + badOnes)) {
+  if (badOnes === 0) {
+  confettiExplosion();}
+
+  
+} 
+}
+
+//reward
+function confettiExplosion() {
+  console.log ("confettiExplosion")
+  const duration = 5 * 1000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+
+  
+  msg.textContent = "   ";
+  msg.textContent = getRandomMessage(successMessages);
+  document.body.appendChild(msg);
+  setTimeout(() => {
+    msg.remove();
+
+  }, 4000);
+}
+
+
+
+function checkOrientation() {
+  console.log ("checkOrientation")
+ const warning = document.getElementById('rotateWarning');
+ const isPortrait = window.matchMedia("(orientation: landscape)").matches;
+    
+  warning.style.display = isPortrait ? 'none' : 'block'; 
+ } 
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('load', checkOrientation);
+window.addEventListener('orientationchange', () => {setTimeout(checkOrientation, 300); 
+});
+
+function goBack() {
+  console.log ("goBack")
+  window.history.back()
+}
+
+function countDownClock() { 
+var secondsBetweenActions = 360;
+var secondsRemaining = secondsBetweenActions;
+setInterval( function() {
+  /*  updateStatus( secondsRemaining );*/
+  /*  secondsRemaining--;*/
+    if( secondsRemaining <= 0 ) {
+        doAction();
+        secondsRemaining = secondsBetweenActions;
+    }
+}, 1000 );
+}
+/*Save original fill color
+    const originalClass = element.getAttribute("class");
+    // Revert color and hide tooltip after 2s
+      setTimeout(() => {
+    element.setAttribute("class", originalClass);
+      tooltip.style.display = "none";
+    }, 2000);*/
+
+
+function showResultMessage(isCorrect) {
+  const message = isCorrect
+    ? getRandomMessage(successMessages)
+    : getRandomMessage(failureMessages);
+
+
+
+
+}
+
+
+
+
+
+
+    ///turbulence
+
+
+
+
+  function simulateTurbulence(elementId, intensity = 5, frequency = 10) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    let interval = setInterval(() => {
+      const offsetX = Math.random() * intensity * 2 - intensity;
+      const offsetY = Math.random() * intensity * 2 - intensity;
+      el.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
+    }, frequency);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      el.setAttribute("transform", "translate(0, 0)");
+    }, 13000);
+  }
+
+function getRandomMessage(list) {
+  const index = Math.floor(Math.random() * list.length);
+  return list[index];
+}
+
+
+
+function flickerLights(groupId, duration = 4000, flicksPerSecond = 8) {
+  console.log ("inside")
+  const group = document.getElementById(groupId);
+  const bg = document.getElementById('flickerBackground');
+  console.log (group,bg);
+  if (!group || !bg) return;
+
+  const interval = 1000 / flicksPerSecond;
+  let elapsed = 0;
+
+  const flicker = setInterval(() => {
+    const dimmed = Math.random() < 0.5;
+    group.setAttribute("opacity", dimmed ? "0.15" : "1");
+    bg.setAttribute("fill", dimmed ? "black" : "white"); // Flicker background too
+
+console.log (bg.getAttribute("fill"))
+
+    elapsed += interval;
+    if (elapsed >= duration) {
+      clearInterval(flicker);
+      group.setAttribute("opacity", "1");
+      bg.setAttribute("fill", "white"); // Restore background
+    }
+  }, interval);
+}
+
+/*
+
+function flickerLights2(groupId, duration = 4000, flicksPerSecond = 8) {
+
+
+  const group = document.getElementById(groupId);
+  if (!group) return;
+
+  const interval = 1000 / flicksPerSecond;
+  let elapsed = 0;
+
+  const flicker = setInterval(() => {
+    // Toggle opacity between 1 and 0.2 randomly
+    const dimmed = Math.random() < 0.5;
+    group.setAttribute("opacity", dimmed ? "0.15" : "1");
+
+    elapsed += interval;
+    if (elapsed >= duration) {
+      clearInterval(flicker);
+      group.setAttribute("opacity", "1"); // Restore lights fully on
+    }
+  }, interval);
+}
+
+*/
+
+
+
+</script>
+
+<nav class="main-nav">
+  <a href="">Menú Principal</a>
+  <a href="">Reintentar</a>
+  <a href="#" onclick="return">Salir</a>
+  <a href="javascript:goBack()">&laquo; Anterior</a>
+</nav>
+
+<footer>
+  &copy; 2025 JCFP
+</footer>
+
+</body>
+</html>
+
