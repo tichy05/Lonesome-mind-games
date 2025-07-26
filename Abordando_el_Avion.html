@@ -109,7 +109,7 @@
   <div id="map">
  
 
-<svg id=”map” width="805" height="340" xmlns="http://www.w3.org/2000/svg"
+<svg id=”map” width="805" height="300" xmlns="http://www.w3.org/2000/svg"
 style="z-index:99999">
   <style>
     .seat { fill: #ffffff; stroke: #000; stroke-width: 1; }
@@ -119,13 +119,13 @@ style="z-index:99999">
     .selected-bad { fill: rgb(219, 13, 13); }
    
   </style>
-  <rect y="0" x="0" rx="0" width="805" height="340" fill="white" id="flickerBackground"/>
-  <line x1="0" y1="40" x2="850" y2="40" style="stroke:black;stroke-width:3" />
-  <line x1="0" y1="320" x2="850" y2="320" style="stroke:black;stroke-width:3"/>
+  <rect y="0" x="0" rx="0" width="805" height="300" fill="white" id="flickerBackground"/>
+  <line x1="0" y1="10" x2="850" y2="10" style="stroke:black;stroke-width:3" />
+  <line x1="0" y1="290" x2="850" y2="290" style="stroke:black;stroke-width:3"/>
  
-  <path id="lineAC" d="M 260 320 q 5 25 300 0" stroke="black" stroke-width="3" fill="none"/>
+  <path id="lineAC" d="M 260 290 q 5 15 300 0" stroke="black" stroke-width="3" fill="none"/>
  
-  <path id="lineBD" d="M 260 40 q 5 -25 300 0" stroke="black" stroke-width="3" fill="none"/>
+  <path id="lineBD" d="M 260 10 q 5 -15 300 0" stroke="black" stroke-width="3" fill="none"/>
   
  <text id="mytextLine" x="250" y="185" fill="black"></text>
 
@@ -144,12 +144,12 @@ style="z-index:99999">
 
   
 
-  <rect y="50" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1F"/>
-  <rect y="90" x=" 0" rx="8" width="30" height="30" class="seat extra-space" id="1E"/>
-  <rect y="130" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1D"/>
-  <rect y="200" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1C"/>
-  <rect y="240" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1B"/>
-  <rect y="280" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1A"/>
+  <rect y="20" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1F"/>
+  <rect y="60" x=" 0" rx="8" width="30" height="30" class="seat extra-space" id="1E"/>
+  <rect y="100" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1D"/>
+  <rect y="170" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1C"/>
+  <rect y="210" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1B"/>
+  <rect y="250" x="0" rx="8" width="30" height="30" class="seat extra-space" id="1A"/>
 
   <!-- Rows 2 to 8 -->
   <!-- Each row adds 40px on Y axis -->
@@ -164,71 +164,71 @@ style="z-index:99999">
   <!-- Increment y by 40 for each row -->
   <!-- 2 to 8: 7 rows -->
   <!-- Row 2 (x=35) -->
-  <rect y="50" x="35" rx="8" width="30" height="30" class="seat" id="2F"/>
-  <rect y="90" x="35" rx="8" width="30" height="30" class="seat" id="2E"/>
-  <rect y="130" x="35" rx="8" width="30" height="30" class="seat" id="2D"/>
-  <rect y="200" x="35" rx="8" width="30" height="30" class="seat" id="2C"/>
-  <rect y="240" x="35" rx="8" width="30" height="30" class="seat" id="2B"/>
-  <rect y="280" x="35" rx="8" width="30" height="30" class="seat" id="2A"/>
+  <rect y="20" x="35" rx="8" width="30" height="30" class="seat" id="2F"/>
+  <rect y="60" x="35" rx="8" width="30" height="30" class="seat" id="2E"/>
+  <rect y="100" x="35" rx="8" width="30" height="30" class="seat" id="2D"/>
+  <rect y="170" x="35" rx="8" width="30" height="30" class="seat" id="2C"/>
+  <rect y="210" x="35" rx="8" width="30" height="30" class="seat" id="2B"/>
+  <rect y="250" x="35" rx="8" width="30" height="30" class="seat" id="2A"/>
 
   <!-- Repeat for Rows 3-8 -->
 
   <!-- Row 3 (y=130) -->
-  <rect y="50" x="70" rx="8" width="30" height="30" class="seat" id="3F"/>
-  <rect y="90" x="70" rx="8" width="30" height="30" class="seat" id="3E"/>
-  <rect y="130" x="70" rx="8" width="30" height="30" class="seat" id="3D"/>
-  <rect y="200" x="70" rx="8" width="30" height="30" class="seat" id="3C"/>
-  <rect y="240" x="70" rx="8" width="30" height="30" class="seat" id="3B"/>
-  <rect y="280" x="70" rx="8" width="30" height="30" class="seat" id="3A"/>
+  <rect y="20" x="70" rx="8" width="30" height="30" class="seat" id="3F"/>
+  <rect y="60" x="70" rx="8" width="30" height="30" class="seat" id="3E"/>
+  <rect y="100" x="70" rx="8" width="30" height="30" class="seat" id="3D"/>
+  <rect y="170" x="70" rx="8" width="30" height="30" class="seat" id="3C"/>
+  <rect y="210" x="70" rx="8" width="30" height="30" class="seat" id="3B"/>
+  <rect y="250" x="70" rx="8" width="30" height="30" class="seat" id="3A"/>
 
   <!-- Row 4 (-->
-<rect y="50" x="105" rx="8" width="30" height="30" class="seat" id="4F"/>
-  <rect y="90" x="105" rx="8" width="30" height="30" class="seat" id="4E"/>
-  <rect y="130" x="105" rx="8" width="30" height="30" class="seat" id="4D"/>
-  <rect y="200" x="105" rx="8" width="30" height="30" class="seat" id="4C"/>
-  <rect y="240" x="105" rx="8" width="30" height="30" class="seat" id="4B"/>
-  <rect y="280" x="105" rx="8" width="30" height="30" class="seat" id="4A"/>
+<rect y="20" x="105" rx="8" width="30" height="30" class="seat" id="4F"/>
+  <rect y="60" x="105" rx="8" width="30" height="30" class="seat" id="4E"/>
+  <rect y="100" x="105" rx="8" width="30" height="30" class="seat" id="4D"/>
+  <rect y="170" x="105" rx="8" width="30" height="30" class="seat" id="4C"/>
+  <rect y="210" x="105" rx="8" width="30" height="30" class="seat" id="4B"/>
+  <rect y="250" x="105" rx="8" width="30" height="30" class="seat" id="4A"/>
 
   <!-- Row 5 (y=210) -->
-  <rect y="50" x="140" rx="8" width="30" height="30" class="seat" id="5F"/>
-  <rect y="90" x="140" rx="8" width="30" height="30" class="seat" id="5E"/>
-  <rect y="130" x="140" rx="8" width="30" height="30" class="seat" id="5D"/>
-  <rect y="200" x="140" rx="8" width="30" height="30" class="seat" id="5C"/>
-  <rect y="240" x="140" rx="8" width="30" height="30" class="seat" id="5B"/>
-  <rect y="280" x="140" rx="8" width="30" height="30" class="seat" id="5A"/>
+  <rect y="20" x="140" rx="8" width="30" height="30" class="seat" id="5F"/>
+  <rect y="60" x="140" rx="8" width="30" height="30" class="seat" id="5E"/>
+  <rect y="100" x="140" rx="8" width="30" height="30" class="seat" id="5D"/>
+  <rect y="170" x="140" rx="8" width="30" height="30" class="seat" id="5C"/>
+  <rect y="210" x="140" rx="8" width="30" height="30" class="seat" id="5B"/>
+  <rect y="250" x="140" rx="8" width="30" height="30" class="seat" id="5A"/>
 
   <!-- Row 6 (y=250) -->
-  <rect y="50" x="175" rx="8" width="30" height="30" class="seat" id="6F"/>
-  <rect y="90" x="175" rx="8" width="30" height="30" class="seat" id="6E"/>
-  <rect y="130" x="175" rx="8" width="30" height="30" class="seat" id="6D"/>
-  <rect y="200" x="175" rx="8" width="30" height="30" class="seat" id="6C"/>
-  <rect y="240" x="175" rx="8" width="30" height="30" class="seat" id="6B"/>
-  <rect y="280" x="175" rx="8" width="30" height="30" class="seat" id="6A"/>
+  <rect y="20" x="175" rx="8" width="30" height="30" class="seat" id="6F"/>
+  <rect y="60" x="175" rx="8" width="30" height="30" class="seat" id="6E"/>
+  <rect y="100" x="175" rx="8" width="30" height="30" class="seat" id="6D"/>
+  <rect y="170" x="175" rx="8" width="30" height="30" class="seat" id="6C"/>
+  <rect y="210" x="175" rx="8" width="30" height="30" class="seat" id="6B"/>
+  <rect y="250" x="175" rx="8" width="30" height="30" class="seat" id="6A"/>
 
   <!-- Row 7 (y=290) -->
-  <rect y="50" x="210" rx="8" width="30" height="30" class="seat" id="7F"/>
-  <rect y="90" x="210" rx="8" width="30" height="30" class="seat" id="7E"/>
-  <rect y="130" x="210" rx="8" width="30" height="30" class="seat" id="7D"/>
-  <rect y="200" x="210" rx="8" width="30" height="30" class="seat" id="7C"/>
-  <rect y="240" x="210" rx="8" width="30" height="30" class="seat" id="7B"/>
-  <rect y="280" x="210" rx="8" width="30" height="30" class="seat" id="7A"/>
+  <rect y="20" x="210" rx="8" width="30" height="30" class="seat" id="7F"/>
+  <rect y="60" x="210" rx="8" width="30" height="30" class="seat" id="7E"/>
+  <rect y="100" x="210" rx="8" width="30" height="30" class="seat" id="7D"/>
+  <rect y="170" x="210" rx="8" width="30" height="30" class="seat" id="7C"/>
+  <rect y="210" x="210" rx="8" width="30" height="30" class="seat" id="7B"/>
+  <rect y="250" x="210" rx="8" width="30" height="30" class="seat" id="7A"/>
 
   <!-- Row 8 (y=330) -->
-  <rect y="50" x="245" rx="8" width="30" height="30" class="seat" id="8F"/>
-  <rect y="90" x="245" rx="8" width="30" height="30" class="seat" id="8E"/>
-  <rect y="130" x="245" rx="8" width="30" height="30" class="seat" id="8D"/>
-  <rect y="200" x="245" rx="8" width="30" height="30" class="seat" id="8C"/>
-  <rect y="240" x="245" rx="8" width="30" height="30" class="seat" id="8B"/>
-  <rect y="280" x="245" rx="8" width="30" height="30" class="seat" id="8A"/>
+  <rect y="20" x="245" rx="8" width="30" height="30" class="seat" id="8F"/>
+  <rect y="60" x="245" rx="8" width="30" height="30" class="seat" id="8E"/>
+  <rect y="100" x="245" rx="8" width="30" height="30" class="seat" id="8D"/>
+  <rect y="170" x="245" rx="8" width="30" height="30" class="seat" id="8C"/>
+  <rect y="210" x="245" rx="8" width="30" height="30" class="seat" id="8B"/>
+  <rect y="250" x="245" rx="8" width="30" height="30" class="seat" id="8A"/>
 
   <!-- Row 9 (Premium) -->
   <!-- y = 370 -->
-  <rect y="50" x="280" rx="8" width="30" height="30" class="seat premium" id="9F"/>
-  <rect y="90" x="280" rx="8" width="30" height="30" class="seat premium" id="9E"/>
-  <rect y="130" x="280" rx="8" width="30" height="30" class="seat premium" id="9D"/>
-  <rect y="200" x="280" rx="8" width="30" height="30" class="seat premium" id="9C"/>
-  <rect y="240" x="280" rx="8" width="30" height="30" class="seat premium" id="9B"/>
-  <rect y="280" x="280" rx="8" width="30" height="30" class="seat premium" id="9A"/>
+  <rect y="20" x="280" rx="8" width="30" height="30" class="seat premium" id="9F"/>
+  <rect y="60" x="280" rx="8" width="30" height="30" class="seat premium" id="9E"/>
+  <rect y="100" x="280" rx="8" width="30" height="30" class="seat premium" id="9D"/>
+  <rect y="170" x="280" rx="8" width="30" height="30" class="seat premium" id="9C"/>
+  <rect y="210" x="280" rx="8" width="30" height="30" class="seat premium" id="9B"/>
+  <rect y="250" x="280" rx="8" width="30" height="30" class="seat premium" id="9A"/>
 
   <!-- Repeat similar pattern for rows 10 to 25 -->
   <!-- Row 10 is More Space again -->
@@ -236,136 +236,136 @@ style="z-index:99999">
   <!-- Just continue incrementing y by 40px -->
 
   <!-- Example: Row 10 (y=410), More Space -->
-  <rect y="50" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10F"/>
-  <rect y="90" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10E"/>
-  <rect y="130" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10D"/>
-  <rect y="200" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10C"/>
-  <rect y="240" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10B"/>
-  <rect y="280" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10A"/>
+  <rect y="20" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10F"/>
+  <rect y="60" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10E"/>
+  <rect y="100" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10D"/>
+  <rect y="170" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10C"/>
+  <rect y="210" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10B"/>
+  <rect y="250" x="315" rx="8" width="30" height="30" class="seat extra-space" id="10A"/>
 
   <!-- Rows 11 to 24 would continue using class="seat" (standard) -->
   <!-- Row 11 (y=450) -->
-  <rect y="50" x="350" rx="8" width="30" height="30" class="seat" id="11F"/>
-  <rect y="90" x="350" rx="8" width="30" height="30" class="seat" id="11E"/>
-  <rect y="130" x="350" rx="8" width="30" height="30" class="seat" id="11D"/>
-  <rect y="200" x="350" rx="8" width="30" height="30" class="seat" id="11C"/>
-  <rect y="240" x="350" rx="8" width="30" height="30" class="seat" id="11B"/>
-  <rect y="280" x="350" rx="8" width="30" height="30" class="seat" id="11A"/>
+  <rect y="20" x="350" rx="8" width="30" height="30" class="seat" id="11F"/>
+  <rect y="60" x="350" rx="8" width="30" height="30" class="seat" id="11E"/>
+  <rect y="100" x="350" rx="8" width="30" height="30" class="seat" id="11D"/>
+  <rect y="170" x="350" rx="8" width="30" height="30" class="seat" id="11C"/>
+  <rect y="210" x="350" rx="8" width="30" height="30" class="seat" id="11B"/>
+  <rect y="250" x="350" rx="8" width="30" height="30" class="seat" id="11A"/>
   <!-- Row 12 (y=490) -->
-  <rect y="50" x="385" rx="8" width="30" height="30" class="seat" id="12F"/>
-  <rect y="90" x="385" rx="8" width="30" height="30" class="seat" id="12E"/>
-  <rect y="130" x="385" rx="8" width="30" height="30" class="seat" id="12D"/>
-  <rect y="200" x="385" rx="8" width="30" height="30" class="seat" id="12C"/>
-  <rect y="240" x="385" rx="8" width="30" height="30" class="seat" id="12B"/>
-  <rect y="280" x="385" rx="8" width="30" height="30" class="seat" id="12A"/>
+  <rect y="20" x="385" rx="8" width="30" height="30" class="seat" id="12F"/>
+  <rect y="60" x="385" rx="8" width="30" height="30" class="seat" id="12E"/>
+  <rect y="100" x="385" rx="8" width="30" height="30" class="seat" id="12D"/>
+  <rect y="170" x="385" rx="8" width="30" height="30" class="seat" id="12C"/>
+  <rect y="210" x="385" rx="8" width="30" height="30" class="seat" id="12B"/>
+  <rect y="250" x="385" rx="8" width="30" height="30" class="seat" id="12A"/>
 
 <!-- Row 13 (y=530) -->
-  <rect y="50" x="420" rx="8" width="30" height="30" class="seat" id="13F"/>
-  <rect y="90" x="420" rx="8" width="30" height="30" class="seat" id="13E"/>
-  <rect y="130" x="420" rx="8" width="30" height="30" class="seat" id="13D"/>
-  <rect y="200" x="420" rx="8" width="30" height="30" class="seat" id="13C"/>
-  <rect y="240" x="420" rx="8" width="30" height="30" class="seat" id="13B"/>
-  <rect y="280" x="420" rx="8" width="30" height="30" class="seat" id="13A"/>
+  <rect y="20" x="420" rx="8" width="30" height="30" class="seat" id="13F"/>
+  <rect y="60" x="420" rx="8" width="30" height="30" class="seat" id="13E"/>
+  <rect y="100" x="420" rx="8" width="30" height="30" class="seat" id="13D"/>
+  <rect y="170" x="420" rx="8" width="30" height="30" class="seat" id="13C"/>
+  <rect y="210" x="420" rx="8" width="30" height="30" class="seat" id="13B"/>
+  <rect y="250" x="420" rx="8" width="30" height="30" class="seat" id="13A"/>
 
 <!-- Row 14 (y=570) -->
-  <rect y="50" x="455" rx="8" width="30" height="30" class="seat" id="14F"/>
-  <rect y="90" x="455" rx="8" width="30" height="30" class="seat" id="14E"/>
-  <rect y="130" x="455" rx="8" width="30" height="30" class="seat" id="14D"/>
-  <rect y="200" x="455" rx="8" width="30" height="30" class="seat" id="14C"/>
-  <rect y="240" x="455" rx="8" width="30" height="30" class="seat" id="14B"/>
-  <rect y="280" x="455" rx="8" width="30" height="30" class="seat" id="14A"/>
+  <rect y="20" x="455" rx="8" width="30" height="30" class="seat" id="14F"/>
+  <rect y="60" x="455" rx="8" width="30" height="30" class="seat" id="14E"/>
+  <rect y="100" x="455" rx="8" width="30" height="30" class="seat" id="14D"/>
+  <rect y="170" x="455" rx="8" width="30" height="30" class="seat" id="14C"/>
+  <rect y="210" x="455" rx="8" width="30" height="30" class="seat" id="14B"/>
+  <rect y="250" x="455" rx="8" width="30" height="30" class="seat" id="14A"/>
 
 <!-- Row 15 (y=610) -->
-  <rect y="50" x="490" rx="8" width="30" height="30" class="seat" id="15F"/>
-  <rect y="90" x="490" rx="8" width="30" height="30" class="seat" id="15E"/>
-  <rect y="130" x="490" rx="8" width="30" height="30" class="seat" id="15D"/>
-  <rect y="200" x="490" rx="8" width="30" height="30" class="seat" id="15C"/>
-  <rect y="240" x="490" rx="8" width="30" height="30" class="seat" id="15B"/>
-  <rect y="280" x="490" rx="8" width="30" height="30" class="seat" id="15A"/>
+  <rect y="20" x="490" rx="8" width="30" height="30" class="seat" id="15F"/>
+  <rect y="60" x="490" rx="8" width="30" height="30" class="seat" id="15E"/>
+  <rect y="100" x="490" rx="8" width="30" height="30" class="seat" id="15D"/>
+  <rect y="170" x="490" rx="8" width="30" height="30" class="seat" id="15C"/>
+  <rect y="210" x="490" rx="8" width="30" height="30" class="seat" id="15B"/>
+  <rect y="250" x="490" rx="8" width="30" height="30" class="seat" id="15A"/>
 
 <!-- Row 16 (y=650) -->
-  <rect y="50" x="525" rx="8" width="30" height="30" class="seat" id="16F"/>
-  <rect y="90" x="525" rx="8" width="30" height="30" class="seat" id="16E"/>
-  <rect y="130" x="525" rx="8" width="30" height="30" class="seat" id="16D"/>
-  <rect y="200" x="525" rx="8" width="30" height="30" class="seat" id="16C"/>
-  <rect y="240" x="525" rx="8" width="30" height="30" class="seat" id="16B"/>
-  <rect y="280" x="525" rx="8" width="30" height="30" class="seat" id="16A"/>
+  <rect y="20" x="525" rx="8" width="30" height="30" class="seat" id="16F"/>
+  <rect y="60" x="525" rx="8" width="30" height="30" class="seat" id="16E"/>
+  <rect y="100" x="525" rx="8" width="30" height="30" class="seat" id="16D"/>
+  <rect y="170" x="525" rx="8" width="30" height="30" class="seat" id="16C"/>
+  <rect y="210" x="525" rx="8" width="30" height="30" class="seat" id="16B"/>
+  <rect y="250" x="525" rx="8" width="30" height="30" class="seat" id="16A"/>
 
 <!-- Row 17 (y=690) -->
-  <rect y="50" x="560" rx="8" width="30" height="30" class="seat" id="17F"/>
-  <rect y="90" x="560" rx="8" width="30" height="30" class="seat" id="17E"/>
-  <rect y="130" x="560" rx="8" width="30" height="30" class="seat" id="17D"/>
-  <rect y="200" x="560" rx="8" width="30" height="30" class="seat" id="17C"/>
-  <rect y="240" x="560" rx="8" width="30" height="30" class="seat" id="17B"/>
-  <rect y="280" x="560" rx="8" width="30" height="30" class="seat" id="17A"/>
+  <rect y="20" x="560" rx="8" width="30" height="30" class="seat" id="17F"/>
+  <rect y="60" x="560" rx="8" width="30" height="30" class="seat" id="17E"/>
+  <rect y="100" x="560" rx="8" width="30" height="30" class="seat" id="17D"/>
+  <rect y="170" x="560" rx="8" width="30" height="30" class="seat" id="17C"/>
+  <rect y="210" x="560" rx="8" width="30" height="30" class="seat" id="17B"/>
+  <rect y="250" x="560" rx="8" width="30" height="30" class="seat" id="17A"/>
 
 <!-- Row 18 (y=730) -->
-  <rect y="50" x="595" rx="8" width="30" height="30" class="seat" id="18F"/>
-  <rect y="90" x="595" rx="8" width="30" height="30" class="seat" id="18E"/>
-  <rect y="130" x="595" rx="8" width="30" height="30" class="seat" id="18D"/>
-  <rect y="200" x="595" rx="8" width="30" height="30" class="seat" id="18C"/>
-  <rect y="240" x="595" rx="8" width="30" height="30" class="seat" id="18B"/>
-  <rect y="280" x="595" rx="8" width="30" height="30" class="seat" id="18A"/>
+  <rect y="20" x="595" rx="8" width="30" height="30" class="seat" id="18F"/>
+  <rect y="60" x="595" rx="8" width="30" height="30" class="seat" id="18E"/>
+  <rect y="100" x="595" rx="8" width="30" height="30" class="seat" id="18D"/>
+  <rect y="170" x="595" rx="8" width="30" height="30" class="seat" id="18C"/>
+  <rect y="210" x="595" rx="8" width="30" height="30" class="seat" id="18B"/>
+  <rect y="250" x="595" rx="8" width="30" height="30" class="seat" id="18A"/>
 
 <!-- Row 19 (y=770) -->
-  <rect y="50" x= "630" rx="8" width="30" height="30" class="seat" id="19F"/>
-  <rect y="90" x="630" rx="8" width="30" height="30" class="seat" id="19E"/>
-  <rect y="130" x="630" rx="8" width="30" height="30" class="seat" id="19D"/>
-  <rect y="200" x="630" rx="8" width="30" height="30" class="seat" id="19C"/>
-  <rect y="240" x="630" rx="8" width="30" height="30" class="seat" id="19B"/>
-  <rect y="280" x="630" rx="8" width="30" height="30" class="seat" id="19A"/>
+  <rect y="20" x= "630" rx="8" width="30" height="30" class="seat" id="19F"/>
+  <rect y="60" x="630" rx="8" width="30" height="30" class="seat" id="19E"/>
+  <rect y="100" x="630" rx="8" width="30" height="30" class="seat" id="19D"/>
+  <rect y="170" x="630" rx="8" width="30" height="30" class="seat" id="19C"/>
+  <rect y="210" x="630" rx="8" width="30" height="30" class="seat" id="19B"/>
+  <rect y="250" x="630" rx="8" width="30" height="30" class="seat" id="19A"/>
 
 <!-- Row 20 (y=810) -->
-  <rect y="50" x="665" rx="8" width="30" height="30" class="seat" id="20F"/>
-  <rect y="90" x="665" rx="8" width="30" height="30" class="seat" id="20E"/>
-  <rect y="130" x="665" rx="8" width="30" height="30" class="seat" id="20D"/>
-  <rect y="200" x="665" rx="8" width="30" height="30" class="seat" id="20C"/>
-  <rect y="240" x="665" rx="8" width="30" height="30" class="seat" id="20B"/>
-  <rect y="280" x="665" rx="8" width="30" height="30" class="seat" id="20A"/>
+  <rect y="20" x="665" rx="8" width="30" height="30" class="seat" id="20F"/>
+  <rect y="60" x="665" rx="8" width="30" height="30" class="seat" id="20E"/>
+  <rect y="100" x="665" rx="8" width="30" height="30" class="seat" id="20D"/>
+  <rect y="170" x="665" rx="8" width="30" height="30" class="seat" id="20C"/>
+  <rect y="210" x="665" rx="8" width="30" height="30" class="seat" id="20B"/>
+  <rect y="250" x="665" rx="8" width="30" height="30" class="seat" id="20A"/>
 
 <!-- Row 21 (y=850) -->
-  <rect y="50" x="700" rx="8" width="30" height="30" class="seat" id="21F"/>
-  <rect y="90" x="700" rx="8" width="30" height="30" class="seat" id="21E"/>
-  <rect y="130" x="700" rx="8" width="30" height="30" class="seat" id="21D"/>
-  <rect y="200" x="700" rx="8" width="30" height="30" class="seat" id="21C"/>
-  <rect y="240" x="700" rx="8" width="30" height="30" class="seat" id="21B"/>
-  <rect y="280" x="700" rx="8" width="30" height="30" class="seat" id="21A"/>
+  <rect y="20" x="700" rx="8" width="30" height="30" class="seat" id="21F"/>
+  <rect y="60" x="700" rx="8" width="30" height="30" class="seat" id="21E"/>
+  <rect y="100" x="700" rx="8" width="30" height="30" class="seat" id="21D"/>
+  <rect y="170" x="700" rx="8" width="30" height="30" class="seat" id="21C"/>
+  <rect y="210" x="700" rx="8" width="30" height="30" class="seat" id="21B"/>
+  <rect y="250" x="700" rx="8" width="30" height="30" class="seat" id="21A"/>
 
 <!-- Row 22 (y=890) -->
-  <rect y="50" x="735" rx="8" width="30" height="30" class="seat" id="22F"/>
-  <rect y="90" x="735" rx="8" width="30" height="30" class="seat" id="22E"/>
-  <rect y="130" x="735" rx="8" width="30" height="30" class="seat" id="22D"/>
-  <rect y="200" x="735" rx="8" width="30" height="30" class="seat" id="22C"/>
-  <rect y="240" x="735" rx="8" width="30" height="30" class="seat" id="22B"/>
-  <rect y="280" x="735" rx="8" width="30" height="30" class="seat" id="22A"/>
+  <rect y="20" x="735" rx="8" width="30" height="30" class="seat" id="22F"/>
+  <rect y="60" x="735" rx="8" width="30" height="30" class="seat" id="22E"/>
+  <rect y="100" x="735" rx="8" width="30" height="30" class="seat" id="22D"/>
+  <rect y="170" x="735" rx="8" width="30" height="30" class="seat" id="22C"/>
+  <rect y="210" x="735" rx="8" width="30" height="30" class="seat" id="22B"/>
+  <rect y="250" x="735" rx="8" width="30" height="30" class="seat" id="22A"/>
 
 <!-- Row 23 (y=930) -->
-  <rect y="50" x="770" rx="8" width="30" height="30" class="seat premium" id="23F"/>
-  <rect y="90" x="770" rx="8" width="30" height="30" class="seat premium" id="23E"/>
-  <rect y="130" x="770" rx="8" width="30" height="30" class="seat premium" id="23D"/>
-  <rect y="200" x="770" rx="8" width="30" height="30" class="seat premium" id="23C"/>
-  <rect y="240" x="770" rx="8" width="30" height="30" class="seat premium" id="23B"/>
-  <rect y="280" x="770" rx="8" width="30" height="30" class="seat premium" id="23A"/>
+  <rect y="20" x="770" rx="8" width="30" height="30" class="seat premium" id="23F"/>
+  <rect y="60" x="770" rx="8" width="30" height="30" class="seat premium" id="23E"/>
+  <rect y="100" x="770" rx="8" width="30" height="30" class="seat premium" id="23D"/>
+  <rect y="170" x="770" rx="8" width="30" height="30" class="seat premium" id="23C"/>
+  <rect y="210" x="770" rx="8" width="30" height="30" class="seat premium" id="23B"/>
+  <rect y="250" x="770" rx="8" width="30" height="30" class="seat premium" id="23A"/>
 </g>
 <!-- Row 24 (y=970) -->
- <!-- <rect y="50" x="805" rx="8" width="30" height="30" class="seat premium" id="24F"/> 
-  <rect y="90" x="805" rx="8" width="30" height="30" class="seat premium" id="24E"/>
-  <rect y="130" x="805" rx="8" width="30" height="30" class="seat premium" id="24D"/>
-  <rect y="200" x="805" rx="8" width="30" height="30" class="seat premium" id="24C"/>
-  <rect y="240" x="805" rx="8" width="30" height="30" class="seat premium" id="24B"/>
-  <rect y="280" x="805" rx="8" width="30" height="30" class="seat premium" id="24A"/>-->
+ <!-- <rect y="20" x="805" rx="8" width="30" height="30" class="seat premium" id="24F"/> 
+  <rect y="60" x="805" rx="8" width="30" height="30" class="seat premium" id="24E"/>
+  <rect y="100" x="805" rx="8" width="30" height="30" class="seat premium" id="24D"/>
+  <rect y="170" x="805" rx="8" width="30" height="30" class="seat premium" id="24C"/>
+  <rect y="210" x="805" rx="8" width="30" height="30" class="seat premium" id="24B"/>
+  <rect y="250" x="805" rx="8" width="30" height="30" class="seat premium" id="24A"/>-->
 
   <!-- Row 25 (y=1010), Premium -->
- <!-- <rect y="50" x="840" rx="8" width="30" height="30" class="seat premium" id="25F"/>
-  <rect y="90" x="840" rx="8" width="30" height="30" class="seat premium" id="25E"/>
-  <rect y="130" x="840" rx="8" width="30" height="30" class="seat premium" id="25D"/>
-  <rect y="200" x="840" rx="8" width="30" height="30" class="seat premium" id="25C"/>
-  <rect y="240" x="840" rx="8" width="30" height="30" class="seat premium" id="25B"/>
-  <rect y="280" x="840" rx="8" width="30" height="30" class="seat premium" id="25A"/> -->
+ <!-- <rect y="20" x="840" rx="8" width="30" height="30" class="seat premium" id="25F"/>
+  <rect y="60" x="840" rx="8" width="30" height="30" class="seat premium" id="25E"/>
+  <rect y="100" x="840" rx="8" width="30" height="30" class="seat premium" id="25D"/>
+  <rect y="170" x="840" rx="8" width="30" height="30" class="seat premium" id="25C"/>
+  <rect y="210" x="840" rx="8" width="30" height="30" class="seat premium" id="25B"/>
+  <rect y="250" x="840" rx="8" width="30" height="30" class="seat premium" id="25A"/> -->
 
 
- <line id="lights" x1="0" y1="165" x2="850" y2="165" style="stroke:rgb(233, 191, 39);stroke-width:2" />
-  <line id="lights" x1="0" y1="195" x2="850" y2="195" style="stroke:rgb(233, 191, 39);stroke-width:2"/> 
+ <line id="lights" x1="0" y1="135" x2="850" y2="135" style="stroke:rgb(233, 191, 39);stroke-width:2" />
+  <line id="lights" x1="0" y1="165" x2="850" y2="165" style="stroke:rgb(233, 191, 39);stroke-width:2"/> 
 </svg>
   </div>
 
@@ -400,7 +400,7 @@ style="z-index:99999">
   z-index:99995">
 
   <img id="stw5" src="https://tichy05.github.io/Lonesome-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
-  position:fixed; display:none; margin-left:200px; margin-top:-270px; 
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
   z-index:99995">
 
 <img id="stw6" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:142px;height:256px;
@@ -412,7 +412,6 @@ style="z-index:99999">
   z-index:99995">
 
 
-<button onclick="simulateTurbulence('seatGroup')">Simulate Turbulence</button>
  <script>
 
 //Start by checking the device orientation
@@ -421,7 +420,7 @@ checkOrientation();
 const msg = document.createElement('div');
   msg.id = "victoryMessage";
   msg.style.cssText = `
-    position:fixed; top:240px; left:0; width:100%;
+    position:fixed; top:208px; left:0; width:100%;
     text-align:center; font-size:2em; font-weight:bold;
     color:black; text-shadow: 0px 0px #000; z-index:9999;`
   
@@ -436,11 +435,60 @@ let badOnes = 0;
 let selectionMade = false;
 let timeExpired = false
 //preparar boton o menu para escoger el nivel de dificultad y para presentar o no la intro
-let difficultyLevel = 1; // Set externally (1–4)
+/*let difficultyLevel = 0; */
 let currentCorrect = [];
 let clickCount = 0;
-let timeInMs=0;
+let timeInMs=3000;
 let firstStrike = false;
+//passed values
+
+function getNumericParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const params = {
+    intensity: parseInt(urlParams.get("intensity"), 10),
+    frequency: parseInt(urlParams.get("frequency"), 10),
+    durationTB: parseInt(urlParams.get("durationTB"), 10),
+    difficultyLevel: parseInt(urlParams.get("difficultyLevel"), 10),
+    durationFL: parseInt(urlParams.get("durationFL"), 10),
+    flicksPerSecond: parseInt(urlParams.get("flicksPerSecond"), 10)
+  };
+
+  return params;
+}
+
+const settings = getNumericParams();
+const intensity = settings.intensity;
+const frequency = settings.frequency;
+const durationTB = settings.durationTB;
+const difficultyLevel = settings.difficultyLevel;
+const durationFL = settings.durationFL;
+const flicksPerSecond = settings.flicksPerSecond;
+
+console.log(" intensity","x",intensity,"x");
+console.log(" frequency","x",frequency,"x");
+console.log(" durationTB ","x",durationTB,"x");
+console.log(" difficultyLevel","x",difficultyLevel,"x");
+console.log(" durationFL",durationFL);
+console.log(" flicksPerSecond",flicksPerSecond);
+
+
+if (difficultyLevel === 1) {
+  timeInMs = 3000
+  console.log ("pase")
+}
+if (difficultyLevel === 2) {
+  timeInMs = 7000
+}
+if (difficultyLevel === 3) {
+  timeInMs = 10000
+}
+if (difficultyLevel === 4) {
+  timeInMs = 13000
+}
+
+
+
 
 //Success and failure msgs
 const successMessages = [
@@ -460,18 +508,7 @@ const failureMessages = [
 ];
 
 
-if (difficultyLevel === 1) {
-  timeInMs = 4000
-}
-if (difficultyLevel === 2) {
-  timeInMs = 7000
-}
-if (difficultyLevel === 3) {
-  timeInMs = 10000
-}
-if (difficultyLevel === 4) {
-  timeInMs = 13000
-}
+
 
 
   // Generate seat IDs: 1A to 23F
@@ -491,7 +528,7 @@ if (difficultyLevel === 4) {
  
   document.addEventListener('DOMContentLoaded', e => {
   const h1 = document.querySelector("h1")
-  h1.innerText = "Asientos de Avión - Nivel " + difficultyLevel
+  h1.innerText = "A Bordo! - Nivel " + difficultyLevel
   })
 
 nextQuestion();
@@ -585,24 +622,7 @@ function enableSeatClicks() {
     checkifEOD()
   */
 
- /* function enableSeatClicks() {
-    console.log ("enableSeatClicks")
-    RegSeats.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.style.pointerEvents = "auto";
-        el.addEventListener("click", () => handleSeatClick(id, el),) /*{ once: true }); */
-      /*  const bbox = el.getBoundingClientRect();
-        tooltip.style.left = `${bbox.left + bbox.width / 2}px`;
-        tooltip.style.top = `${bbox.top + window.scrollY - 30}px`;
-        tooltip.textContent = name;
-        tooltip.style.display = "block"; */
-
-
-
-    /*  }
-    });
-  }*/
+ 
 
   function disableAllSeats() {
     console.log ("disableAllSeats")
@@ -718,7 +738,7 @@ setTimeout(() => {
    msg.textContent =  titleVar + ": " + currentCorrect; ;
    document.body.appendChild(msg);
    const h1 = document.querySelector("h1");
-   h1.innerText= "Asientos de Avión - Nivel: " + difficultyLevel + "  " + titleVar + ": " + currentCorrect + " Tiempo:" + (timeInMs / 1000) + " segundos"; 
+   h1.innerText= "A Bordo! - Nivel: " + difficultyLevel + "   " + titleVar + ":  " + currentCorrect + "   Tiempo: " + (timeInMs / 1000) + " segundos"; 
   stw6.style.display = "none";
   }, 6000); 
 
@@ -726,9 +746,9 @@ setTimeout(() => {
   enableSeatClicks()
   msg.textContent = "GO!";
   document.body.appendChild(msg);
-simulateTurbulence('seatGroup');
-flickerLights('seatGroup');
-  }, 9000) //6000
+simulateTurbulence('seatGroup',intensity,frequency,durationTB);
+flickerLights('seatGroup',durationFL,flicksPerSecond);
+  }, 10000) //6000
    
 setTimeout(() => { 
  msg.textContent = ""; 
@@ -737,48 +757,11 @@ if   (firstStrike === false) {
     timeExpired = true}
   else {timeExpired = false}
     checkifEOD(timeExpired)}
-},  (timeInMs+9000))   //timeInMs + 24000
+},  (timeInMs+10000))   //timeInMs + 24000
 
 
 
-/* if (clickCount < difficultyLevel) {
-    timeExpired = true
-  } else {
-      timeExpired = false}
 
-checkifEOD()
-
-} */
-
-/*}, 1000);*/
- /* setTimeout(() => {
-   msg.textContent =  "";
-  document.body.appendChild(msg);
- /*  checkforWinner(); */
-  /* setTimeout(() => {
-    console.log ("selectionMadeb: ", selectionMade);
-       if (selectionMade === false) {
-      msg.textContent =  "Se le acabo el tiempo";
-      document.body.appendChild(msg);*/
-   
- /* console.log ("selectionMadea: ", selectionMade);
-    };  }, timeInMs);
-  }, 21000);*/
-/*  }, 2000);*/
-/*checkifEOD(); */
-/*}*/
-
-
-//logica para ver si lo logro
-/*function checkforWinner() {
-console.log ("checkforWinner");
-
-  selectionMade = true;
-
-
-}
-
-*/
 
 
 //Verify if there are more things to select 
@@ -798,12 +781,6 @@ console.log (firstStrike, timeExpired,badOnes,goodOnes);
     }, 6000);
   
 }
-  
-
-
-
-
-
 } else {
   if (timeExpired === false) {
     if (firstStrike === true) {
@@ -814,15 +791,19 @@ console.log (firstStrike, timeExpired,badOnes,goodOnes);
         document.body.appendChild(msg);
         disableAllSeats() ;
         firstStrike = true;
-      }, 1000);
+      }, 4000);
       
       setTimeout(() => {
         msg.textContent = "Oprima Reintentar o Salir";
         document.body.appendChild(msg);
        
-      }, 3000);
+      }, 6000);
 } }}}
+console.log (difficultyLevel,firstStrike, timeExpired,badOnes,goodOnes);
+console.log ("trigger","-",difficultyLevel,"-");
+
 if (difficultyLevel === (goodOnes + badOnes)) {
+  console.log ("trigger","-",difficultyLevel,"-");
   if (badOnes === 0) {
   confettiExplosion();}
 
@@ -860,9 +841,15 @@ function confettiExplosion() {
   msg.textContent = getRandomMessage(successMessages);
   document.body.appendChild(msg);
   setTimeout(() => {
-    msg.remove();
-
+  /*  msg.remove();*/
+console.log ("msg.textContent")
   }, 4000);
+
+   setTimeout(() => {
+        msg.textContent = "Oprima Reintentar o Salir";
+        document.body.appendChild(msg);
+       
+      }, 6000);
 }
 
 
@@ -925,7 +912,7 @@ function showResultMessage(isCorrect) {
 
 
 
-  function simulateTurbulence(elementId, intensity = 5, frequency = 10) {
+  function simulateTurbulence(elementId = 'seatGroup', intensity = 5, frequency = 10, durationTB = 4) {
     const el = document.getElementById(elementId);
     if (!el) return;
 
@@ -938,7 +925,7 @@ function showResultMessage(isCorrect) {
     setTimeout(() => {
       clearInterval(interval);
       el.setAttribute("transform", "translate(0, 0)");
-    }, 13000);
+    }, durationTB*1000);
   }
 
 function getRandomMessage(list) {
@@ -948,12 +935,13 @@ function getRandomMessage(list) {
 
 
 
-function flickerLights(groupId, duration = 4000, flicksPerSecond = 8) {
+function flickerLights(groupId = 'seatGroup', durationFL = 4, flicksPerSecond = 8) {
   console.log ("inside")
   const group = document.getElementById(groupId);
   const bg = document.getElementById('flickerBackground');
   console.log (group,bg);
   if (!group || !bg) return;
+
 
   const interval = 1000 / flicksPerSecond;
   let elapsed = 0;
@@ -966,7 +954,7 @@ function flickerLights(groupId, duration = 4000, flicksPerSecond = 8) {
 console.log (bg.getAttribute("fill"))
 
     elapsed += interval;
-    if (elapsed >= duration) {
+    if (elapsed >= durationFL*1000) {
       clearInterval(flicker);
       group.setAttribute("opacity", "1");
       bg.setAttribute("fill", "white"); // Restore background
@@ -999,6 +987,24 @@ function flickerLights2(groupId, duration = 4000, flicksPerSecond = 8) {
 }
 
 */
+
+
+   
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,479 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Abordando - Menu</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+  <!--<link rel="icon" type="image/png" href="https://tichy05.github.io/Biolum-match/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://tichy05.github.io/Biolum-match/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152"
+    href="https://tichy05.github.io/Biolum-match/apple-touch-icon-152x152.png"> -->
+ 
+</head>
+<style>
+
+    body { font-family: Arial, sans-serif; text-align: center;  
+    background-color: white; margin-top: 20px; color: black; font-size: 12pt; font-style: heavy }
+ .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+      
+      
+    }
+
+    .card {
+      background:  #ffbf00;
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+      flex: 1 1 280px;
+      max-width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease-in-out;
+   /*   background-image: url('Bandera.png'); 
+      color: white; */
+   /*   background-color:rgb(186, 19, 19); */
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      margin-top: 0px;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      background-color: white;
+      color: black;
+      padding: 0.75rem;
+      border-radius: 24px;
+      border-color: black;
+      border-width: 2px;
+      border-style: solid;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 10pt;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover,
+    .card a:active {
+      background-color: #0056b3;
+    }
+
+ #card2 {
+      background:  white;
+      padding: 1.5rem 1rem;
+      border-radius:0px;
+      flex: 1 1 280px;
+      max-width:800px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 30pt;
+      color: black
+ }
+
+
+  #card-container2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      max-width: 1500px;
+      max-height: 150px;
+      font-size: 12pt;
+      font-weight: bold;
+      color: black;
+      background-color: #ffbf00;
+      border-radius: 0px;
+      border-color: #ffbf00;
+      border-width: 3px;
+      border-style: solid;
+      margin: 1rem auto;
+      padding: 0.5rem;
+      display: block;
+  }
+
+ nav.main-nav {
+      background-color: #333;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 0px;
+      margin: 1rem auto;
+      max-width: 1500px;
+      padding: 0.5rem;
+    }
+
+    nav.main-nav a {
+      color: white;
+      padding: 0.25rem 1rem;
+      text-decoration: none;
+      flex: 0 1 auto;
+      text-align: center;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    nav.main-nav a:hover,
+    nav.main-nav a:active {
+      background-color: #555;
+    }
+
+    
+
+
+ #footer {
+  	display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* optional spacing between buttons */
+  max-width: 768px; /* optional, controls line wrap based on width */
+  Margin: 0px auto; /* centers and adds top space. */
+  font-size: 14pt;
+  font-weight: bold;
+
+   }
+    @media only screen and (min-width: 600px)
+{#rotateWarning {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #000000cc;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 10vh;
+  z-index: 9999;
+  
+}}
+
+
+ 
+ 
+
+
+</style>
+
+
+
+<body>
+  <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
+  <h1 id="card-container2">Asientos de Avión - Nivel 1</h1>
+  <?xml version="1.0" standalone="no"?>
+ 
+  
+  
+ <text id="mytextLine" x="250" y="185" fill="black"></text>
+
+
+
+
+<img id="stw1" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw2" src="https://tichy05.github.io/Lonesome-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw3" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing down.png" alt="Steward pointing down" style="width:120px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw4" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing up.png" alt="Steward pointing up" style="width:128px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+  <img id="stw5" src="https://tichy05.github.io/Lonesome-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
+  position:fixed; display:none; margin-left:200px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw6" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:142px;height:256px;
+  position:fixed; display:none; margin-left:270px; margin-top:-270px; 
+  z-index:99995">
+
+<img id="stw7" src="https://tichy05.github.io/Lonesome-mind-games/stewardess pointing up left 2.png" alt="Steward pointing up left 2" style="width:300px;height:280px;
+  position:fixed; display:none; margin-left:420px; margin-top:-300px; 
+  z-index:99995">
+
+
+<div class="card-container2">
+     
+
+      
+    <h2 id="card-container">Contenido:</h2>
+   <div class="card2">
+    <p>Esto va dirigido a aquellas personas que ya no tienen o nunca tuvieron,<br> 
+        las destrezas para jugar con los juegos digitales modernos, pero aún <br>
+        no están listos para limitarse a jugar solo Bingo...
+    </p>
+</div>
+    <div class="card-container">
+      <div class="card">
+        <h3>Conoce a Marge</h3>
+        <p>Deja que Marge te explique el juego</p>
+        <a href="Intro Marge.html">SELECCIONAR</a>
+      </div>
+      
+      <div class="card">
+        <h3>Niveles ** 1-4</h3>
+        <p>Empieza por el Nivel 1 y vas subiendo de nivel</p>
+      <!--  <a href="A Bordo del Avion Niveles 1-4.html">SELECCIONAR</a> -->
+      <a href="Abordando_el_Avion.html?intensity=5&frequency=10&durationTB=6&difficultyLevel=1&durationFL=6&flicksPerSecond=8">SELECCIONAR</a>
+      
+    </div>
+
+      <div class="card">
+        <h3>Niveles 4-8</h3>
+        <p>Eres una persona brava: Turbulencia</p>
+        <a href="A Bordo del Avion Niveles 4-8.html">SELECCIONAR</a>
+      </div>
+
+       <div class="card">
+        <h3>Niveles 8-12</h3>
+        <p>Eres masoquista: En lo Oscuro</p>
+        <a href="A Bordo del Avion Niveles 8-12.html">SELECCIONAR</a>
+      </div>
+
+    </div>
+  </main>
+<p></p>
+
+
+ <script>
+//variables
+
+let difficultyLevel = 1;
+//Start by checking the device orientation
+checkOrientation();
+
+const msg = document.createElement('div');
+  msg.id = "victoryMessage";
+  msg.style.cssText = `
+    position:fixed; top:240px; left:0; width:100%;
+    text-align:center; font-size:2em; font-weight:bold;
+    color:black; text-shadow: 0px 0px #000; z-index:9999;`
+ /* 
+const params = new URLSearchParams(window.location.search);
+const intensity = params.get("intensity");
+const frequency = params.get("frequency");
+const durationTB = params.get("durationTB");
+const difficultyLevel = params.get("difficultyLevel");
+const durationFL = params.get("durationFL");
+const flicksPerSecond = params.get("flicksPerSecond");
+let timeInMs = 4000
+*/
+ 
+//Initialize variables
+
+/*
+let difficultyLevel = 1; // Set externally (1–4)*/
+/*
+
+if (difficultyLevel === 1) {
+  timeInMs = 3000
+}
+if (difficultyLevel === 2) {
+  timeInMs = 7000
+}
+if (difficultyLevel === 3) {
+  timeInMs = 10000
+}
+if (difficultyLevel === 4) {
+  timeInMs = 13000
+}
+console.log ("time",timeInMs,"diff",difficultyLevel)
+*/
+  //Verify DOM loaded before making any changes
+ 
+  document.addEventListener('DOMContentLoaded', e => {
+  const h1 = document.querySelector("h1")
+  h1.innerText = "A Bordo del Avión"
+  })
+
+
+    if (difficultyLevel === 1) {
+    titleVar = "Asiento"
+    titleVar2 = "el asiento"
+  } else {
+    titleVar = "Asientos"
+    titleVar2 = "los asientos"
+  }
+  // mensajes iniciales
+
+
+
+ /* msg.textContent = "<---- El frente es hacia allá";
+  document.body.appendChild(msg);
+  stw1.style.display = "block";
+
+  setTimeout(() => {
+      msg.textContent = "Filas van de la 1 a la 23 ";
+      document.body.appendChild(msg);
+      stw1.style.display = "none";
+      stw2.style.display = "block";
+  }, 3000);
+  setTimeout(() => {
+      msg.textContent = "Asientos van de la A a la F ";
+      document.body.appendChild(msg);
+      stw2.style.display = "none";
+      stw3.style.display = "block";
+  }, 6000);
+  setTimeout(() => {
+   msg.textContent = "de abajo hacia arriba ";
+  document.body.appendChild(msg);
+      stw3.style.display = "none";
+      stw4.style.display = "block";
+  }, 9000);
+   setTimeout(() => {
+   msg.textContent = titleVar2 + " estará en el pasillo y luego en la banda chinita";
+  document.body.appendChild(msg);
+      stw4.style.display = "none";
+      stw7.style.display = "block";
+  }, 12000);*/
+ /* 
+   msg.textContent = "Tiene " + (timeInMs/1000) + " seg. para localizar " + titleVar2;
+  document.body.appendChild(msg);
+      stw7.style.display = "none";
+      stw5.style.display = "block";
+  
+setTimeout(() => {
+   msg.textContent =  "Espere el GO! ";
+  document.body.appendChild(msg);
+      stw5.style.display = "none";
+      stw6.style.display = "block";
+  }, 3000); //18000
+setTimeout(() => {
+   stw6.style.display = "none";
+   msg.textContent =  titleVar + ": " + currentCorrect; ;
+   document.body.appendChild(msg);
+   const h1 = document.querySelector("h1");
+   h1.innerText= "Asientos de Avión - Nivel: " + difficultyLevel + "  " + titleVar + ": " + currentCorrect + " Tiempo:" + (timeInMs / 1000) + " segundos"; 
+  stw6.style.display = "none";
+  }, 6000); 
+
+  setTimeout(() => {
+  enableSeatClicks()
+  msg.textContent = "GO!";
+  document.body.appendChild(msg);
+simulateTurbulence('seatGroup');
+flickerLights('seatGroup');
+  }, 9000) //6000
+   
+setTimeout(() => { 
+ msg.textContent = ""; 
+if   (firstStrike === false) {
+  if (clickCount < difficultyLevel) {
+    timeExpired = true}
+  else {timeExpired = false}
+    checkifEOD(timeExpired)}
+},  (timeInMs+9000))   //timeInMs + 24000
+
+
+*/
+
+/* ///here
+
+
+*/
+function checkOrientation() {
+  console.log ("checkOrientation")
+ const warning = document.getElementById('rotateWarning');
+ const isPortrait = window.matchMedia("(orientation: landscape)").matches;
+    
+  warning.style.display = isPortrait ? 'none' : 'block'; 
+ } 
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('load', checkOrientation);
+window.addEventListener('orientationchange', () => {setTimeout(checkOrientation, 300); 
+});
+
+function goBack() {
+  console.log ("goBack")
+  window.history.back()
+}
+/*
+
+    ///turbulence
+
+  function simulateTurbulence(elementId, intensity = 5, frequency = 10, durationTB = 13) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    let interval = setInterval(() => {
+      const offsetX = Math.random() * intensity * 2 - intensity;
+      const offsetY = Math.random() * intensity * 2 - intensity;
+      el.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
+    }, frequency);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      el.setAttribute("transform", "translate(0, 0)");
+    }, durationTB);
+  }
+
+
+
+function flickerLights(groupId, duration = 4000, flicksPerSecond = 8) {
+  console.log ("inside")
+  const group = document.getElementById(groupId);
+  const bg = document.getElementById('flickerBackground');
+  console.log (group,bg);
+  if (!group || !bg) return;
+
+  const interval = 1000 / flicksPerSecond;
+  let elapsed = 0;
+
+  const flicker = setInterval(() => {
+    const dimmed = Math.random() < 0.5;
+    group.setAttribute("opacity", dimmed ? "0.15" : "1");
+    bg.setAttribute("fill", dimmed ? "black" : "white"); // Flicker background too
+
+
+    elapsed += interval;
+    if (elapsed >= duration) {
+      clearInterval(flicker);
+      group.setAttribute("opacity", "1");
+      bg.setAttribute("fill", "white"); // Restore background
+    }
+  }, interval);
+}
+
+
+*/
+
+
+</script>
+
+<nav class="main-nav">
+  <a href="">Menú Principal</a>
+  <a href="">Reintentar</a>
+  <a href="#" onclick="return">Salir</a>
+  <a href="javascript:goBack()">&laquo; Anterior</a>
+</nav>
+
+<footer>
+  &copy; 2025 JCFP
+</footer>
+
+</body>
+</html>
+
