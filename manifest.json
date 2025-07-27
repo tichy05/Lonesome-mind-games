@@ -1,0 +1,15 @@
+{
+  "name": "A Bordo!",
+  "short_name": "A Bordo!",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffbf00",
+  "icons": [
+    {
+      "src": "https://tichy05.github.io/Wandering-mind-games/favicon.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
