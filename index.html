@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Abordando - Menu</title>
+<title>A Bordo! - Menu</title>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,7 +20,7 @@
 <style>
 
     body { font-family: Arial, sans-serif; text-align: center;  
-    background-color: white; margin-top: 20px; color: black; font-size: 12pt; font-style: heavy }
+    background-color: white; margin-top: 20px; color: black; font-size: 14pt; font-style: heavy }
  .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -101,7 +101,7 @@
       justify-content: center;
       max-width: 1500px;
       max-height: 150px;
-      font-size: 12pt;
+      font-size: 18pt;
       font-weight: bold;
       color: black;
       background-color: #ffbf00;
@@ -139,8 +139,63 @@
     nav.main-nav a:active {
       background-color: #555;
     }
+    /* Optional container for layout */
+.dropdown-container {
+  display: flex;
+  gap: 20px; /* spacing between dropdowns */
+  margin: 20px;
+  justify-content: center;
+     
+}
 
-    
+
+    /* Dropdown Button */
+.dropbtn {
+  background-color: #ffbf00;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 24px;
+      border-color: black;
+      border-width: 2px;
+      border-style: solid;
+      min-width: 150px;;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 18px;
+  z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #78cb98;}
 
 
  #footer {
@@ -168,8 +223,6 @@
   
 }}
 
-
- 
  
 
 
@@ -179,38 +232,38 @@
 
 <body>
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
-  <h1 id="card-container2">Asientos de Avión - Nivel 1</h1>
-  <?xml version="1.0" standalone="yes"?>
+  <h1 id="card-container2">A Bordo!</h1>
+  <?xml version="1.0" standalone="no"?>
  
   
   
- <text id="mytextLine" x="250" y="185" fill="black"></text>
+ <text id="mytextLine" x="250" y="165" fill="black"></text>
 
 
 
 
 <img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
-  position:fixed; display:none; left:270px; top:135px; 
+  position:fixed; display:none; left:270px; top:115px; 
   z-index:99995">
 
 <img id="stw2" src="https://tichy05.github.io/Wandering-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
-  position:fixed; display:none; left:270px; top:135px; 
+  position:fixed; display:none; left:270px; top:115px; 
   z-index:99995">
 
 <img id="stw3" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing down.png" alt="Steward pointing down" style="width:120px;height:256px;
-  position:fixed; display:none; left:270px; top:135px; 
+  position:fixed; display:none; left:270px; top:115px; 
   z-index:99995">
 
 <img id="stw4" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up.png" alt="Steward pointing up" style="width:128px;height:256px;
-  position:fixed; display:none; left:270px; top:135px; 
+  position:fixed; display:none; left:270px; top:115px; 
   z-index:99995">
 
   <img id="stw5" src="https://tichy05.github.io/Wandering-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
-  position:fixed; display:none; left:200px; top:135px; 
+  position:fixed; display:none; left:200px; top:115px; 
   z-index:99995">
 
 <img id="stw6" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:142px;height:256px;
-  position:fixed; display:none; left:270px; top:135px; 
+  position:fixed; display:none; left:270px; top:115px; 
   z-index:99995">
 
 <img id="stw7" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up left 2.png" alt="Steward pointing up left 2" style="width:300px;height:280px;
@@ -222,46 +275,65 @@
      
 
       
-    <h2 id="card-container">Contenido:</h2>
+    <h2 id="card-container">Contenido</h2>
    <div class="card2">
-    <p>Esto va dirigido a aquellas personas que ya no tienen o nunca tuvieron,<br> 
-        las destrezas para jugar con los juegos digitales modernos, pero aún <br>
-        no están listos para limitarse a jugar solo Bingo...
-    </p>
+    <h3>Juego de coordinación visual-memoria-motor</h3>
 </div>
-    <div class="card-container">
-      <div class="card">
-        <h3>Conoce a Marge</h3>
-        <p>Deja que Marge te explique el juego</p>
-        <a href="Intro Marge.html">SELECCIONAR</a>
-      </div>
-      
-      <div class="card">
-        <h3>Niveles ** 1-4</h3>
-        <p>Empieza por el Nivel 1 y vas subiendo de nivel</p>
-      <!--  <a href="A Bordo del Avion Niveles 1-4.html">SELECCIONAR</a> -->
-      <a href="Abordando_el_Avion.html?intensity=5&frequency=10&durationTB=6&difficultyLevel=1&durationFL=6&flicksPerSecond=8">SELECCIONAR</a>
-      
+</div>
+
+
+
+<div class="dropdown-container">
+
+  <div class="dropdown">
+    <button class="dropbtn">Conoce a<br>Marge</button>
+    <div class="dropdown-content">
+      <a href="A_Bordo_Intro_Marge.html">Reglas del juego</a>
     </div>
+  </div>
 
-      <div class="card">
-        <h3>Niveles 4-8</h3>
-        <p>Eres una persona brava: Turbulencia</p>
-        <a href="A Bordo del Avion Niveles 4-8.html">SELECCIONAR</a>
-      </div>
-
-       <div class="card">
-        <h3>Niveles 8-12</h3>
-        <p>Eres masoquista: En lo Oscuro</p>
-        <a href="A Bordo del Avion Niveles 8-12.html">SELECCIONAR</a>
-      </div>
-
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 1-4<br>Sin incidentes</button>
+    <div class="dropdown-content">
+      <a id="N1" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 1</a>
+      <a id="N2" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=2&durationFL=0&flicksPerSecond=8">Nivel 2</a>      
+      <a id="N3" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=3&durationFL=0&flicksPerSecond=8">Nivel 3</a>
+      <a id="N4" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=4&durationFL=0&flicksPerSecond=8">Nivel 4</a>
     </div>
-  </main>
-<p></p>
+  </div>
 
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 5-8<br>Turbulencia</button>
+    <div class="dropdown-content">
+      <a id="N5" href="A_Bordo.html?intensity=5&frequency=10&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 5</a>
+      <a id="N6" href="A_Bordo.html?intensity=8&frequency=12&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 6</a>      
+      <a id="N7" href="A_Bordo.html?intensity=12&frequency=16&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 7</a>
+      <a id="N8" href="A_Bordo.html?intensity=16&frequency=18&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 8</a>
+    </div>
+  </div>
 
- <script>
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 9-12<br>A Oscuras </button>
+    <div class="dropdown-content">
+        <a id="N9" href="A_Bordo.html?intensity=5&frequency=10&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=8">Nivel 9</a>
+        <a id="N10" href="A_Bordo.html?intensity=8&frequency=12&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=10">Nivel 10</a>      
+        <a id="N11" href="A_Bordo.html?intensity=12&frequency=16&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=11">Nivel 11</a>
+        <a id="N12" href="A_Bordo.html?intensity=16&frequency=18&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=14">Nivel 12</a>
+     </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Prueba tus<br>propias variaciones</button>
+    <div class="dropdown-content">
+    <a id="C1" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Ajustes</a>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<script>
 //variables
 
 let difficultyLevel = 1;
@@ -309,7 +381,7 @@ console.log ("time",timeInMs,"diff",difficultyLevel)
  
   document.addEventListener('DOMContentLoaded', e => {
   const h1 = document.querySelector("h1")
-  h1.innerText = "A Bordo del Avión"
+  h1.innerText = "A Bordo!"
   })
 
 
@@ -320,83 +392,7 @@ console.log ("time",timeInMs,"diff",difficultyLevel)
     titleVar = "Asientos"
     titleVar2 = "los asientos"
   }
-  // mensajes iniciales
-
-
-
- /* msg.textContent = "<---- El frente es hacia allá";
-  document.body.appendChild(msg);
-  stw1.style.display = "block";
-
-  setTimeout(() => {
-      msg.textContent = "Filas van de la 1 a la 23 ";
-      document.body.appendChild(msg);
-      stw1.style.display = "none";
-      stw2.style.display = "block";
-  }, 3000);
-  setTimeout(() => {
-      msg.textContent = "Asientos van de la A a la F ";
-      document.body.appendChild(msg);
-      stw2.style.display = "none";
-      stw3.style.display = "block";
-  }, 6000);
-  setTimeout(() => {
-   msg.textContent = "de abajo hacia arriba ";
-  document.body.appendChild(msg);
-      stw3.style.display = "none";
-      stw4.style.display = "block";
-  }, 9000);
-   setTimeout(() => {
-   msg.textContent = titleVar2 + " estará en el pasillo y luego en la banda chinita";
-  document.body.appendChild(msg);
-      stw4.style.display = "none";
-      stw7.style.display = "block";
-  }, 12000);*/
- /* 
-   msg.textContent = "Tiene " + (timeInMs/1000) + " seg. para localizar " + titleVar2;
-  document.body.appendChild(msg);
-      stw7.style.display = "none";
-      stw5.style.display = "block";
   
-setTimeout(() => {
-   msg.textContent =  "Espere el GO! ";
-  document.body.appendChild(msg);
-      stw5.style.display = "none";
-      stw6.style.display = "block";
-  }, 3000); //18000
-setTimeout(() => {
-   stw6.style.display = "none";
-   msg.textContent =  titleVar + ": " + currentCorrect; ;
-   document.body.appendChild(msg);
-   const h1 = document.querySelector("h1");
-   h1.innerText= "Asientos de Avión - Nivel: " + difficultyLevel + "  " + titleVar + ": " + currentCorrect + " Tiempo:" + (timeInMs / 1000) + " segundos"; 
-  stw6.style.display = "none";
-  }, 6000); 
-
-  setTimeout(() => {
-  enableSeatClicks()
-  msg.textContent = "GO!";
-  document.body.appendChild(msg);
-simulateTurbulence('seatGroup');
-flickerLights('seatGroup');
-  }, 9000) //6000
-   
-setTimeout(() => { 
- msg.textContent = ""; 
-if   (firstStrike === false) {
-  if (clickCount < difficultyLevel) {
-    timeExpired = true}
-  else {timeExpired = false}
-    checkifEOD(timeExpired)}
-},  (timeInMs+9000))   //timeInMs + 24000
-
-
-*/
-
-/* ///here
-
-
-*/
 function checkOrientation() {
   console.log ("checkOrientation")
  const warning = document.getElementById('rotateWarning');
@@ -467,8 +463,7 @@ function flickerLights(groupId, duration = 4000, flicksPerSecond = 8) {
 </script>
 
 <nav class="main-nav">
-  <a href="">Menú Principal</a>
-  <a href="">Reintentar</a>
+  <a href="A_Bordo_Menu.html">Menú Principal</a>
   <a href="#" onclick="return">Salir</a>
   <a href="javascript:goBack()">&laquo; Anterior</a>
   <a>  &copy; 2025 JCFP</a>
