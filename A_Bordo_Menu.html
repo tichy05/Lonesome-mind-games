@@ -21,14 +21,18 @@
 
     body { font-family: Arial, sans-serif; text-align: center;  
     background-color: white; margin-top: 20px; color: black; font-size: 14pt; font-style: heavy }
+
  .card-container {
-      display: flex;
+    /*  display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
-      margin-top: 1rem;
+      margin-top: 1rem;*/
       
-      
+      display: block;
+      gap: 1.5rem;
+      top: 1rem;
+      left: 0;
     }
 
     .card {
@@ -295,37 +299,37 @@
   <div class="dropdown">
     <button class="dropbtn">Niveles 1-4<br>Sin incidentes</button>
     <div class="dropdown-content">
-      <a id="N1" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 1</a>
-      <a id="N2" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=2&durationFL=0&flicksPerSecond=8">Nivel 2</a>      
-      <a id="N3" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=3&durationFL=0&flicksPerSecond=8">Nivel 3</a>
-      <a id="N4" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=4&durationFL=0&flicksPerSecond=8">Nivel 4</a>
+      <a id="N1" href="A_Bordo.html?level=1&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 1</a>
+      <a id="N2" href="A_Bordo.html?level=2&intensity=5&frequency=10&durationTB=0&difficultyLevel=2&durationFL=0&flicksPerSecond=8">Nivel 2</a>      
+      <a id="N3" href="A_Bordo.html?level=3&intensity=5&frequency=10&durationTB=0&difficultyLevel=3&durationFL=0&flicksPerSecond=8">Nivel 3</a>
+      <a id="N4" href="A_Bordo.html?level=4&intensity=5&frequency=10&durationTB=0&difficultyLevel=4&durationFL=0&flicksPerSecond=8">Nivel 4</a>
     </div>
   </div>
 
   <div class="dropdown">
     <button class="dropbtn">Niveles 5-8<br>Turbulencia</button>
     <div class="dropdown-content">
-      <a id="N5" href="A_Bordo.html?intensity=5&frequency=10&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 5</a>
-      <a id="N6" href="A_Bordo.html?intensity=8&frequency=12&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 6</a>      
-      <a id="N7" href="A_Bordo.html?intensity=12&frequency=16&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 7</a>
-      <a id="N8" href="A_Bordo.html?intensity=16&frequency=18&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 8</a>
+      <a id="N5" href="A_Bordo.html?level=5&intensity=5&frequency=10&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 5</a>
+      <a id="N6" href="A_Bordo.html?level=6&intensity=8&frequency=12&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 6</a>      
+      <a id="N7" href="A_Bordo.html?level=7&intensity=12&frequency=16&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 7</a>
+      <a id="N8" href="A_Bordo.html?level=8&intensity=16&frequency=18&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Nivel 8</a>
     </div>
   </div>
 
   <div class="dropdown">
     <button class="dropbtn">Niveles 9-12<br>A Oscuras </button>
     <div class="dropdown-content">
-        <a id="N9" href="A_Bordo.html?intensity=5&frequency=10&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=8">Nivel 9</a>
-        <a id="N10" href="A_Bordo.html?intensity=8&frequency=12&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=10">Nivel 10</a>      
-        <a id="N11" href="A_Bordo.html?intensity=12&frequency=16&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=11">Nivel 11</a>
-        <a id="N12" href="A_Bordo.html?intensity=16&frequency=18&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=14">Nivel 12</a>
+        <a id="N9" href="A_Bordo.html?level=9&intensity=5&frequency=10&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=8">Nivel 9</a>
+        <a id="N10" href="A_Bordo.html?level=10&intensity=8&frequency=12&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=10">Nivel 10</a>      
+        <a id="N11" href="A_Bordo.html?level=11&intensity=12&frequency=16&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=11">Nivel 11</a>
+        <a id="N12" href="A_Bordo.html?level=12&intensity=16&frequency=18&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=14">Nivel 12</a>
      </div>
   </div>
 
   <div class="dropdown">
     <button class="dropbtn">Prueba tus<br>propias variaciones</button>
     <div class="dropdown-content">
-    <a id="C1" href="A_Bordo.html?intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Ajustes</a>
+    <a id="N14" href="A_Bordo.html?level=14&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Ajustes</a>
     </div>
   </div>
 
