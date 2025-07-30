@@ -189,6 +189,7 @@
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
+  border-radius: 18px;
   text-decoration: none;
   display: block;
 }
@@ -201,6 +202,19 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #78cb98;}
 
+
+label {
+      display: block;
+      margin-top: 10px;
+    }
+input[type="number"] {
+      width: 100px;
+      padding: 5px;
+    }
+button {
+      margin-top: 15px;
+      padding: 10px 20px;
+    }
 
  #footer {
   	display: flex;
@@ -327,14 +341,14 @@
   </div>
 
   <div class="dropdown">
-    <button class="dropbtn">Prueba tus<br>propias variaciones</button>
+    <button class="dropbtn">Pruebe sus<br>propias variaciones</button>
     <div class="dropdown-content">
-    <a id="N14" href="A_Bordo.html?level=14&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Ajustes</a>
-    </div>
+  <!--  <a id="N14" href="A_Bordo.html?level=14&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Ajustes</a> -->
+      <a id="N14" href="A_Bordo_custom.html">Personalize<br> el Juego</a>
+</div>
   </div>
 
 </div>
-
 </main>
 
 <script>
@@ -396,7 +410,8 @@ console.log ("time",timeInMs,"diff",difficultyLevel)
     titleVar = "Asientos"
     titleVar2 = "los asientos"
   }
-  
+
+
 function checkOrientation() {
   console.log ("checkOrientation")
  const warning = document.getElementById('rotateWarning');
@@ -413,55 +428,7 @@ function goBack() {
   console.log ("goBack")
   window.history.back()
 }
-/*
 
-    ///turbulence
-
-  function simulateTurbulence(elementId, intensity = 5, frequency = 10, durationTB = 13) {
-    const el = document.getElementById(elementId);
-    if (!el) return;
-
-    let interval = setInterval(() => {
-      const offsetX = Math.random() * intensity * 2 - intensity;
-      const offsetY = Math.random() * intensity * 2 - intensity;
-      el.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
-    }, frequency);
-
-    setTimeout(() => {
-      clearInterval(interval);
-      el.setAttribute("transform", "translate(0, 0)");
-    }, durationTB);
-  }
-
-
-
-function flickerLights(groupId, duration = 4000, flicksPerSecond = 8) {
-  console.log ("inside")
-  const group = document.getElementById(groupId);
-  const bg = document.getElementById('flickerBackground');
-  console.log (group,bg);
-  if (!group || !bg) return;
-
-  const interval = 1000 / flicksPerSecond;
-  let elapsed = 0;
-
-  const flicker = setInterval(() => {
-    const dimmed = Math.random() < 0.5;
-    group.setAttribute("opacity", dimmed ? "0.15" : "1");
-    bg.setAttribute("fill", dimmed ? "black" : "white"); // Flicker background too
-
-
-    elapsed += interval;
-    if (elapsed >= duration) {
-      clearInterval(flicker);
-      group.setAttribute("opacity", "1");
-      bg.setAttribute("fill", "white"); // Restore background
-    }
-  }, interval);
-}
-
-
-*/
 
 
 </script>
