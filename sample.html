@@ -80,9 +80,20 @@
   Margin: 0px auto; /* centers and adds top space. */
   font-size: 14pt;
   font-weight: bold;
+ }
 
-   }
-    @media only screen /*and (min-width: 600px)*/
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+   
+    @media only screen and (min-width: 600px)
 {#rotateWarning {
   display: none;
   position: fixed;
@@ -104,11 +115,11 @@
   <h1 id="card-container">Intro xxxxx</h1>
   <?xml version="1.0" standalone="no"?>
   <div id="mysvg">
- <!--<div id="scene" style="position:relative; width:100%; max-width:805px; margin:auto;">-->
+ <div id="scene" style="position:relative; width:100%; max-width:805px; margin:auto;">
 
  
 
-<svg id=”mysvg” width="805" height="280" xmlns="http://www.w3.org/2000/svg" style="z-index:99999">
+<svg id="mysvg" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" style="z-index:99999">
 
   <style>
     .seat { fill: #ffffff; stroke: #000; stroke-width: 1; }
@@ -155,11 +166,11 @@
 
 
 <img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
-  position:absolute; display:block; left:25vw; top:15vh; 
+  position:absolute; display:block; left:270px; top:99px;  
   z-index:99995">
 
 <img id="stw2" src="https://tichy05.github.io/Wandering-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
-  position:absolute; display:none; left:270px; top:115px; 
+  position:absolute; display:block; left:270px; top:97px; 
   z-index:99995">
 </div>
 </body>
