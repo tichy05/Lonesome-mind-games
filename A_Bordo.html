@@ -107,6 +107,7 @@
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
   <h1 id="card-container">A Bordo!</h1>
   <?xml version="1.0" standalone="no"?>
+  <div class="card-container">
   <div id="map">
  
 
@@ -120,6 +121,7 @@ style="z-index:99999">
     .selected-bad { fill: rgb(219, 13, 13); }
    
   </style>
+  
   <rect y="-10" x="0" rx="0" width="805" height="290" fill="white" id="flickerBackground"/>
   <line x1="0" y1="2" x2="850" y2="2" style="stroke:black;stroke-width:3" />
   <line x1="0" y1="277" x2="850" y2="277" style="stroke:black;stroke-width:3"/>
@@ -447,12 +449,14 @@ function getNumericParams() {
 
   const params = {
     level: parseInt(urlParams.get("level"), 10),
+    totalTime: parseInt(urlParams.get("totalTime"), 10),
     intensity: parseInt(urlParams.get("intensity"), 10),
     frequency: parseInt(urlParams.get("frequency"), 10),
     durationTB: parseInt(urlParams.get("durationTB"), 10),
     difficultyLevel: parseInt(urlParams.get("difficultyLevel"), 10),
     durationFL: parseInt(urlParams.get("durationFL"), 10),
     flicksPerSecond: parseInt(urlParams.get("flicksPerSecond"), 10)
+    
   };
 
   return params;
@@ -460,6 +464,7 @@ function getNumericParams() {
 
 const settings = getNumericParams();
 const level = settings.level;
+const totalTime = settings.totalTime;
 const intensity = settings.intensity;
 const frequency = settings.frequency;
 const durationTB = settings.durationTB;
@@ -467,6 +472,8 @@ const difficultyLevel = settings.difficultyLevel;
 const durationFL = settings.durationFL;
 const flicksPerSecond = settings.flicksPerSecond;
 
+console.log(" level","x",level,"x");
+console.log(" totalTime","x",totalTime,"x");
 console.log(" intensity","x",intensity,"x");
 console.log(" frequency","x",frequency,"x");
 console.log(" durationTB ","x",durationTB,"x");
@@ -485,18 +492,22 @@ if (durationTB => durationFL, durationTB > 0) {
     timeInMs = durationFL * 1000
   } else {
     if (durationTB === 0, durationFL === 0, difficultyLevel === 1) {
-  timeInMs = 4000
+  timeInMs = 3000
 }
 if (durationTB === 0, durationFL === 0, difficultyLevel === 2) {
   timeInMs = 7000
 }
 if (durationTB === 0, durationFL === 0, difficultyLevel === 3) {
-  timeInMs = 10000
+  timeInMs = 12000
 }
 if (durationTB === 0, durationFL === 0, difficultyLevel === 4) {
-  timeInMs = 13000
+  timeInMs = 18000
+}
+if (totalTime  > timeInMs/1000) {
+  timeInMs = totalTime
 }
   }
+  
 }
 
 
@@ -753,7 +764,7 @@ setTimeout(() => {
    msg.textContent =  titleVar + ": " + currentCorrect; ;
    document.body.appendChild(msg);
    const h1 = document.querySelector("h1");
-   h1.innerText= "A Bordo! - Nivel: " + difficultyLevel + "   " + titleVar + ":  " + currentCorrect + "   Tiempo: " + (timeInMs / 1000) + " segundos"; 
+   h1.innerText= "A Bordo! - Nivel: " + level + "   " + titleVar + ":  " + currentCorrect + "   Tiempo: " + (timeInMs / 1000) + " segundos"; 
   stw6.style.display = "none";
   }, 6000); 
 
@@ -761,8 +772,8 @@ setTimeout(() => {
   enableSeatClicks()
   msg.textContent = "GO!";
   document.body.appendChild(msg);
-simulateTurbulence('seatGroup',intensity,frequency,durationTB);
-flickerLights('seatGroup',durationFL,flicksPerSecond);
+  simulateTurbulence('seatGroup',intensity,frequency,durationTB);
+  flickerLights('seatGroup',durationFL,flicksPerSecond);
   }, 10000) //6000
    
 setTimeout(() => { 
