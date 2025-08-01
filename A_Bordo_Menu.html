@@ -242,16 +242,12 @@ button {
   
 }}
 
- 
-
-
 </style>
 
 
 
 <body>
- <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
-<div id="flashingWarning" style="
+  <div id="flashingWarning" style="
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
@@ -266,8 +262,6 @@ button {
   text-align: center;
   font-size: 1.25rem;
 ">
-<p id="warning-note" style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;"></p>
-
   <p style="max-width: 600px; margin-bottom: 2rem;">
     ⚠️ Advertencia: Este contenido contiene luces intermitentes, movimiento visual fuerte y efectos que pueden afectar a personas sensibles. Por favor proceda con precaución.
   </p>
@@ -295,17 +289,16 @@ button {
 </div>
 
 
+  
 
+ <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
  
   <h1 id="card-container2">A Bordo!</h1>
   <?xml version="1.0" standalone="no"?>
  
   <!--<div class="card-container">
   
- <text id="mytextLine" x="250" y="165" fill="black"></text>
-
-
-
+ 
 
 <img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
   position:fixed; display:none; left:270px; top:115px; 
@@ -337,16 +330,11 @@ button {
 
 </div>-->
 <div class="card-container2">
-     
-
-      
    <h2 id="card-container">Contenido</h2>
    <div class="card2">
     <h3>Juego de coordinación visual-memoria-motor</h3>
 </div>
 </div>
-
-
 
 <div class="dropdown-container">
 
@@ -389,28 +377,32 @@ button {
 
   <div class="dropdown">
     <button class="dropbtn">Pruebe sus<br>propias<br>variaciones</button>
-    <div class="dropdown-content">
-  <!--  <a id="N14" href="A_Bordo.html?level=14&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8">Ajustes</a> -->
-      <a id="N14" href="A_Bordo_custom.html">Personalize<br> el Juego</a>
-</div>
+      <div class="dropdown-content">
+        <a id="N14" href="A_Bordo_custom.html">Personalize<br> el Juego</a>
+      </div>
   </div>
 
 </div>
-</main>
 
+<p id="warning-note" style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;"></p>
+
+
+</body>
 <script>
- function enterSite() {
-  document.getElementById("flashingWarning").style.display = "none";
-  setTimeout(startApp, 100); // <-- failsafe only start app after user confirms
-}
 
+
+function enterSite() {
+  document.getElementById("flashingWarning").style.display = "none";
+  // Delay app startup for visual smoothness in iOS standalone mode
+  setTimeout(startApp, 100);
+}
 
 function exitSite() {
-  
+  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
   if (isInStandaloneMode) {
-  document.getElementById('warning-note').textContent = "Para salir, cierre la app manualmente.";
-}
- else {
+    alert("Para salir, por favor cierre esta aplicación manualmente desde su dispositivo.");
+  } else {
     // Works in Safari/Chrome browser mode
     window.location.href = "https://www.google.com"; // or your site’s home
   }
@@ -418,10 +410,9 @@ function exitSite() {
 
 
 
-function startApp() {
-//variables
- const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+ function startApp() {
 
+//variables
 let difficultyLevel = 1;
 //Start by checking the device orientation
 checkOrientation();
@@ -432,37 +423,7 @@ const msg = document.createElement('div');
     position:fixed; top:240px; left:0; width:100%;
     text-align:center; font-size:2em; font-weight:bold;
     color:black; text-shadow: 0px 0px #000; z-index:9999;`
- /* 
-const params = new URLSearchParams(window.location.search);
-const intensity = params.get("intensity");
-const frequency = params.get("frequency");
-const durationTB = params.get("durationTB");
-const difficultyLevel = params.get("difficultyLevel");
-const durationFL = params.get("durationFL");
-const flicksPerSecond = params.get("flicksPerSecond");
-let timeInMs = 4000
-*/
  
-//Initialize variables
-
-/*
-let difficultyLevel = 1; // Set externally (1–4)*/
-/*
-
-if (difficultyLevel === 1) {
-  timeInMs = 3000
-}
-if (difficultyLevel === 2) {
-  timeInMs = 7000
-}
-if (difficultyLevel === 3) {
-  timeInMs = 10000
-}
-if (difficultyLevel === 4) {
-  timeInMs = 13000
-}
-console.log ("time",timeInMs,"diff",difficultyLevel)
-*/
   //Verify DOM loaded before making any changes
  
   document.addEventListener('DOMContentLoaded', e => {
@@ -497,8 +458,9 @@ function goBack() {
   window.history.back()
 }
 
-
-}
+//function startApp ends
+ 
+ }
 </script>
 
 <nav class="main-nav">
@@ -507,10 +469,10 @@ function goBack() {
   <a href="javascript:goBack()">&laquo; Anterior</a>
   <a>  &copy; 2025 JCFP</a>
 </nav>
+ 
 
 
 
 
-</body>
 </html>
-
+ 
