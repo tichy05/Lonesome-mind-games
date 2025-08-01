@@ -23,10 +23,10 @@
 
 
   #card-container {
-    /*  display: flex; 
-      flex-wrap: wrap;*/
+      display: flex; 
+      flex-wrap: wrap;
       gap: 10px;
-      justify-content: left;
+      justify-content: center;
       max-width: 1500px;
       max-height: 150;
       font-size: 12pt;
@@ -37,15 +37,15 @@
       border-color: #ffbf00;
       border-width: 3px;
       border-style: solid;
-    /*  margin: 1rem auto;*/
-      padding: 0.1rem;
-      display: block;
+      margin: 1rem auto;
+      padding: 0.1rem
+     
   }
 
  nav.main-nav {
       background-color: black;
-    /* display: flex;
-      flex-wrap: wrap;*/
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       border-radius: 0px;
       margin: 1rem auto;
@@ -83,6 +83,24 @@
   font-weight: bold;
 
    }
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+#map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents horizontal scroll from layout overflow */
+}
+
     @media only screen and (min-width: 600px)
 {#rotateWarning {
   display: none;
@@ -98,22 +116,17 @@
   
 }}
 
- 
-
-
 </style>
-
-
 
 <body>
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
-  <h1 id="card-container">A Bordo! - Intro Marge</h1>
+  <h1 id="card-container">A Bordo! - Intro Marge y Pedro</h1>
   <?xml version="1.0" standalone="no"?>
   <div id="map">
- 
+ <div id="svg-wrapper" style="position:relative; width:100%; max-width:805px; margin:auto;">
+  <svg id="map" viewBox="0 0 805 280" preserveAspectRatio="xMinYMin meet" style="width:100%; height:auto;">
 
-<svg id=”map” width="805" height="280" xmlns="http://www.w3.org/2000/svg"
-style="z-index:99999">
+
   <style>
     .seat { fill: #ffffff; stroke: #000; stroke-width: 1; }
     .extra-space { fill: #99d8e0; }
@@ -367,12 +380,61 @@ style="z-index:99999">
   <rect y="240" x="840" rx="8" width="30" height="30" class="seat premium" id="25A"/> -->
 
 
- <line id="lights" x1="0" y1="125" x2="850" y2="125" style="stroke:rgb(233, 191, 39);stroke-width:2" />
+  <line id="lights" x1="0" y1="125" x2="850" y2="125" style="stroke:rgb(233, 191, 39);stroke-width:2" />
   <line id="lights" x1="0" y1="155" x2="850" y2="155" style="stroke:rgb(233, 191, 39);stroke-width:2"/> 
+  
 </svg>
-  </div>
+  
+  
 
-<div class="card-container">
+
+<img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
+  position:absolute; display:none; left:40px; top:30px;  
+  z-index:10">
+
+<img id="stw2" src="https://tichy05.github.io/Wandering-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
+ position:absolute; display:none; left:40px; top:30px;  
+  z-index:10">
+
+<img id="stw3" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing down.png" alt="Steward pointing down" style="width:120px;height:256px;
+  position:absolute; display:none; left:40px; top:30px;  
+  z-index:10">
+
+<img id="stw4" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up.png" alt="Steward pointing up" style="width:128px;height:256px;
+  position:absolute; display:none; left:40px; top:30px;  
+  z-index:10">
+
+  <img id="stw5" src="https://tichy05.github.io/Wandering-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
+  position:absolute; display:none; left:40px; top:30px;  
+  z-index:10">
+<img id="stw6" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:152px;height:240px;
+  position:absolute; display:none; left:10px; top:45px;  
+  z-index:10">
+
+<img id="stw7" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up left 2.png" alt="Steward pointing up left 2" style="width:300px;height:280px;
+  position:absolute; display:none; left:220px; top:1px;  
+  z-index:10">
+
+ <img id="stw8" src="https://tichy05.github.io/Wandering-mind-games/steward hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
+  position:absolute; display:none; left:680px; top:25px;  
+  z-index:10">
+
+<img id="stw9" src="https://tichy05.github.io/Wandering-mind-games/steward hands pointing both sides.png" alt="Steward hands pointing L R" style="width:150px;height:256px;
+  position:absolute; display:none; left:670px; top:25px;  
+  z-index:10">
+
+<img id="stw10" src="https://tichy05.github.io/Wandering-mind-games/steward pointing up left.png" alt="steward pointing up left" style="width:100px;height:256px;
+  position:absolute; display:none; left:150px; top:30px;  
+  z-index:9">
+
+
+
+
+
+
+
+
+  </div>
 <div id="tooltip" style="
   position: absolute;
   background: rgba(255,255,255,0.9);
@@ -385,39 +447,7 @@ style="z-index:99999">
   display: none;
   z-index: 10;
 "></div>
-
-<img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
-  position:fixed; display:none; left:260px; top:115px; 
-  z-index:99995">
-
-<img id="stw2" src="https://tichy05.github.io/Wandering-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
-  position:fixed; display:none; left:270px; top:115px; 
-  z-index:99995">
-
-<img id="stw3" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing down.png" alt="Steward pointing down" style="width:120px;height:256px;
-  position:fixed; display:none; left:270px; top:115px; 
-  z-index:99995">
-
-<img id="stw4" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up.png" alt="Steward pointing up" style="width:128px;height:256px;
-  position:fixed; display:none; left:270px; top:115px; 
-  z-index:99995">
-
-  <img id="stw5" src="https://tichy05.github.io/Wandering-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
-  position:fixed; display:none; left:235px; top:115px; 
-  z-index:99995">
-
-<img id="stw6" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:142px;height:256px;
-  position:fixed; display:none; left:235px; top:115px; 
-  z-index:99995">
-
-<img id="stw7" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up left 2.png" alt="Steward pointing up left 2" style="width:300px;height:280px;
-  position:fixed; display:none; left:460px; top:70px; 
-  z-index:99995">
-
- <img id="stw8" src="stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
-  position:fixed; display:none; left:250px; top:115px; 
-  z-index:99995">
-
+</body>
 
  <script>
 
@@ -427,7 +457,7 @@ checkOrientation();
 const msg = document.createElement('div');
   msg.id = "victoryMessage";
   msg.style.cssText = `
-    position:fixed; top:186px; left:5px; width:100%;
+    position:absolute; top:182px; left:5px; width:100%;
     text-align:center; font-size:2em; font-weight:bold;
     color:black; text-shadow: 0px 0px #000; z-index:9999;`
   
@@ -480,7 +510,7 @@ if (difficultyLevel === 4) {
  
   document.addEventListener('DOMContentLoaded', e => {
   const h1 = document.querySelector("h1")
-  h1.innerText = "A Bordo! - Intro Marge" 
+  h1.innerText = "A Bordo! - Intro Marge y Pedro" 
   })
 
 
@@ -495,19 +525,23 @@ if (difficultyLevel === 4) {
 
 
 
-  msg.textContent = "!Bienvenidos a Aerolíneas La Guagua Aérea!";
+  msg.textContent = "!Bienvenidos a La Guagua Aérea!";
   document.body.appendChild(msg);
   stw5.style.display = "block";
+  stw8.style.display = "block";
 setTimeout(() => {
-      msg.textContent = "Soy Marge. Esto es la base del juego";
+      msg.textContent = "Somos Marge y Pedro";
       document.body.appendChild(msg);
       stw5.style.display = "none";
-      stw6.style.display = "block";    
+      stw8.style.display = "none";
+      stw6.style.display = "block";  
+      stw9.style.display = "block";
   }, 3000);
 setTimeout(() => {
-      msg.textContent = "<---- El frente es hacia allá";
+      msg.textContent = "<-- Escuchen,el frente es acá";
       document.body.appendChild(msg);
       stw6.style.display = "none";
+      stw9.style.display = "none";
       stw1.style.display = "block";    
   }, 6000);
 
@@ -528,11 +562,13 @@ setTimeout(() => {
   document.body.appendChild(msg);
       stw3.style.display = "none";
       stw4.style.display = "block";
+      stw10.style.display = "block";
   }, 15000);
    setTimeout(() => {
    msg.textContent = titleVar2 + " siempre ...... estarán en la banda chinita";
   document.body.appendChild(msg);
       stw4.style.display = "none";
+      stw10.style.display = "none";
       stw7.style.display = "block";
   }, 18000);
   setTimeout(() => { 
@@ -544,8 +580,9 @@ setTimeout(() => {
 setTimeout(() => {
    msg.textContent =  "ah, y siempre espere el GO! ";
   document.body.appendChild(msg);
-      stw5.style.display = "none";
+      stw5.style.display = "block";
       stw8.style.display = "block";
+      
   }, 24000); //18000
 
 
