@@ -266,6 +266,8 @@ button {
   text-align: center;
   font-size: 1.25rem;
 ">
+<p id="warning-note" style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;"></p>
+
   <p style="max-width: 600px; margin-bottom: 2rem;">
     ⚠️ Advertencia: Este contenido contiene luces intermitentes, movimiento visual fuerte y efectos que pueden afectar a personas sensibles. Por favor proceda con precaución.
   </p>
@@ -397,6 +399,8 @@ button {
 </main>
 
 <script>
+  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
 //variables
 
 let difficultyLevel = 1;
@@ -491,12 +495,17 @@ function enterSite() {
 }
 
 function exitSite() {
-  // Option 1: Redirect to another site or page
-  window.location.href = "https://www.google.com";
+  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
-  // Option 2 (alternative): Try to close the window (only works if user opened it via script)
-  // window.close();
+  if (isInStandaloneMode) {
+  document.getElementById('warning-note').textContent = "Para salir, cierre la app manualmente.";
 }
+ else {
+    // Works in Safari/Chrome browser mode
+    window.location.href = "https://www.google.com"; // or your site’s home
+  }
+}
+
 </script>
 
 
