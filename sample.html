@@ -88,6 +88,17 @@ svg {
   height: auto;
 }
 
+#map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents horizontal scroll from layout overflow */
+}
 
 
 
@@ -114,12 +125,16 @@ svg {
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
   <h1 id="card-container">Intro xxxxx</h1>
   <?xml version="1.0" standalone="no"?>
-  <div id="mysvg">
- <div id="scene" style="position:relative; width:100%; max-width:805px; margin:auto;">
+  <div id="map">
+ <!--<div id="scene" style="position:relative; width:100%; max-width:805px; margin:auto;">-->
 
+
+<div id="svg-wrapper" style="position:relative; width:100%; max-width:805px; margin:auto;">
+  <svg id="map" viewBox="0 0 805 280" preserveAspectRatio="xMinYMin meet" style="width:100%; height:auto;">
+  
  
 
-<svg id="mysvg" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" style="z-index:99999">
+<!--<svg id="map" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" style="z-index:99999">-->
 
   <style>
     .seat { fill: #ffffff; stroke: #000; stroke-width: 1; }
@@ -161,17 +176,23 @@ svg {
 </g>
 </svg>
 
-  </div>
 
 
 
 <img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
-  position:absolute; display:block; left:270px; top:99px;  
-  z-index:99995">
+  position:absolute; display:block; left:40px; top:30px;  
+  z-index:10">
 
 <img id="stw2" src="https://tichy05.github.io/Wandering-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
-  position:absolute; display:block; left:270px; top:97px; 
-  z-index:99995">
+  position:absolute; display:block; left:40px; top:28px; 
+  z-index:10">
+
+</div>
+
+
+
+
+
 </div>
 </body>
 <script>
@@ -206,3 +227,10 @@ window.addEventListener('load', checkOrientation);
 window.addEventListener('orientationchange', () => {setTimeout(checkOrientation, 300); 
 });
 
+</script>
+<nav class="main-nav">
+  <a href="">Menú Principal</a>
+  <a href="">Reintentar</a>
+  <a href="#" onclick="return">Salir</a>
+  <a href="javascript:goBack()">&laquo; Anterior</a>
+</nav>
