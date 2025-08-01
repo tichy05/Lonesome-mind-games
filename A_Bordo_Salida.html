@@ -246,69 +246,20 @@ button {
 
 <body>
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape)</div>
-   <h1 id="card-container2">A Bordo! - Personalize el juego a su gusto </h1>
+   <h1 id="card-container2">A Bordo! - Salida</h1>
   <?xml version="1.0" standalone="no"?>
-  <div class="card-container">
+  <div class="card-container2">
  
 
 
 
- <!-- <h2 >Entre Valores Númericos</h2>--->
+  <h2>Gracias por jugar A Bordo!</h2>
 
-  <form id="numberForm">
-   
-    <label>Número de asientos (1-4) <input type="number" min="1" max="4" name="difficultyLevel" required></label>
-    <label>Intensidad Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="intensity" required></label>
-    <label>Frecuencia Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="frequency" required></label>
-    <label>Flicks Por Segundo - luces: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="flicksPerSecond" required></label>
-     <label>Tiempo de busqueda (1-20) <input type="number" min="1"  max="20" name="totalTime" required> segundos</label>
-    <p></p>
-    
-
-  <div class="dropdown">
-    <button class="dropbtn">Guardar<br>Valores</button>
-  </div>
   
-  
-  
-  
-   <!--  <a id="N14" href="A_Bordo.html?level=14&intensity=${intensity}&frequency=${frequency}&durationTB=${timeInMs}&difficultyLevel=${difficultyLevel}&durationFL=${timeOInMs}&flicksPerSecond=${flicksPerSecond}">Enviar</a> 
-    
-    -->
-
- <!--   <div class="dropdown">
-     <div class="dropbtn">
-   <a id="N14" href="A_Bordo.html?level=14&intensity=${intensity}&frequency=frequency&durationTB=6&difficultyLevel=difficultyLevel&durationFL=6&flicksPerSecond=flicksPerSecond">Enviar</a>
- </div>
-    </div>-->
-  </form>
-</div>
 </body>
   <script>
 
-   /* window.open ()*/
-    document.getElementById("numberForm").addEventListener("submit", function(e) {
-      e.preventDefault(); // prevent page reload
-
-      const form = e.target;
-
-      // Capture and convert all values to numbers
-    /*  const values = { */
-      const intensity = (Number(form.intensity.value))
-      const frequency = Number(form.frequency.value)
-      const difficultyLevel = Number(form.difficultyLevel.value)
-      const flicksPerSecond = Number(form.flicksPerSecond.value)
-      const totalTime = (Number(form.totalTime.value))
-      /* extraValue: Number(form.extraValue.value)*/
-      console.log ("convert to number ",difficultyLevel,intensity,frequency,flicksPerSecond,totalTime)
-
-
-    window.location.href=`A_Bordo.html?level=14&totalTime=${totalTime}&intensity=${intensity}&frequency=${frequency}&durationTB=${totalTime}&difficultyLevel=${difficultyLevel}&durationFL=${totalTime}&flicksPerSecond=${flicksPerSecond}`;
-
-       /*   // Example usage: alert total
-      alert("Total: " + Object.values(values).reduce((sum, val) => sum + val, 0));*/
-    });
- 
+  //no script
    
   </script>
 
@@ -320,6 +271,5 @@ button {
  
   <a>  &copy; 2025 JCFP</a>
 </nav>
-
 
 </html>
