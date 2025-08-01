@@ -250,6 +250,50 @@ button {
 
 
 <body>
+
+<div id="flashingWarning" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: black;
+  color: white;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+">
+  <p style="max-width: 600px; margin-bottom: 2rem;">
+    ⚠️ Advertencia: Este contenido contiene luces intermitentes, movimiento visual fuerte y efectos que pueden afectar a personas sensibles. Por favor proceda con precaución.
+  </p>
+  <div style="display: flex; gap: 1rem;">
+    <button onclick="enterSite()" style="
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: green;
+      border: none;
+      border-radius: 6px;
+    ">Entrar</button>
+
+    <button onclick="exitSite()" style="
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 6px;
+    ">Salir</button>
+  </div>
+</div>
+
+
+
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
   <h1 id="card-container2">A Bordo!</h1>
   <?xml version="1.0" standalone="no"?>
@@ -441,6 +485,19 @@ function goBack() {
   <a>  &copy; 2025 JCFP</a>
 </nav>
 
+<script>
+function enterSite() {
+  document.getElementById("flashingWarning").style.display = "none";
+}
+
+function exitSite() {
+  // Option 1: Redirect to another site or page
+  window.location.href = "https://www.google.com";
+
+  // Option 2 (alternative): Try to close the window (only works if user opened it via script)
+  // window.close();
+}
+</script>
 
 
 </body>
