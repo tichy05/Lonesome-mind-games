@@ -399,8 +399,7 @@ button {
 </main>
 
 <script>
-  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-function enterSite() {
+ function enterSite() {
   document.getElementById("flashingWarning").style.display = "none";
   startApp(); // <-- only start app after user confirms
 }
@@ -422,6 +421,7 @@ function exitSite() {
 
 function startApp() {
 //variables
+ const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
 let difficultyLevel = 1;
 //Start by checking the device orientation
