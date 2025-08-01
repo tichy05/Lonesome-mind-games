@@ -400,7 +400,27 @@ button {
 
 <script>
   const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+function enterSite() {
+  document.getElementById("flashingWarning").style.display = "none";
+  startApp(); // <-- only start app after user confirms
+}
 
+
+function exitSite() {
+  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+  if (isInStandaloneMode) {
+  document.getElementById('warning-note').textContent = "Para salir, cierre la app manualmente.";
+}
+ else {
+    // Works in Safari/Chrome browser mode
+    window.location.href = "https://www.google.com"; // or your site’s home
+  }
+}
+
+
+
+function startApp() {
 //variables
 
 let difficultyLevel = 1;
@@ -479,7 +499,7 @@ function goBack() {
 }
 
 
-
+}
 </script>
 
 <nav class="main-nav">
@@ -489,24 +509,7 @@ function goBack() {
   <a>  &copy; 2025 JCFP</a>
 </nav>
 
-<script>
-function enterSite() {
-  document.getElementById("flashingWarning").style.display = "none";
-}
 
-function exitSite() {
-  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-
-  if (isInStandaloneMode) {
-  document.getElementById('warning-note').textContent = "Para salir, cierre la app manualmente.";
-}
- else {
-    // Works in Safari/Chrome browser mode
-    window.location.href = "https://www.google.com"; // or your site’s home
-  }
-}
-
-</script>
 
 
 </body>
