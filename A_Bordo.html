@@ -800,7 +800,7 @@ setTimeout(() => {
    const h1 = document.querySelector("h1");
    h1.innerText= "A Bordo! - Nivel: " + level +  "  "  + titleVar + ":  " + currentCorrect + "   Tiempo: " + (timeInMs / 1000) + " segundos"; 
   stw6.style.display = "none";
-  }, 6000); 
+  }, 5000); 
 
   setTimeout(() => {
   enableSeatClicks()
@@ -836,7 +836,7 @@ console.log (firstStrike, timeExpired,badOnes,goodOnes);
       disableAllSeats() 
     }, 3000);
     setTimeout(() => {
-      msg.textContent = "Oprima Reintentar o Salir";
+      msg.textContent = "Oprima Reintentar o Menú";
       document.body.appendChild(msg);
     }, 6000);
   
@@ -854,7 +854,7 @@ console.log (firstStrike, timeExpired,badOnes,goodOnes);
       }, 4000);
       
       setTimeout(() => {
-        msg.textContent = "Oprima Reintentar o Salir";
+        msg.textContent = "Oprima Reintentar o Menú";
         document.body.appendChild(msg);
        
       }, 6000);
@@ -906,7 +906,7 @@ console.log ("msg.textContent")
   }, 4000);
 
    setTimeout(() => {
-        msg.textContent = "Oprima Reintentar o Salir";
+        msg.textContent = "Oprima Reintentar o Menú";
         document.body.appendChild(msg);
        
       }, 6000);
