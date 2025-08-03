@@ -555,24 +555,27 @@ let timeInMs=3000;
 let firstStrike = false;
 //passed values
  // Multiple cloud image URLs
- /*
+ 
 const cloudSources = [
-  "https://tichy05.github.io/Wandering-mind-games/Cloud1a.png",
-  "https://tichy05.github.io/Wandering-mind-games/Cloud2a.png",
-  "https://tichy05.github.io/Wandering-mind-games/Cloud3a.png",
-  "https://tichy05.github.io/Wandering-mind-games/Cloud4a.png",
-  "https://tichy05.github.io/Wandering-mind-games/Cloud5a.png"
+  "https://tichy05.github.io/Wandering-mind-games/Cloud1.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud3x.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud6a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud8a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud10a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud12a.png"
 ];
-*/
 
+
+
+/*
 const cloudSources = [
   "Cloud1a.png",
   "Cloud2a.png",
   "Cloud3a.png",
-  "hCloud4a.png",
+  "Cloud4a.png",
   "Cloud5a.png"
 ]
-
+*/
 
 
 function getNumericParams() {
@@ -864,15 +867,15 @@ setTimeout(() => {
   document.body.appendChild(msg);
       stw9.style.display = "none";
       stw6.style.display = "block";
-  }, 3000); //18000
+  }, 1500); //3000
 setTimeout(() => {
    stw6.style.display = "none";
    msg.textContent =  titleVar + ": " + currentCorrect; ;
    document.body.appendChild(msg);
    const h1 = document.querySelector("h1");
-   h1.innerText= "A Bordo! - Nivel: " + level +  "   "  + titleVar + ":  " + currentCorrect + "   Tiempo: " + (timeInMs / 1000) + " segundos"; 
+   h1.innerText= "A Bordo! - Nivel: " + level +  "  --  "  + titleVar + ":  " + currentCorrect + "  --  Tiempo: " + (timeInMs / 1000) + " segundos"; 
   stw6.style.display = "none";
-  }, 5000); 
+  }, 3000); //4000
 
   setTimeout(() => {
   enableSeatClicks();
@@ -882,7 +885,7 @@ setTimeout(() => {
   flickerLights('seatGroup',durationFL,flicksPerSecond);
   /*triggerCloudPass();*/
   randomClouds(cloudMinSec,cloudMaxSec,cloudSources);
-  }, 10000) //6000
+  }, 4500) //10000
    
 
 
@@ -893,7 +896,7 @@ if   (firstStrike === false) {
     timeExpired = true}
   else {timeExpired = false}
     checkifEOD(timeExpired)}
-},  (timeInMs+10000))   //timeInMs + 24000
+},  (timeInMs+4500))   //timeInMs + 24000
 
 
 
@@ -1214,7 +1217,7 @@ randomClouds(10, cloudSources);
 }
 */
 function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
-  const count = Math.floor(Math.random() * 2) + 2; // 2 or 3 clouds
+  const count = Math.floor(Math.random() * 3) + 2; // 2 or 3 clouds - had 2
   const layer = document.getElementById("cloudLayer");
   layer.innerHTML = '';
   layer.style.display = "block";
@@ -1231,7 +1234,7 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
 
     // Random top & scale
     const top = Math.random() * 180;
-    const scale = 0.6 + Math.random() * 0.8;
+    const scale = 1.0 + Math.random() * 0.8; //had 0.6 0.8
 
     // Random speed (duration in seconds)
     const duration = cloudMinSec + Math.random() * (cloudMaxSec - cloudMinSec);
@@ -1252,7 +1255,7 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
     cloud.style.top = `${top}px`;
     cloud.style.left = `-250px`;
     cloud.style.width = `${200 * scale}px`;
-    cloud.style.opacity = 0.7;
+    cloud.style.opacity = 0.9;
     cloud.style.animation = `${animationName} ${duration}s linear forwards`;
     cloud.style.pointerEvents = "auto";
     cloud.style.position = "absolute";
@@ -1265,7 +1268,17 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
     layer.style.display = "none";
     layer.innerHTML = '';
   }, maxDuration * 1000 + 500);
+
+
 }
+
+
+
+
+
+
+
+
 
 
 </script>
