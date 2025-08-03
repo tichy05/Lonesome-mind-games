@@ -175,19 +175,19 @@ html, body {
 ">-->
 
 <!-- -->
-<!--  <img src="https://tichy05.github.io/Wandering-mind-games/cloud3.png"
+<!--  <img src="https://tichy05.github.io/Wandering-mind-games/Cloud3.png"
        class="cloud" />
   </div>
 
-<img src="https://tichy05.github.io/Wandering-mind-games/cloud2.png"
+<img src="https://tichy05.github.io/Wandering-mind-games/Cloud2.png"
        class="cloud" />
   </div> -->
 
-<!--<img src="cloud3x.png"
+<!--<img src="Cloud3x.png"
        class="cloud" style="width:1024px;height:280px"/>
   </div>
 
-<img src="cloud2xpng"
+<img src="Cloud2xpng"
        class="cloud" />
   </div>-->
 
@@ -507,7 +507,7 @@ html, body {
   display: block;  /* initially hidden */
 
 ">-->
- <!--<img src="https://tichy05.github.io/Wandering-mind-games/cloud1e.png"/>-->
+ <!--<img src="https://tichy05.github.io/Wandering-mind-games/Cloud1e.png"/>-->
  <!--<img src="cloud3x.png"
        class="cloud" style="width:145px;height:256px"/>-->
 </div>
@@ -555,15 +555,23 @@ let timeInMs=3000;
 let firstStrike = false;
 //passed values
  // Multiple cloud image URLs
+ /*
 const cloudSources = [
-  "https://tichy05.github.io/Wandering-mind-games/cloud1a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud2a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud3a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud4a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud5a.png"
+  "https://tichy05.github.io/Wandering-mind-games/Cloud1a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud2a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud3a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud4a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud5a.png"
+];
+*/
+
+const cloudSources = [
+  "Cloud1a.png",
+  "Cloud2a.png",
+  "Cloud3a.png",
+  "hCloud4a.png",
+  "Cloud5a.png"
 ]
-
-
 
 
 
@@ -578,8 +586,12 @@ function getNumericParams() {
     durationTB: parseInt(urlParams.get("durationTB"), 10),
     difficultyLevel: parseInt(urlParams.get("difficultyLevel"), 10),
     durationFL: parseInt(urlParams.get("durationFL"), 10),
-    flicksPerSecond: parseInt(urlParams.get("flicksPerSecond"), 10)
-    
+    flicksPerSecond: parseInt(urlParams.get("flicksPerSecond"), 10),
+    cloudMinSec: parseInt(urlParams.get("cloudMinSec"), 10),
+    cloudMaxSec: parseInt(urlParams.get("cloudMaxSec"), 10),
+
+
+
   };
 
   return params;
@@ -594,6 +606,8 @@ const durationTB = settings.durationTB;
 const difficultyLevel = settings.difficultyLevel;
 const durationFL = settings.durationFL;
 const flicksPerSecond = settings.flicksPerSecond;
+const  cloudMinSec = settings. cloudMinSec;
+const cloudMaxSec = settings.cloudMaxSec;
 
 console.log(" level","x",level,"x");
 console.log(" totalTime","x",totalTime,"x");
@@ -867,7 +881,7 @@ setTimeout(() => {
   simulateTurbulence('seatGroup',intensity,frequency,durationTB);
   flickerLights('seatGroup',durationFL,flicksPerSecond);
   /*triggerCloudPass();*/
-  randomClouds(7,12,cloudSources);
+  randomClouds(cloudMinSec,cloudMaxSec,cloudSources);
   }, 10000) //6000
    
 
@@ -1096,7 +1110,7 @@ function triggerCloudPass() {
 
   // Create and add a cloud image
   const cloud = document.createElement("img");
-  cloud.src = "https://tichy05.github.io/Wandering-mind-games/cloud3a.png"
+  cloud.src = "https://tichy05.github.io/Wandering-mind-games/Cloud3a.png"
 
 cloud.className = "cloud";
   layer.appendChild(cloud);
@@ -1118,7 +1132,7 @@ cloud.className = "cloud";
   layer.innerHTML = '';
   for (let i = 0; i < count; i++) {
     const cloud = document.createElement("img");
-    cloud.src = "cloud3a.png";
+    cloud.src = "Cloud3a.png";
     cloud.className = "cloud";
     cloud.style.top = `${Math.random() * 200}px`;
     cloud.style.animationDelay = `${i * 1.5}s`;
@@ -1139,15 +1153,15 @@ cloud.className = "cloud";
 
   // Multiple cloud image URLs
 /*const cloudSources = [
-  "https://tichy05.github.io/Wandering-mind-games/cloud1a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud2a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud3a.png"
+  "https://tichy05.github.io/Wandering-mind-games/Cloud1a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud2a.png",
+  "https://tichy05.github.io/Wandering-mind-games/Cloud3a.png"
 ]*/
 /*
 const cloudSources = [
-  "cloud1a.png",
-  "cloud2a.png",
-  "cloud3a.png"
+  "Cloud1a.png",
+  "Cloud2a.png",
+  "Cloud3a.png"
 ];
 
 
@@ -1199,7 +1213,7 @@ randomClouds(10, cloudSources);
   }, durationSeconds * 1000 + 500); // buffer for slower animations
 }
 */
-function randomClouds(minSec, maxSec, cloudSources) {
+function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
   const count = Math.floor(Math.random() * 2) + 2; // 2 or 3 clouds
   const layer = document.getElementById("cloudLayer");
   layer.innerHTML = '';
@@ -1220,7 +1234,7 @@ function randomClouds(minSec, maxSec, cloudSources) {
     const scale = 0.6 + Math.random() * 0.8;
 
     // Random speed (duration in seconds)
-    const duration = minSec + Math.random() * (maxSec - minSec);
+    const duration = cloudMinSec + Math.random() * (cloudMaxSec - cloudMinSec);
     if (duration > maxDuration) maxDuration = duration;
 
     // Create unique animation keyframes
@@ -1265,7 +1279,7 @@ function randomClouds(minSec, maxSec, cloudSources) {
   <a>  &copy; 2025 JCFP</a>
 </nav>
 
-
+</body>
 
 
 </html>
