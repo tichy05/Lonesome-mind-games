@@ -555,16 +555,14 @@ let timeInMs=3000;
 let firstStrike = false;
 //passed values
  // Multiple cloud image URLs
-/*const cloudSources = [
+const cloudSources = [
   "https://tichy05.github.io/Wandering-mind-games/cloud1a.png",
   "https://tichy05.github.io/Wandering-mind-games/cloud2a.png",
-  "https://tichy05.github.io/Wandering-mind-games/cloud3a.png"
-]*/
-const cloudSources = [
-  "cloud1a.png",
-  "cloud2a.png",
-  "cloud3a.png"
-];
+  "https://tichy05.github.io/Wandering-mind-games/cloud3a.png",
+  "https://tichy05.github.io/Wandering-mind-games/cloud4a.png",
+  "https://tichy05.github.io/Wandering-mind-games/cloud5a.png"
+]
+
 
 
 
@@ -1098,8 +1096,8 @@ function triggerCloudPass() {
 
   // Create and add a cloud image
   const cloud = document.createElement("img");
-/*  cloud.src = "https://tichy05.github.io/Wandering-mind-games/cloud2.png"*/
-  cloud.src = "cloud3a.png";
+  cloud.src = "https://tichy05.github.io/Wandering-mind-games/cloud3a.png"
+
 cloud.className = "cloud";
   layer.appendChild(cloud);
 
