@@ -257,14 +257,15 @@ button {
 
   <form id="numberForm">
    
-    <label>Número de asientos (1-4) <input type="number" min="1" max="4" name="difficultyLevel" required></label>
-    <label>Intensidad Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="intensity" required></label>
-    <label>Frecuencia Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="frequency" required></label>
-    <label>Flicks Por Segundo - luces: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="flicksPerSecond" required></label>
-    <label>Velocidad <Map></Map>ínima (1-20) <input type="number" min="1"  max="20" name="" required> segundos</label>
-    <label>Velocidad Máxima (1-20) <input type="number" min="1"  max="20" name="totalTime" required> segundos</label>
+    <label>Número de asientos (1-4) <input type="number" min="1" max="4" name="difficultyLevel" value="1" required></label>
+    <label>Tiempo Contestar (3-20) <input type="number" min="3" max="20" name="totalTime" value="7" required></label>
+    <label>Intensidad Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="intensity" value="0" required></label>
+    <label>Frecuencia Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="frequency" value="0" required></label>
+    <label>Flicks Por Segundo - luces: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="flicksPerSecond" value="0" required></label>
+    <label>Velocidad Mínima (0 apagado; 3-15) (nubes) <input type="number" min="0"  max="15" name="cloudMinSec" value="0" required> segundos</label>
+    <label>Velocidad Máxima (0 apagado; 4-20) (nubes) <input type="number" min="0"  max="20" name="cloudMaxSec" value="0" required> segundos</label>
     
-    
+   
      <p></p>
     
 
@@ -297,16 +298,19 @@ button {
 
       // Capture and convert all values to numbers
     /*  const values = { */
+      const level = 15
+      const totalTime = (Number(form.totalTime.value))
       const intensity = (Number(form.intensity.value))
       const frequency = Number(form.frequency.value)
       const difficultyLevel = Number(form.difficultyLevel.value)
       const flicksPerSecond = Number(form.flicksPerSecond.value)
-      const totalTime = (Number(form.totalTime.value))
+      const cloudMinSec = (Number(form.cloudMinSec.value))
+      const cloudMaxSec = (Number(form.cloudMaxSec.value))
       /* extraValue: Number(form.extraValue.value)*/
       console.log ("convert to number ",difficultyLevel,intensity,frequency,flicksPerSecond,totalTime)
 
 
-    window.location.href=`https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=14&totalTime=${totalTime}&intensity=${intensity}&frequency=${frequency}&durationTB=${totalTime}&difficultyLevel=${difficultyLevel}&durationFL=${totalTime}&flicksPerSecond=${flicksPerSecond}`;
+    window.location.href=`https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=14&totalTime=${totalTime}&intensity=${intensity}&frequency=${frequency}&durationTB=${totalTime}&difficultyLevel=${difficultyLevel}&durationFL=${totalTime}&flicksPerSecond=${flicksPerSecond}&cloudMinSec=${cloudMinSec}&cloudMaxSec=${cloudMaxSec}`;
 
        /*   // Example usage: alert total
       alert("Total: " + Object.values(values).reduce((sum, val) => sum + val, 0));*/
@@ -318,8 +322,9 @@ button {
 <nav class="main-nav">
   <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú Principal</a>
   <a href="">Reintentar</a>
-  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de A Bordo!</a>
   <a href="javascript:goBack()">&laquo; Anterior</a>
+  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de A Bordo!</a>
+  
  
   <a>  &copy; 2025 JCFP</a>
 </nav>
