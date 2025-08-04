@@ -867,7 +867,7 @@ setTimeout(() => {
   document.body.appendChild(msg);
       stw9.style.display = "none";
       stw6.style.display = "block";
-  }, 1500); //3000
+  }, 2000); //3000
 setTimeout(() => {
    stw6.style.display = "none";
    msg.textContent =  titleVar + ": " + currentCorrect; ;
@@ -875,22 +875,26 @@ setTimeout(() => {
    const h1 = document.querySelector("h1");
    h1.innerText= "A Bordo! - Nivel: " + level +  "  --  "  + titleVar + ":  " + currentCorrect + "  --  Tiempo: " + (timeInMs / 1000) + " segundos"; 
   stw6.style.display = "none";
-  }, 3000); //4000
+  }, 2000); //4000
 
   setTimeout(() => {
+ 
   enableSeatClicks();
-  msg.textContent = "GO!";
-  document.body.appendChild(msg);
+ /* msg.textContent = "GO!";
+  document.body.appendChild(msg);*/
+   countDownClock();
   simulateTurbulence('seatGroup',intensity,frequency,durationTB);
   flickerLights('seatGroup',durationFL,flicksPerSecond);
   /*triggerCloudPass();*/
   randomClouds(cloudMinSec,cloudMaxSec,cloudSources);
-  }, 4500) //10000
+  
+  }, 4000) //10000
    
 
 
 setTimeout(() => { 
  msg.textContent = ""; 
+  
 if   (firstStrike === false) {
   if (clickCount < difficultyLevel) {
     timeExpired = true}
@@ -1011,17 +1015,53 @@ function goBack() {
 }
 
 function countDownClock() { 
+  // Set the starting value of the countdown
+  let countdown = ((timeInMs)/1000); 
+
+  // Display it immediately
+    msg.textContent = "GO!  " + countdown;
+     document.body.appendChild(msg);
+  // Run the countdown every second
+  const countdownInterval = setInterval(() => {
+    countdown--;
+
+    if (countdown > 0) {
+      msg.textContent = "GO!  " + countdown;
+        document.body.appendChild(msg); 
+    } else {
+      // When countdown reaches 0
+      msg.textContent = "Fin   0";
+      document.body.appendChild(msg);
+      clearInterval(countdownInterval);
+      // Optional: call a function here
+      // startGame(); or nextScreen();
+    }
+  }, 1000);
+
+}
+
+
+
+/*function countDownClock() { 
 var secondsBetweenActions = 360;
 var secondsRemaining = secondsBetweenActions;
+console.log (secondsBetweenActions, secondsRemaining)
 setInterval( function() {
-  /*  updateStatus( secondsRemaining );*/
-  /*  secondsRemaining--;*/
+  /* updateStatus( secondsRemaining );
+   secondsRemaining--;
     if( secondsRemaining <= 0 ) {
         doAction();
         secondsRemaining = secondsBetweenActions;
-    }
+         msg.textContent = secondsRemaining;
+        document.body.appendChild(msg);
+
+
+    
 }, 1000 );
-}
+}*/
+
+
+
 /*Save original fill color
     const originalClass = element.getAttribute("class");
     // Revert color and hide tooltip after 2s
@@ -1129,100 +1169,14 @@ cloud.className = "cloud";
 }*/
 }
 
-/*function randomClouds() {
-  const count = Math.floor(Math.random() * 3) + 1;
-  const layer = document.getElementById("cloudLayer");
-  layer.innerHTML = '';
-  for (let i = 0; i < count; i++) {
-    const cloud = document.createElement("img");
-    cloud.src = "Cloud3a.png";
-    cloud.className = "cloud";
-    cloud.style.top = `${Math.random() * 200}px`;
-    cloud.style.animationDelay = `${i * 1.5}s`;
-    layer.appendChild(cloud);
-  }
-  layer.style.display = "block";
-  setTimeout(() => {
-    layer.style.display = "none";
-    layer.innerHTML = '';
-  }, 10000);
-}*/
 
-/*function randomClouds(durationSeconds, cloudSources) {
-  const count = Math.floor(Math.random() * 2) + 2; // 2 or 3 clouds
-  const layer = document.getElementById("cloudLayer");
-  layer.innerHTML = '';
-  layer.style.display = "block";
-
-  // Multiple cloud image URLs
-/*const cloudSources = [
-  "https://tichy05.github.io/Wandering-mind-games/Cloud1a.png",
-  "https://tichy05.github.io/Wandering-mind-games/Cloud2a.png",
-  "https://tichy05.github.io/Wandering-mind-games/Cloud3a.png"
-]*/
-/*
-const cloudSources = [
-  "Cloud1a.png",
-  "Cloud2a.png",
-  "Cloud3a.png"
-];
-
-
-// Trigger with 10-second crossing
-randomClouds(10, cloudSources);
-
-
-  for (let i = 0; i < count; i++) {
-    const cloud = document.createElement("img");
-
-    // Pick random cloud image from array
-    const imgSrc = cloudSources[Math.floor(Math.random() * cloudSources.length)];
-    cloud.src = imgSrc;
-
-    // Random top position and size
-    const top = Math.random() * 180; // varies height
-    const scale = 0.6 + Math.random() * 0.8; // scale between 0.6 and 1.4
-
-    // Create unique animation name per cloud
-    const animationName = `moveCloud${i}`;
-    const duration = durationSeconds;
-
-    // Add custom keyframes for this cloud
-    const styleSheet = document.styleSheets[0];
-    const keyframes =
-      `@keyframes ${animationName} {
-        0%   { left: -250px; }
-        100% { left: 100%; }
-      }`;
-    styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
-
-    // Apply styling
-    cloud.className = "cloud";
-    cloud.style.top = `${top}px`;
-    cloud.style.left = `-250px`;
-    cloud.style.width = `${200 * scale}px`;
-    cloud.style.opacity = 0.7;
-    cloud.style.animation = `${animationName} ${duration}s linear forwards`;
-    cloud.style.pointerEvents = "auto";
-    cloud.style.position = "absolute";
-
-    layer.appendChild(cloud);
-  }
-
-  // Clean up after longest duration
-  setTimeout(() => {
-    layer.style.display = "none";
-    layer.innerHTML = '';
-  }, durationSeconds * 1000 + 500); // buffer for slower animations
-}
-*/
 function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
   const count = Math.floor(Math.random() * 3) + 2; // 2 or 3 clouds - had 2
   const layer = document.getElementById("cloudLayer");
   layer.innerHTML = '';
   layer.style.display = "block";
 
-  let maxDuration = 0;
+  let maxDuration = cloudMaxSec;
 
   for (let i = 0; i < count; i++) {
     const cloud = document.createElement("img");
@@ -1286,8 +1240,9 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
 <nav class="main-nav">
   <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú Principal</a>
   <a href="">Reintentar</a>
-  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de A Bordo!</a>
   <a href="javascript:goBack()">&laquo; Anterior</a>
+  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de A Bordo!</a>
+  
  
   <a>  &copy; 2025 JCFP</a>
 </nav>
