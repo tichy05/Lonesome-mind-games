@@ -27,7 +27,7 @@
       flex-wrap: wrap;*/
       gap: 10px;
       justify-content: left;
-      max-width: 1500px;
+      max-width: 805px;
       max-height: 150;
       font-size: 12pt;
       font-weight: bold;
@@ -49,7 +49,7 @@
       justify-content: center;
       border-radius: 0px;
       margin: 1rem auto;
-      max-width: 1500px;
+      max-width: 805px;
       padding: 0.5rem;
     }
 
@@ -612,19 +612,6 @@ const flicksPerSecond = settings.flicksPerSecond;
 const  cloudMinSec = settings. cloudMinSec;
 const cloudMaxSec = settings.cloudMaxSec;
 
-console.log(" level","x",level,"x");
-console.log(" totalTime","x",totalTime,"x");
-console.log(" intensity","x",intensity,"x");
-console.log(" frequency","x",frequency,"x");
-console.log(" durationTB ","x",durationTB,"x");
-console.log(" difficultyLevel","x",difficultyLevel,"x");
-console.log(" durationFL",durationFL);
-console.log(" flicksPerSecond",flicksPerSecond);
-
-
-
-
-
 if (durationTB => durationFL, durationTB > 0) {
   timeInMs = durationTB * 1000
 } else {
@@ -651,11 +638,6 @@ if (totalTime  > timeInMs/1000) {
 }
 
 
-
-
-
-
-
 //Success and failure msgs
 const successMessages = [
   "¡Bien hecho!",
@@ -669,13 +651,9 @@ const failureMessages = [
   "Intenta otra vez",
   "No te rindas",
   "Casi lo logras",
-  "Sigue practicando.",
-  "En serio?!"
+  "Sigue practicando",
+  "!Otra vez!"
 ];
-
-
-
-
 
   // Generate seat IDs: 1A to 23F
   const seatRows = 23;
@@ -840,7 +818,6 @@ function confettiExplosion() {
 
  
   msg.textContent = "   ";
-  
   msg.textContent = getRandomMessage(successMessages);
   document.body.appendChild(msg);
   selectionMade = true;
@@ -870,6 +847,7 @@ setTimeout(() => {
   }, 2000); //3000
 setTimeout(() => {
    stw6.style.display = "none";
+
    msg.textContent =  titleVar + ": " + currentCorrect; ;
    document.body.appendChild(msg);
    const h1 = document.querySelector("h1");
@@ -910,7 +888,7 @@ if   (firstStrike === false) {
 //Verify if there are more things to select 
 function checkifEOD(){
 console.log ("checkifEOD");
-console.log (firstStrike, timeExpired,badOnes,goodOnes);
+
  if (firstStrike === false) {
     if (timeExpired === true) { 
     setTimeout(() => {
@@ -942,15 +920,10 @@ console.log (firstStrike, timeExpired,badOnes,goodOnes);
        
       }, 6000);
 } }}}
-console.log (difficultyLevel,firstStrike, timeExpired,badOnes,goodOnes);
-console.log ("trigger","-",difficultyLevel,"-");
 
 if (difficultyLevel === (goodOnes + badOnes)) {
-  console.log ("trigger","-",difficultyLevel,"-");
   if (badOnes === 0) {
   confettiExplosion();}
-
-  
 } 
 }
 
@@ -985,7 +958,6 @@ function confettiExplosion() {
   document.body.appendChild(msg);
   setTimeout(() => {
   /*  msg.remove();*/
-console.log ("msg.textContent")
   }, 4000);
 
    setTimeout(() => {
@@ -1010,7 +982,6 @@ window.addEventListener('orientationchange', () => {setTimeout(checkOrientation,
 });
 
 function goBack() {
-  console.log ("goBack")
   window.history.back()
 }
 
@@ -1041,27 +1012,6 @@ function countDownClock() {
 }
 
 
-
-/*function countDownClock() { 
-var secondsBetweenActions = 360;
-var secondsRemaining = secondsBetweenActions;
-console.log (secondsBetweenActions, secondsRemaining)
-setInterval( function() {
-  /* updateStatus( secondsRemaining );
-   secondsRemaining--;
-    if( secondsRemaining <= 0 ) {
-        doAction();
-        secondsRemaining = secondsBetweenActions;
-         msg.textContent = secondsRemaining;
-        document.body.appendChild(msg);
-
-
-    
-}, 1000 );
-}*/
-
-
-
 /*Save original fill color
     const originalClass = element.getAttribute("class");
     // Revert color and hide tooltip after 2s
@@ -1076,20 +1026,9 @@ function showResultMessage(isCorrect) {
     ? getRandomMessage(successMessages)
     : getRandomMessage(failureMessages);
 
-
-
-
 }
 
-
-
-
-
-
     ///turbulence
-
-
-
 
   function simulateTurbulence(elementId = 'seatGroup', intensity = 5, frequency = 10, durationTB = 4) {
     const el = document.getElementById(elementId);
@@ -1107,18 +1046,17 @@ function showResultMessage(isCorrect) {
     }, durationTB*1000);
   }
 
+  // Buscar mensaje al azar de la lista definida mas arriba
 function getRandomMessage(list) {
   const index = Math.floor(Math.random() * list.length);
   return list[index];
 }
 
-
+// relampagueo luces
 
 function flickerLights(groupId = 'seatGroup', durationFL = 4, flicksPerSecond = 8) {
-  console.log ("inside")
   const group = document.getElementById(groupId);
   const bg = document.getElementById('flickerBackground');
-  console.log (group,bg);
   if (!group || !bg) return;
 
 
@@ -1169,6 +1107,7 @@ cloud.className = "cloud";
 }*/
 }
 
+//nubes tandom
 
 function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
   const count = Math.floor(Math.random() * 3) + 2; // 2 or 3 clouds - had 2
@@ -1186,8 +1125,8 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
     const imgSrc = cloudSources[Math.floor(Math.random() * cloudSources.length)];
     cloud.src = imgSrc;
 
-    // Random top & scale
-    const top = Math.random() * 180;
+    // Random top & scale 
+    const top = Math.random() * 80;  //had 180, 80 cubre mas arriba
     const scale = 1.0 + Math.random() * 0.8; //had 0.6 0.8
 
     // Random speed (duration in seconds)
@@ -1226,15 +1165,6 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
 
 }
 
-
-
-
-
-
-
-
-
-
 </script>
 
 <nav class="main-nav">
@@ -1248,7 +1178,5 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
 </nav>
 
 </body>
-
-
 </html>
 

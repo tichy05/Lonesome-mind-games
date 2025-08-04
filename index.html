@@ -101,12 +101,12 @@ function enterSite() {
 function exitSite() {
   const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
-  if (isInStandaloneMode) {
-    alert("Para salir, por favor cierre esta aplicación manualmente desde su dispositivo.");
-  } else {
+ /* if (isInStandaloneMode) {*/
+    /*alert("Para salir, por favor cierre esta aplicación manualmente desde su dispositivo.");*/
+ /* } else {*/
     // Works in Safari/Chrome browser mode
-    window.location.href = "https://www.google.com"; // or your site’s home
-  }
+    window.location.href = "https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html"; // or your site’s home
+/* }*/
 }
 
 function startApp() {

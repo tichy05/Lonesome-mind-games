@@ -27,7 +27,7 @@
       flex-wrap: wrap;
       gap: 10px;
       justify-content: center;
-      max-width: 1500px;
+      max-width: 805px;
       max-height: 150;
       font-size: 12pt;
       font-weight: bold;
@@ -49,7 +49,7 @@
       justify-content: center;
       border-radius: 0px;
       margin: 1rem auto;
-      max-width: 1500px;
+      max-width: 805px;
       padding: 0.5rem;
     }
 
@@ -524,8 +524,9 @@ if (difficultyLevel === 4) {
   // mensajes iniciales
 
 
+let timeCounter=0
 
-  msg.textContent = "!Bienvenidos a La Guagua Aérea!";
+  msg.textContent = "Bienvenidos a La Guagua Aérea!";
   document.body.appendChild(msg);
   stw5.style.display = "block";
   stw8.style.display = "block";
@@ -536,73 +537,84 @@ setTimeout(() => {
       stw8.style.display = "none";
       stw6.style.display = "block";  
       stw9.style.display = "block";
-  }, 3000);
-  setTimeout(() => {
-      msg.textContent = "Tiene que llegar a su asiento";
+  }, (timeCounter = timeCounter + 3000));
+    setTimeout(() => {
+      msg.textContent = "tiene que volver a su asiento";
       document.body.appendChild(msg);
       /*stw6.style.display = "block";  
       stw9.style.display = "block";*/
-  }, 6000);
+ }, (timeCounter = timeCounter + 3000));
+  setTimeout(() => {
+      msg.textContent = "lo antes posible";
+      document.body.appendChild(msg);
+      /*stw6.style.display = "block";  
+      stw9.style.display = "block";*/
+ ;}, (timeCounter = timeCounter + 3000));
   setTimeout(() => {
    msg.textContent =  "y va a correr contra el reloj";
     document.body.appendChild(msg);
    /*   stw6.style.display = "block";
       stw9.style.display = "block";*/
-  }, 9000); //18000
+}, (timeCounter = timeCounter + 3000));
 setTimeout(() => {
-   msg.textContent =  "habrá nubosidad,turbulencia y relampagueo";
+   msg.textContent =  "habrá nubosidad, turbulencia y relampagueo";
     document.body.appendChild(msg);
      stw6.style.display = "none";
       stw9.style.display = "none";
-  }, 12000); //18000
+}, (timeCounter = timeCounter + 3000));
 
 setTimeout(() => {
-      msg.textContent = "y va subiendo de nivel a su ritmo";
+      msg.textContent = "Lo que tiene que saber es:";
       document.body.appendChild(msg);
       stw6.style.display = "none";
       stw9.style.display = "none";
       stw1.style.display = "block";    
-  }, 15000);
+ }, (timeCounter = timeCounter + 3000));
 
   setTimeout(() => {
       msg.textContent = "Filas van de la 1 a la 23 ";
       document.body.appendChild(msg);
       stw1.style.display = "none";
       stw2.style.display = "block";
-  }, 18000);
+ }, (timeCounter = timeCounter + 3000));
   setTimeout(() => {
       msg.textContent = "Asientos van de la A a la F ";
       document.body.appendChild(msg);
       stw2.style.display = "none";
       stw3.style.display = "block";
-  }, 21000);
+  }, (timeCounter = timeCounter + 3000));
   setTimeout(() => {
    msg.textContent = "de abajo hacia arriba ";
   document.body.appendChild(msg);
       stw3.style.display = "none";
       stw4.style.display = "block";
       stw10.style.display = "block";
-  }, 24000);
+}, (timeCounter = timeCounter + 3000));
    setTimeout(() => {
    msg.textContent = titleVar2 + " siempre ...... estarán en la banda chinita";
   document.body.appendChild(msg);
       stw4.style.display = "none";
       stw10.style.display = "none";
       stw7.style.display = "block";
-  }, 27000);
+}, (timeCounter = timeCounter + 3000));
   setTimeout(() => { 
    msg.textContent = "También verá cuánto tiempo tiene para completar";
   document.body.appendChild(msg);
       stw7.style.display = "none";
       stw5.style.display = "none";
-  }, 30000); //15000
+}, (timeCounter = timeCounter + 3000));
 setTimeout(() => {
    msg.textContent =  "ah, y siempre espere el GO! ";
   document.body.appendChild(msg);
       stw5.style.display = "block";
       stw8.style.display = "block";
-  }, 33000); //18000
-
+}, (timeCounter = timeCounter + 3000));
+ setTimeout(() => {
+      msg.textContent = "Vaya ahora al Menú Principal";
+      document.body.appendChild(msg);
+      /*stw6.style.display = "block";  
+      stw9.style.display = "block";*/
+ }, (timeCounter = timeCounter + 3000));
 
 
 function checkOrientation() {
@@ -628,16 +640,13 @@ function goBack() {
 <nav class="main-nav">
   <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú Principal</a>
   <a href="">Reintentar</a>
-  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de A Bordo!</a>
   <a href="javascript:goBack()">&laquo; Anterior</a>
+  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de A Bordo!</a>
+  
  
   <a>  &copy; 2025 JCFP</a>
 </nav>
 
-
-<footer>
-  &copy; 2025 JCFP
-</footer>
 
 </body>
 </html>
