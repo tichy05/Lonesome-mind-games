@@ -162,34 +162,7 @@ html, body {
 
 <!-- Clouds-->
 
-<!--<div id="cloudLayer" style="
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 280px;  /* same as SVG height */
-  pointer-events: auto;  /* blocks touches/clicks */
-  z-index: 9999;
-  overflow: hidden;
-  display: none;  /* initially hidden */
-">-->
 
-<!-- -->
-<!--  <img src="https://tichy05.github.io/Wandering-mind-games/Cloud3.png"
-       class="cloud" />
-  </div>
-
-<img src="https://tichy05.github.io/Wandering-mind-games/Cloud2.png"
-       class="cloud" />
-  </div> -->
-
-<!--<img src="Cloud3x.png"
-       class="cloud" style="width:1024px;height:280px"/>
-  </div>
-
-<img src="Cloud2xpng"
-       class="cloud" />
-  </div>-->
 
 <div id="svg-wrapper" style="position:relative; width:100%; max-width:805px; margin:auto;">
   <svg id="map" viewBox="0 0 805 280" preserveAspectRatio="xMinYMin meet" style="width:100%; height:auto;">
@@ -498,21 +471,7 @@ html, body {
 
 <div id="cloudLayer">
 
-<!-- style="
-  position: absolute;
-  top: 40px;
-  left: 200px;
-  width: 100%;
-  height: 280px;  /* same as SVG height */
-  pointer-events: auto;  /* blocks touches/clicks */
-  z-index: 99999;
-  overflow: hidden;
-  display: block;  /* initially hidden */
 
-">-->
- <!--<img src="https://tichy05.github.io/Wandering-mind-games/Cloud1e.png"/>-->
- <!--<img src="cloud3x.png"
-       class="cloud" style="width:145px;height:256px"/>-->
 </div>
 
 
@@ -557,6 +516,9 @@ let clickCount = 0;
 let timeInMs=3000;
 let firstStrike = false;
 let countdownInterval;
+let Wins = 0;
+let Loses = 0;
+
 //passed values
  // Multiple cloud image URLs
  
@@ -569,17 +531,6 @@ const cloudSources = [
   "https://tichy05.github.io/Wandering-mind-games/Cloud12a.png"
 ];
 
-
-
-/*
-const cloudSources = [
-  "Cloud1a.png",
-  "Cloud2a.png",
-  "Cloud3a.png",
-  "Cloud4a.png",
-  "Cloud5a.png"
-]
-*/
 
 
 function getNumericParams() {
@@ -710,10 +661,47 @@ function enableSeatClicks() {
 }
 })
 }
+//loadconfig
+
+function loadConfig() {
+      console.log("entering loadconfig")
+      const saved = localStorage.getItem('AbordoConfig');
+      if (saved) {
+        const cfg = JSON.parse(saved);
+        if (typeof cfg.Wins === "number") Wins = cfg.Wins;
+        if (typeof cfg.Loses === "number") Loses = cfg.Loses;
+      }
+    }
+
+ 
+    // close config form
+    function closeConfig() {
+      console.log("entering closeconfig");
+      document.getElementById('configModal').style.display = 'none';
+      document.body.style.overflow = ''; // Restore scroll
+    }
+
+
+    // Save config to localStorage
+    function saveConfig() {
+      console.log("entering saveConfig");
+      localStorage.setItem('AbordoConfig', JSON.stringify({
+        Wins,Loses}));
+        console.log("exiting saveConfig");
+      
+
+    }
+
+
+
+
+
+//load config end
 
   function nextQuestion() {
     console.log ("nextQuestion")
     // Reset clicks and styles
+    loadConfig();
     clickCount = 0;
     clearAllSeatStyles();
 
@@ -731,15 +719,19 @@ function enableSeatClicks() {
   function handleSeatClick(id, el) {
     console.log ("handleSeatClick")
 
-    if (clickCount > difficultyLevel) {
+    if (clickCount > difficultyLevel) {   
+      clearInterval(countdownInterval);
+      Loses++;
       msg.textContent = "Limite de selecciones alcanzado ("+ difficultyLevel + ")" ;
       document.body.appendChild(msg);
+      
       console.log("⛔ Limit reached");
-  
+      Loses++;
+      saveConfig()
     }
 
     if (currentCorrect.includes(id)) {
-      
+
     el.classList.add("selected-good");
     goodOnes = goodOnes + 1;
 
@@ -749,11 +741,12 @@ function enableSeatClicks() {
     el.classList.add("selected-bad");
     badOnes = badOnes + 1;
     firstStrike = true;
+    Loses++;
+    saveConfig()
     console.log("❌ Wrong seat:", id);
-    console.log ("clear");
-    console.log (countdownInterval);
+   
     clearInterval(countdownInterval);
-    console.log (countdownInterval);
+
     disableAllSeats() ;
     checkifEOD(firstStrike);
     
@@ -798,8 +791,12 @@ function enableSeatClicks() {
  
 
 //reward
-function confettiExplosion() {
+/*function confettiExplosion() {
   console.log ("confettiExplosion")
+  console.log("w bef incr conf",Wins);
+  Wins++;
+console.log("w after incr conf",Wins);
+  saveConfig();
   const duration = 5 * 1000;
   const end = Date.now() + duration;
 
@@ -828,7 +825,7 @@ function confettiExplosion() {
   document.body.appendChild(msg);
   selectionMade = true;
 
-}
+}*/
 
 
     if (difficultyLevel === 1) {
@@ -857,7 +854,13 @@ setTimeout(() => {
    msg.textContent =  titleVar + ": " + currentCorrect; ;
    document.body.appendChild(msg);
    const h1 = document.querySelector("h1");
-   h1.innerText= "A Bordo! - Nivel: " + level +  "  --  "  + titleVar + ":  " + currentCorrect + "  --  Tiempo: " + (timeInMs / 1000) + " segundos"; 
+  h1.style.fontFamily = "Monaco", "monospace"; // like Courier
+  h1.style.whiteSpace = "pre"; // preserves spacing
+  h1.innerText= "A Bordo! - Nivel: " + level +  "       Tiempo total: " + (timeInMs / 1000) + "s"+ "       " + titleVar + ": " + currentCorrect ;
+ 
+  
+  
+  
   stw6.style.display = "none";
   }, 2000); //4000
 
@@ -898,9 +901,9 @@ console.log ("checkifEOD");
  if (firstStrike === false) {
     if (timeExpired === true) { 
     setTimeout(() => {
-      msg.textContent =  "Se le acabo el tiempo"
-      document.body.appendChild(msg)
-      disableAllSeats() 
+      msg.textContent =  "Se le acabo el tiempo";
+      document.body.appendChild(msg);
+      disableAllSeats() ;
     }, 2000);
     setTimeout(() => {
       msg.textContent = "Oprima Reintentar o Menú";
@@ -913,7 +916,7 @@ console.log ("checkifEOD");
     if (firstStrike === true) {
      if (badOnes > 0) { 
         setTimeout(() => {
-      msg.textContent = " ";
+        msg.textContent = " ";
         msg.textContent = getRandomMessage(failureMessages)
         document.body.appendChild(msg);
         disableAllSeats() ;
@@ -929,6 +932,7 @@ console.log ("checkifEOD");
 
 if (difficultyLevel === (goodOnes + badOnes)) {
   if (badOnes === 0) {
+  clearInterval(countdownInterval); 
   confettiExplosion();}
 } 
 }
@@ -936,6 +940,10 @@ if (difficultyLevel === (goodOnes + badOnes)) {
 //reward
 function confettiExplosion() {
   console.log ("confettiExplosion")
+  console.log("w bef incr conf",Wins);
+  Wins++;
+  console.log("w after incr conf",Wins);
+  saveConfig(); 
   const duration = 5 * 1000;
   const end = Date.now() + duration;
 
@@ -992,48 +1000,6 @@ function goBack() {
 }
 
 
-//temp
-
-/*<script>
-  let countdown = 3;
-  const countdownDisplay = document.getElementById('countdownDisplay');
-
-  // Start countdown and keep a reference to the interval
-  const countdownInterval = setInterval(() => {
-    countdown--;
-
-    if (countdown > 0) {
-      countdownDisplay.textContent = countdown;
-    } else {
-      countdownDisplay.textContent = "GO!";
-      clearInterval(countdownInterval);
-      // Optional: start your game or next phase
-    }
-  }, 1000);
-
-  // Example function triggered when user presses a wrong key
-  function userLost() {
-    clearInterval(countdownInterval); // ⛔ Stop the countdown
-    countdownDisplay.textContent = "You Lost!";
-    // Add any other logic here (disable buttons, etc.)
-  }
-
-  // Example: listen for a wrong key press (simulate it here)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'x') { // let's say 'x' is the wrong key
-      userLost();
-    }
-  });
-
-*/
-
-
-
-//end temp
-
-
-
-
 function countDownClock() {
   console.log ("countDownClock") 
 
@@ -1041,8 +1007,10 @@ function countDownClock() {
   let countdown = ((timeInMs)/1000); 
 
   // Display it immediately
-    msg.textContent = "GO!         Tiempo: "+ countdown;
-     document.body.appendChild(msg);
+   msg.textContent = "GO!         Tiempo: "+ countdown;
+   msg.style.fontFamily = "monospace"; // like Courier
+   msg.style.whiteSpace = "pre"; // preserves spacing
+   document.body.appendChild(msg);
   // Run the countdown every second
    countdownInterval = setInterval(() => {
     
@@ -1050,12 +1018,18 @@ function countDownClock() {
 
     if (countdown > 0) {
       msg.textContent = "GO!         Tiempo: "+ countdown;
-        document.body.appendChild(msg); 
+      msg.style.fontFamily = "monospace"; // like Courier
+      msg.style.whiteSpace = "pre"; // preserves spacing
+      document.body.appendChild(msg); 
     } else {
       // When countdown reaches 0
       clearInterval(countdownInterval);
-      msg.textContent = "         Tiempo: 0"
+      msg.textContent = "            Tiempo: "+ countdown;
+      msg.style.fontFamily = "monospace"; // like Courier
+      msg.style.whiteSpace = "pre"; // preserves spacing
       document.body.appendChild(msg);
+
+
       checkifEOD;
       // Optional: call a function here
       // startGame(); or nextScreen();
@@ -1063,9 +1037,6 @@ function countDownClock() {
   }, 1000);
 
 }
-
-
-
 
 /*Save original fill color
     const originalClass = element.getAttribute("class");
