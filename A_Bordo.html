@@ -214,6 +214,9 @@ html, body {
   
  <text id="mytextLine" x="250" y="165" fill="black"></text>
 
+ 
+
+
   <!-- SEAT GENERATION START -->
   <!-- Each row is spaced by 40px vertically -->
   <!-- Each seat is 30x30, with 10px spacing -->
@@ -553,6 +556,7 @@ let currentCorrect = [];
 let clickCount = 0;
 let timeInMs=3000;
 let firstStrike = false;
+let countdownInterval;
 //passed values
  // Multiple cloud image URLs
  
@@ -722,6 +726,8 @@ function enableSeatClicks() {
    /* enableSeatClicks();*/
   }
 
+  
+
   function handleSeatClick(id, el) {
     console.log ("handleSeatClick")
 
@@ -744,19 +750,19 @@ function enableSeatClicks() {
     badOnes = badOnes + 1;
     firstStrike = true;
     console.log("❌ Wrong seat:", id);
-    disableAllSeats() 
-    checkifEOD(firstStrike)
+    console.log ("clear");
+    console.log (countdownInterval);
+    clearInterval(countdownInterval);
+    console.log (countdownInterval);
+    disableAllSeats() ;
+    checkifEOD(firstStrike);
     
   }
     clickCount++;
     
-
-    
-
- 
     }
 
-    
+  
     // Prevent re-clicking same seat
     /*element.style.pointerEvents = "none";*/
 
@@ -895,11 +901,11 @@ console.log ("checkifEOD");
       msg.textContent =  "Se le acabo el tiempo"
       document.body.appendChild(msg)
       disableAllSeats() 
-    }, 3000);
+    }, 2000);
     setTimeout(() => {
       msg.textContent = "Oprima Reintentar o Menú";
       document.body.appendChild(msg);
-    }, 6000);
+    }, 4000);
   
 }
 } else {
@@ -907,18 +913,18 @@ console.log ("checkifEOD");
     if (firstStrike === true) {
      if (badOnes > 0) { 
         setTimeout(() => {
-       
+      msg.textContent = " ";
         msg.textContent = getRandomMessage(failureMessages)
         document.body.appendChild(msg);
         disableAllSeats() ;
         firstStrike = true;
-      }, 4000);
+      }, 2000);
       
-      setTimeout(() => {
+        setTimeout(() => {
         msg.textContent = "Oprima Reintentar o Menú";
         document.body.appendChild(msg);
        
-      }, 6000);
+      }, 4000);
 } }}}
 
 if (difficultyLevel === (goodOnes + badOnes)) {
@@ -985,31 +991,80 @@ function goBack() {
   window.history.back()
 }
 
-function countDownClock() { 
-  // Set the starting value of the countdown
-  let countdown = ((timeInMs)/1000); 
 
-  // Display it immediately
-    msg.textContent = "GO!  " + countdown;
-     document.body.appendChild(msg);
-  // Run the countdown every second
+//temp
+
+/*<script>
+  let countdown = 3;
+  const countdownDisplay = document.getElementById('countdownDisplay');
+
+  // Start countdown and keep a reference to the interval
   const countdownInterval = setInterval(() => {
     countdown--;
 
     if (countdown > 0) {
-      msg.textContent = "GO!  " + countdown;
+      countdownDisplay.textContent = countdown;
+    } else {
+      countdownDisplay.textContent = "GO!";
+      clearInterval(countdownInterval);
+      // Optional: start your game or next phase
+    }
+  }, 1000);
+
+  // Example function triggered when user presses a wrong key
+  function userLost() {
+    clearInterval(countdownInterval); // ⛔ Stop the countdown
+    countdownDisplay.textContent = "You Lost!";
+    // Add any other logic here (disable buttons, etc.)
+  }
+
+  // Example: listen for a wrong key press (simulate it here)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'x') { // let's say 'x' is the wrong key
+      userLost();
+    }
+  });
+
+*/
+
+
+
+//end temp
+
+
+
+
+function countDownClock() {
+  console.log ("countDownClock") 
+
+  // Set the starting value of the countdown
+  let countdown = ((timeInMs)/1000); 
+
+  // Display it immediately
+    msg.textContent = "GO!         Tiempo: "+ countdown;
+     document.body.appendChild(msg);
+  // Run the countdown every second
+   countdownInterval = setInterval(() => {
+    
+    countdown--;
+
+    if (countdown > 0) {
+      msg.textContent = "GO!         Tiempo: "+ countdown;
         document.body.appendChild(msg); 
     } else {
       // When countdown reaches 0
-      msg.textContent = "Fin   0";
-      document.body.appendChild(msg);
       clearInterval(countdownInterval);
+      msg.textContent = "         Tiempo: 0"
+      document.body.appendChild(msg);
+      checkifEOD;
       // Optional: call a function here
       // startGame(); or nextScreen();
     }
   }, 1000);
 
 }
+
+
 
 
 /*Save original fill color
