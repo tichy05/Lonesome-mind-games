@@ -740,7 +740,6 @@ function loadConfig() {
 
     if (clickCount > difficultyLevel) {   
       clearInterval(countdownInterval);
-      Loses++;
       msg.textContent = "Limite de selecciones alcanzado ("+ difficultyLevel + ")" ;
       document.body.appendChild(msg);
       
@@ -922,11 +921,12 @@ console.log ("checkifEOD");
     if (timeExpired === true) { 
     setTimeout(() => {
       Loses++;
+      saveConfig();
       msg.textContent =  "Se le acabo el tiempo";
       document.body.appendChild(msg);
       disableAllSeats() ;
       
-    }, 3000);
+    },1000);
     setTimeout(() => {
       msg.textContent = "Oprima Reintentar o Menú";
       document.body.appendChild(msg);
@@ -943,13 +943,13 @@ console.log ("checkifEOD");
         document.body.appendChild(msg);
         disableAllSeats() ;
         firstStrike = true;
-      }, 4000);
+      }, 1000);
       
         setTimeout(() => {
         msg.textContent = "Oprima Reintentar o Menú";
         document.body.appendChild(msg);
        
-      }, 6000);
+      }, 4000);
 } }}}
 
 if (difficultyLevel === (goodOnes + badOnes)) {
@@ -962,9 +962,7 @@ if (difficultyLevel === (goodOnes + badOnes)) {
 //reward
 function confettiExplosion() {
   console.log ("confettiExplosion")
-  console.log("w bef incr conf",Wins);
   Wins++;
-  console.log("w after incr conf",Wins);
   saveConfig(); 
   const duration = 5 * 1000;
   const end = Date.now() + duration;
