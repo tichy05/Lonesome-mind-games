@@ -1,9 +1,9 @@
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>A Bordo! - AVISO</title>
+<title>¡A Bordo! - Menu</title>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -19,11 +19,214 @@
 </head>
 <style>
 
-body { font-family: Arial, sans-serif; text-align: center;  
+    body { font-family: Arial, sans-serif; text-align: center;  
     background-color: white; margin-top: 20px; color: black; font-size: 14pt; font-style: heavy }
 
+ .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+      
+      display: block;
+      gap: 1.5rem;
+      top: 1rem;
+      left: 0;
+    }
 
-@media only screen and (min-width: 600px)
+    .card {
+      background:  #ffbf00;
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+      flex: 1 1 280px;
+      max-width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease-in-out;
+ 
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      margin-top: 0px;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      background-color: white;
+      color: black;
+      padding: 0.75rem;
+      border-radius: 24px;
+      border-color: black;
+      border-width: 2px;
+      border-style: solid;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 10pt;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover,
+    .card a:active {
+      background-color: #0056b3;
+    }
+
+ #card2 {
+      background-color: white;
+      padding: 1.5rem 1rem;
+      border-radius:0px;
+      flex: 1 1 280px;
+      max-width:800px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 30pt;
+      color: black
+ }
+
+
+  #card-container2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      max-width: 805px;
+      max-height: 150px;
+      font-size: 18pt;
+      font-weight: bold;
+      color: black;
+      background-color: #ffbf00;
+      border-radius: 0px;
+      border-color: #ffbf00;
+      border-width: 3px;
+      border-style: solid;
+      margin: 1rem auto;
+      padding: 0.5rem;
+      display: block;
+      
+  }
+
+ nav.main-nav {
+      background-color: #333;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 0px;
+      margin: 1rem auto;
+      max-width: 805px;
+      padding: 0.5rem;
+    }
+
+    nav.main-nav a {
+      color: white;
+      padding: 0.25rem 1rem;
+      text-decoration: none;
+      flex: 0 1 auto;
+      text-align: center;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    nav.main-nav a:hover,
+    nav.main-nav a:active {
+      background-color: #555;
+    }
+    /* Optional container for layout */
+.dropdown-container {
+  display: flex;
+  gap: 3px; /* spacing between dropdowns */
+  margin: 3px;
+  justify-content: center;
+     
+}
+
+
+    /* Dropdown Button */
+.dropbtn {
+  background-color: #ffbf00;
+  color: black;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+      border-color: black;
+      border-width: 2px;
+      border-style: solid;
+      min-width: 100px;;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 18px;
+  z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 6px 8px;
+  border-radius: 18px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #78cb98;}
+
+
+label {
+      display: block;
+      margin-top: 10px;
+    }
+input[type="number"] {
+      width: 100px;
+      padding: 5px;
+    }
+button {
+      margin-top: 15px;
+      padding: 10px 20px;
+    }
+
+ #footer {
+  	display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* optional spacing between buttons */
+  max-width: 768px; /* optional, controls line wrap based on width */
+  Margin: 0px auto; /* centers and adds top space. */
+  font-size: 14pt;
+  font-weight: bold;
+
+   }
+    @media only screen and (min-width: 600px)
 {#rotateWarning {
   display: none;
   position: fixed;
@@ -41,77 +244,180 @@ body { font-family: Arial, sans-serif; text-align: center;
 </style>
 
 
+
 <body>
+  
 
-<div id="flashingWarning" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: black;
-  color: white;
-  z-index: 999999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  text-align: center;
-  font-size: 1.25rem;
-">
-  <p style="max-width: 600px; margin-bottom: 2rem;">
-    ⚠️ Advertencia: Este juego tiene partes<br>donde hay luces intermitentes,<br>movimiento visual fuerte y efectos<br>que pueden afectar a personas sensibles.<br>Por favor proceda con precaución.
-  </p>
-  <div style="display: flex; gap: 1rem;">
-    <button onclick="enterSite()" style="
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: white;
-      background-color: green;
-      border: none;
-      border-radius: 6px;
-    ">Entrar</button>
+  
 
-    <button onclick="exitSite()" style="
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: white;
-      background-color: red;
-      border: none;
-      border-radius: 6px;
-    ">Salir</button>
-  </div>
+ <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape).</div>
+ 
+  <h1 id="card-container2">¡A Bordo!</h1>
+  <?xml version="1.0" standalone="no"?>
+
+<div id="svg-wrapper" style="position:relative; width:100%; max-width:805px; margin:auto;">
+ 
+ 
+  <div class="card-container">
+  
+ 
+<!---
+<img id="stw1" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing right.png" alt="Steward pointing right" style="width:145px;height:256px;
+  position:fixed; display:none; left:270px; top:115px; 
+  z-index:99995">
+
+<img id="stw2" src="https://tichy05.github.io/Wandering-mind-games/stewardess showing below.png" alt="Steward showing below" style="width:135px;height:256px;
+  position:fixed; display:none; left:270px; top:115px; 
+  z-index:99995">
+
+<img id="stw3" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing down.png" alt="Steward pointing down" style="width:120px;height:256px;
+  position:fixed; display:none; left:270px; top:115px; 
+  z-index:99995">
+
+<img id="stw4" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up.png" alt="Steward pointing up" style="width:128px;height:256px;
+  position:fixed; display:none; left:270px; top:115px; 
+  z-index:99995">
+
+  <img id="stw5" src="https://tichy05.github.io/Wandering-mind-games/stewardess hands to sides body.png" alt="Steward hands to sides body" style="width:100px;height:256px;
+  position:fixed; display:none; left:200px; top:115px; 
+  z-index:99995">
+
+<img id="stw6" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing left.png" alt="Steward pointing left" style="width:142px;height:256px;
+  position:fixed; display:none; left:270px; top:115px; 
+  z-index:99995">
+
+<img id="stw7" src="https://tichy05.github.io/Wandering-mind-games/stewardess pointing up left 2.png" alt="Steward pointing up left 2" style="width:300px;height:280px;
+  position:fixed; display:none; left:420px; top:-175px; 
+  z-index:99995">
+
+</div>-->
+<div class="card2">
+    <h2>Juego de coordinación visual-memoria-motor</h2>
+
+<div class="card2">
+
+ <h3 id="stats">Estadísticas - Logrados</h3> 
+   
+   
+   <div class="card-container">
+</div>
 </div>
 
+<div class="dropdown-container">
+  
+  <div class="dropdown">
+    <button class="dropbtn">Conoce a tus<br> asistentes<br>de vuelo</button>
+    <div class="dropdown-content">
+      <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Intro_Marge.html">Guía del juego</a>
+    </div>
+  </div>
 
-<p id="warning-note" style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;"></p>
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 1-4<br>A Tiempo</button>
+    <div class="dropdown-content">
+      <a id="N1" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=1&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 1</a>
+      <a id="N2" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=2&intensity=5&frequency=10&durationTB=0&difficultyLevel=2&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 2</a>      
+      <a id="N3" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=3&intensity=5&frequency=10&durationTB=0&difficultyLevel=3&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 3</a>
+      <a id="N4" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=4&intensity=5&frequency=10&durationTB=0&difficultyLevel=4&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 4</a>
+    </div> 
 
+
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 5-6<br>Entre Nubes</button>
+    <div class="dropdown-content">
+   <!-- <a id="cloud" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=5&intensity=0&frequency=0&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=0&cloudMinSec=7&cloudMaxSec=12">Nivel 5</a>
+    -->
+   <a id="cloud" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=5&intensity=0&frequency=0&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=0&cloudMinSec=4&cloudMaxSec=8">Nivel 5</a>
+   <a id="cloud" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=6&intensity=0&frequency=0&durationTB=0&difficultyLevel=2&durationFL=0&flicksPerSecond=0&cloudMinSec=5&cloudMaxSec=7">Nivel 6</a>
+  
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 6-9<br>Turbulencia</button>
+    <div class="dropdown-content">
+      <a id="N6" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=7&intensity=5&frequency=10&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 7</a>
+      <a id="N7" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=8&intensity=8&frequency=12&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 8</a>      
+      <a id="N8" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=9&intensity=12&frequency=16&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 9</a>
+      <a id="N9" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=10&intensity=16&frequency=18&durationTB=5&difficultyLevel=1&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 10</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Niveles 10-14<br>A Oscuras</button>
+    <div class="dropdown-content">
+        <a id="N10" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=11&intensity=5&frequency=10&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 11</a>
+        <a id="N11" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=12&intensity=8&frequency=12&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=10&cloudMinSec=0&cloudMaxSec=0">Nivel 12</a>      
+        <a id="N12" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=13&intensity=12&frequency=16&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=11&cloudMinSec=0&cloudMaxSec=0">Nivel 13</a>
+        <a id="N13" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=14&intensity=16&frequency=18&durationTB=7&difficultyLevel=1&durationFL=7&flicksPerSecond=14&cloudMinSec=0&cloudMaxSec=0">Nivel 14</a>
+     </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Cambie los<br>parametros</button>
+      <div class="dropdown-content">
+        <a id="N14" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_custom.html">Nivel 15</a>
+      </div>
+  </div>
+
+
+<img id="stwx" src="https://tichy05.github.io/Wandering-mind-games/Background.png" alt="background pict" 
+style="width:100px;height:120px;
+  position:absolute; display:block; left:0px; top:90px;  
+  z-index:10">
+</div>
+</div>
 </body>
-
 <script>
 
-function enterSite() {
+//variables
+let difficultyLevel = 1;
+let Wins = 0;
+let Loses = 0;
+//Start by checking the device orientation
+checkOrientation();
+
+const msg = document.createElement('div');
+  msg.id = "mainMessage";
+  msg.style.cssText = `
+    position:fixed; top:240px; left:0; width:100%;
+    text-align:center; font-size:2em; font-weight:bold;
+    color:black; text-shadow: 0px 0px #000; z-index:9999;`
  
-  document.getElementById("flashingWarning").style.display = "none";
-  // Delay app startup for visual smoothness in iOS standalone mode
-  setTimeout(startApp, 100);
-}
+// for reset stats
+    document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("resetLink").addEventListener("click", function(e) {
+    e.preventDefault();
+    resetConfig();
+  });
+});
 
-function exitSite() {
-  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
- /* if (isInStandaloneMode) {*/
-    /*alert("Para salir, por favor cierre esta aplicación manualmente desde su dispositivo.");*/
- /* } else {*/
-    // Works in Safari/Chrome browser mode
-    window.location.href = "https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html"; // or your site’s home
-/* }*/
-}
 
-function startApp() {
-    window.location.href = "A_Bordo_Menu.html";
 
+  //Verify DOM loaded before making any changes
+ 
+  /*document.addEventListener('DOMContentLoaded', e => {
+  const h1 = document.querySelector("h1")
+  h1.innerText = "¡A Bordo!"
+  })*/
+
+
+
+    if (difficultyLevel === 1) {
+    titleVar = "Asiento"
+    titleVar2 = "el asiento"
+  } else {
+    titleVar = "Asientos"
+    titleVar2 = "los asientos"
+  }
+loadConfig()
+const msgcover = document.getElementById("stats");
+msgcover.style.fontFamily = "monospace";
+msgcover.style.whiteSpace = "pre";
+msgcover.textContent = "Datos acumulados - Logrados: " + Wins + " Fallidos: " + Loses               
 
 function checkOrientation() {
   console.log ("checkOrientation")
@@ -124,10 +430,47 @@ window.addEventListener('resize', checkOrientation);
 window.addEventListener('load', checkOrientation);
 window.addEventListener('orientationchange', () => {setTimeout(checkOrientation, 300); 
 });
+
+function goBack() {
+  console.log ("goBack")
+  window.history.back()
 }
+ function loadConfig() {
+      console.log("entering loadconfig")
+      const saved = localStorage.getItem('AbordoConfig');
+      if (saved) {
+        const cfg = JSON.parse(saved);
+        if (typeof cfg.Wins === "number") Wins = cfg.Wins;
+        if (typeof cfg.Loses === "number") Loses = cfg.Loses;
+      }
+    }
+ // Save config to localStorage
+    function resetConfig() {
+        Wins = 0;
+        Loses = 0;
+     
+      localStorage.setItem('AbordoConfig', JSON.stringify({
+        Wins,Loses}));
+      }
+      
+    
+
+    
 
 
 </script>
-</html>
+
+<nav class="main-nav">
+  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú Principal</a>
+  <a href="">Reintentar</a>
+  <a href="javascript:goBack()">&laquo; Anterior</a>
+  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de ¡A Bordo!</a>
+  <a href="#" id="resetLink">Borrar Estadísticas</a>
+
+  <a>  &copy; 2025 JCFP</a>
+</nav>
 
  
+
+</body>
+</html>
