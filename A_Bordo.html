@@ -921,10 +921,11 @@ console.log ("checkifEOD");
  if (firstStrike === false) {
     if (timeExpired === true) { 
     setTimeout(() => {
+      Loses++;
       msg.textContent =  "Se le acabo el tiempo";
       document.body.appendChild(msg);
       disableAllSeats() ;
-      Loses++;
+      
     }, 3000);
     setTimeout(() => {
       msg.textContent = "Oprima Reintentar o Menú";
