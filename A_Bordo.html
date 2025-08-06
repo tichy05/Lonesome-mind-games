@@ -923,7 +923,7 @@ console.log ("checkifEOD");
       msg.textContent =  "Se le acabo el tiempo";
       document.body.appendChild(msg);
       disableAllSeats() ;
-    }, 2000);
+    }, 3000);
     setTimeout(() => {
       msg.textContent = "Oprima Reintentar o Menú";
       document.body.appendChild(msg);
@@ -940,13 +940,13 @@ console.log ("checkifEOD");
         document.body.appendChild(msg);
         disableAllSeats() ;
         firstStrike = true;
-      }, 2000);
+      }, 4000);
       
         setTimeout(() => {
         msg.textContent = "Oprima Reintentar o Menú";
         document.body.appendChild(msg);
        
-      }, 4000);
+      }, 6000);
 } }}}
 
 if (difficultyLevel === (goodOnes + badOnes)) {
