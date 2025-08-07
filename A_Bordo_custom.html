@@ -25,22 +25,25 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
-      justify-content: center;
+      justify-content: left;
+      text-align: left;
       margin-top: 1rem;
-     
+   
       
     }
 
     .card {
-      background:  #ffbf00;
+      background:  white;
       padding: 1.5rem 1rem;
       border-radius: 12px;
+      
       flex: 1 1 280px;
-      max-width: 220px;
+      max-width: 805px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: left;
+      
       transition: transform 0.2s ease-in-out;
    /*   background-image: url('Bandera.png'); 
       color: white; */
@@ -85,11 +88,11 @@
       padding: 1.5rem 1rem;
       border-radius:0px;
       flex: 1 1 280px;
-      max-width:800px;
+      max-width:805px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font-size: 30pt;
+      font-size: 14px;
       color: black
  }
 
@@ -204,7 +207,7 @@
 
 label {
       display: block;
-      margin-top: 10px;
+      margin-top: 5px;
     }
 input[type="number"] {
       width: 100px;
@@ -212,8 +215,8 @@ input[type="number"] {
       font-size: 14pt;
     }
 button {
-      margin-top: 15px;
-      padding: 10px 20px;
+      margin-top: 0px;
+      padding: 5px 10px;
     }
 
  #footer {
@@ -248,7 +251,7 @@ button {
   <div id="rotateWarning">Por favor, gire su dispositivo a modo horizontal (landscape)</div>
    <h1 id="card-container2">¡A Bordo! - Personalize el juego a su gusto </h1>
   <?xml version="1.0" standalone="no"?>
-  <div class="card-container">
+  <div class="card2">
  
 
 
@@ -257,8 +260,8 @@ button {
 
   <form id="numberForm">
    
-    <label>Número de asientos (1-4) <input type="number" min="1" max="4" name="difficultyLevel" value="1" required></label>
-    <label>Tiempo Contestar (3-20) <input type="number" min="3" max="20" name="totalTime" value="7" required></label>
+    <label>Número de asientos: (1-4) <input type="number" min="1" max="4" name="difficultyLevel" value="1" required></label>
+    <label>Tiempo Contestar: (3-20) <input type="number" min="3" max="20" name="totalTime" value="7" required></label>
     <label>Intensidad Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="intensity" value="0" required></label>
     <label>Frecuencia Turbulencia: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="frequency" value="0" required></label>
     <label>Flicks Por Segundo - luces: (0 apagado; 1-20) <input type="number" min="0"  max="20" name="flicksPerSecond" value="0" required></label>
