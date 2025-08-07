@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>A Bordo! - AVISO</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="icon" type="image/png" href="https://tichy05.github.io/Wandering-mind-games/favicon.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tichy05.github.io/Wandering-mind-games/apple-touch-icon.jpg">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tichy05.github.io/Wandering-mind-games/apple-touch-icon-152x152.jpg"> 
+ <!-- Android Manifest (shared across pages) -->
+<link rel="manifest" href="https://tichy05.github.io/Wandering-mind-games/manifest.json">
+ 
+
+</head>
+<style>
+
+body { font-family: Arial, sans-serif; text-align: center;  
+    background-color: white; margin-top: 20px; color: black; font-size: 14pt; font-style: heavy }
+
+
+@media only screen and (min-width: 600px)
+{#rotateWarning {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #000000cc;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 10vh;
+  z-index: 9999;
+  
+}}
+
+</style>
+
+
+<body>
+
+<div id="flashingWarning" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: black;
+  color: white;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+">
+  <p style="max-width: 600px; margin-bottom: 2rem;">
+    ⚠️ Advertencia: Este juego tiene partes<br>donde hay luces intermitentes,<br>movimiento visual fuerte y efectos<br>que pueden afectar a personas sensibles.<br>Por favor proceda con precaución.
+  </p>
+  <div style="display: flex; gap: 1rem;">
+    <button onclick="enterSite()" style="
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: green;
+      border: none;
+      border-radius: 6px;
+    ">Entrar</button>
+
+    <button onclick="exitSite()" style="
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+      border: none;
+      border-radius: 6px;
+    ">Salir</button>
+  </div>
+</div>
+
+
+<p id="warning-note" style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;"></p>
+
+</body>
+
+<script>
+
+function enterSite() {
+ 
+  document.getElementById("flashingWarning").style.display = "none";
+  // Delay app startup for visual smoothness in iOS standalone mode
+  setTimeout(startApp, 100);
+}
+
+function exitSite() {
+  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+ /* if (isInStandaloneMode) {*/
+    /*alert("Para salir, por favor cierre esta aplicación manualmente desde su dispositivo.");*/
+ /* } else {*/
+    // Works in Safari/Chrome browser mode
+    window.location.href = "https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html"; // or your site’s home
+/* }*/
+}
+
+function startApp() {
+    window.location.href = "A_Bordo_Menu.html";
+
+
+function checkOrientation() {
+  console.log ("checkOrientation")
+ const warning = document.getElementById('rotateWarning');
+ const isPortrait = window.matchMedia("(orientation: landscape)").matches;
+    
+  warning.style.display = isPortrait ? 'none' : 'block'; 
+ } 
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('load', checkOrientation);
+window.addEventListener('orientationchange', () => {setTimeout(checkOrientation, 300); 
+});
+}
+
+
+</script>
+</html>
+
+ 

@@ -133,7 +133,7 @@
       padding: 0.25rem 1rem;
       text-decoration: none;
       flex: 0 1 auto;
-      text-align: center;
+      text-align: right;
       border-radius: 6px;
       transition: background-color 0.3s;
     }
@@ -142,6 +142,11 @@
     nav.main-nav a:active {
       background-color: #555;
     }
+
+
+
+
+
     /* Optional container for layout */
 .dropdown-container {
   display: flex;
@@ -318,7 +323,7 @@ button {
       <a id="N1" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=1&intensity=5&frequency=10&durationTB=0&difficultyLevel=1&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 1</a>
       <a id="N2" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=2&intensity=5&frequency=10&durationTB=0&difficultyLevel=2&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 2</a>      
       <a id="N3" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=3&intensity=5&frequency=10&durationTB=0&difficultyLevel=3&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 3</a>
-      <a id="N4" href="https://tichy05.github.io/Wandering-mind-games/A_Bordo.html?level=4&intensity=5&frequency=10&durationTB=0&difficultyLevel=4&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 4</a>
+      <a id="N4" href="A_Bordo.html?level=4&intensity=5&frequency=10&durationTB=0&difficultyLevel=4&durationFL=0&flicksPerSecond=8&cloudMinSec=0&cloudMaxSec=0">Nivel 4</a>
     </div> 
 
 
@@ -387,12 +392,12 @@ const msg = document.createElement('div');
     color:black; text-shadow: 0px 0px #000; z-index:9999;`
  
 // for reset stats
-    document.addEventListener("DOMContentLoaded", function () {
+  /*  document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("resetLink").addEventListener("click", function(e) {
     e.preventDefault();
     resetConfig();
   });
-});
+});*/
 
 
 
@@ -445,29 +450,40 @@ function goBack() {
       }
     }
  // Save config to localStorage
-    function resetConfig() {
-        Wins = 0;
-        Loses = 0;
-     
-      localStorage.setItem('AbordoConfig', JSON.stringify({
-        Wins,Loses}));
-      }
+ 
+
+   
+    
+  function resetConfig() {
+     console.log ("reset")
+  localStorage.clear(); // or remove specific keys
+  Wins=0;
+  Loses=0;
+  location.reload(); // refreshes the page and shows updated (zeroed) stats
+}
+
+  
+
+
+
+        
+      
       
     
 
-    
+ 
 
 
 </script>
 
 <nav class="main-nav">
-  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú Principal</a>
-  <a href="">Reintentar</a>
-  <a href="javascript:goBack()">&laquo; Anterior</a>
+  <!--<a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú</a>-->
+ <!-- <a href="">Reintentar</a>-->
+ <!--<a href="javascript:goBack()">&laquo; Anterior</a>-->
   <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de ¡A Bordo!</a>
-  <a href="#" id="resetLink">Borrar Estadísticas</a>
+  <a href="#" onclick="resetConfig()">Borrar Estadísticas</a>
 
-  <a>  &copy; 2025 JCFP</a>
+  <a class="main-nav a" style="font-size:8pt;">  &copy; 2025 JCFP</a>
 </nav>
 
  

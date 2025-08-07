@@ -32,9 +32,9 @@
       font-size: 12pt;
       font-weight: bold;
       color: black;
-      background-color: #ffbf00;
+      background-color: #10a9b4;
       border-radius: 0px;
-      border-color: #ffbf00;
+      border-color: #10a9b4;
       border-width: 3px;
       border-style: solid;
       margin: 1rem auto;
@@ -515,9 +515,12 @@ let currentCorrect = [];
 let clickCount = 0;
 let timeInMs=3000;
 let firstStrike = false;
-let countdownInterval;
+let countDownInterval;
+let flicker;
+let interval;
 let Wins = 0;
 let Loses = 0;
+
 
 //passed values
  // Multiple cloud image URLs
@@ -739,7 +742,7 @@ function loadConfig() {
     console.log ("handleSeatClick")
 
     if (clickCount > difficultyLevel) {   
-      clearInterval(countdownInterval);
+      clearInterval(countDownInterval);
       msg.textContent = "Limite de selecciones alcanzado ("+ difficultyLevel + ")" ;
       document.body.appendChild(msg);
       
@@ -760,11 +763,10 @@ function loadConfig() {
     badOnes = badOnes + 1;
     firstStrike = true;
     Loses++;
-    saveConfig()
+    saveConfig();
     console.log("❌ Wrong seat:", id);
    
-    clearInterval(countdownInterval);
-
+    //cd
     disableAllSeats() ;
     checkifEOD(firstStrike);
     
@@ -875,7 +877,7 @@ setTimeout(() => {
   h1.style.fontFamily = "Monaco", "monospace"; // like Courier
   h1.style.fontSize = "14pt";
   h1.style.whiteSpace = "pre"; // preserves spacing
-  h1.innerText= "¡A Bordo! - Nivel: " + level +  "       Tiempo total: " + (timeInMs / 1000) + "s"+ "       " + titleVar + ": " + currentCorrect ;
+  h1.innerText= "¡A Bordo! - Nivel: " + level +  "     Tiempo total: " + (timeInMs / 1000) + "s"+ "     " + titleVar + ": " + currentCorrect ;
  
   
   
@@ -888,7 +890,7 @@ setTimeout(() => {
   enableSeatClicks();
  /* msg.textContent = "GO!";
   document.body.appendChild(msg);*/
-   countDownClock();
+  countDownClock();
   simulateTurbulence('seatGroup',intensity,frequency,durationTB);
   flickerLights('seatGroup',durationFL,flicksPerSecond);
   /*triggerCloudPass();*/
@@ -943,6 +945,8 @@ console.log ("checkifEOD");
         document.body.appendChild(msg);
         disableAllSeats() ;
         firstStrike = true;
+        clearInterval(countDownInterval);
+    
       }, 1000);
       
         setTimeout(() => {
@@ -954,16 +958,25 @@ console.log ("checkifEOD");
 
 if (difficultyLevel === (goodOnes + badOnes)) {
   if (badOnes === 0) {
-  clearInterval(countdownInterval); 
-  confettiExplosion();}
+  
+
+    
+
+  confettiExplosion();
+ 
+}
+  
 } 
 }
 
 //reward
 function confettiExplosion() {
-  console.log ("confettiExplosion")
+  console.log ("confettiExplosion");
+
+    
   Wins++;
   saveConfig(); 
+ 
   const duration = 5 * 1000;
   const end = Date.now() + duration;
 
@@ -1032,7 +1045,7 @@ function countDownClock() {
    msg.style.whiteSpace = "pre"; // preserves spacing
    document.body.appendChild(msg);
   // Run the countdown every second
-   countdownInterval = setInterval(() => {
+   countDownInterval = setInterval(() => {
     
     countdown--;
 
@@ -1043,7 +1056,7 @@ function countDownClock() {
       document.body.appendChild(msg); 
     } else {
       // When countdown reaches 0
-      clearInterval(countdownInterval);
+      clearInterval(countDownInterval);
       msg.textContent = "            Tiempo: "+ countdown;
       msg.style.fontFamily = "monospace"; // like Courier
       msg.style.whiteSpace = "pre"; // preserves spacing
@@ -1079,8 +1092,8 @@ function showResultMessage(isCorrect) {
   function simulateTurbulence(elementId = 'seatGroup', intensity = 5, frequency = 10, durationTB = 4) {
     const el = document.getElementById(elementId);
     if (!el) return;
-
-    let interval = setInterval(() => {
+// had let interval
+     interval = setInterval(() => {
       const offsetX = Math.random() * intensity * 2 - intensity;
       const offsetY = Math.random() * intensity * 2 - intensity;
       el.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
@@ -1108,8 +1121,8 @@ function flickerLights(groupId = 'seatGroup', durationFL = 4, flicksPerSecond = 
 
   const interval = 1000 / flicksPerSecond;
   let elapsed = 0;
-
-  const flicker = setInterval(() => {
+//hD CONST FLICKER =
+   flicker = setInterval(() => {
     const dimmed = Math.random() < 0.5;
     group.setAttribute("opacity", dimmed ? "0.15" : "1");
     bg.setAttribute("fill", dimmed ? "black" : "white"); // Flicker background too
@@ -1214,13 +1227,13 @@ function randomClouds(cloudMinSec, cloudMaxSec, cloudSources) {
 </script>
 
 <nav class="main-nav">
-  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú Principal</a>
+  <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Menu.html">Menú</a>
   <a href="">Reintentar</a>
   <a href="javascript:goBack()">&laquo; Anterior</a>
   <a href="https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html">Salir de ¡A Bordo!</a>
   
  
-  <a>  &copy; 2025 JCFP</a>
+  <a class="main-nav a" style="font-size:8pt;">  &copy; 2025 JCFP</a>>
 </nav>
 
 </body>
