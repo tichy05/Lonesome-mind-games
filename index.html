@@ -9,18 +9,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="icon" type="image/png" href="https://tichy05.github.io/Wandering-mind-games/favicon.jpg">
-<link rel="apple-touch-icon" sizes="180x180" href="https://tichy05.github.io/Wandering-mind-games/apple-touch-icon.jpg">
-<link rel="apple-touch-icon" sizes="152x152" href="https://tichy05.github.io/Wandering-mind-games/apple-touch-icon-152x152.jpg"> 
+<link rel="icon" type="image/png" href="favicon.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.jpg">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.jpg"> 
  <!-- Android Manifest (shared across pages) -->
-<link rel="manifest" href="https://tichy05.github.io/Wandering-mind-games/manifest.json">
+<link rel="manifest" href="manifest.json">
  
 
 </head>
 <style>
 
 body { font-family: Arial, sans-serif; text-align: center;  
-    background-color: white; margin-top: 20px; color: black; font-size: 14pt; font-style: heavy }
+    background-color: white; margin-top: 0px; color: black; font-size: 14pt; font-style: heavy }
 
 
 @media only screen and (min-width: 600px)
@@ -33,7 +33,7 @@ body { font-family: Arial, sans-serif; text-align: center;
   color: white;
   font-size: 24px;
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 1vh;
   z-index: 9999;
   
 }}
@@ -45,21 +45,25 @@ body { font-family: Arial, sans-serif; text-align: center;
 
 <div id="flashingWarning" style="
   position: fixed;
-  top: 0; left: 0;
+  top: 1; left: 1px;
   width: 100vw; height: 100vh;
   background: black;
-  color: white;
+  background-size: 280px 280px;
+  color: orange;
   z-index: 999999;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
   font-size: 1.25rem;
+  
 ">
-  <p style="max-width: 600px; margin-bottom: 2rem;">
-    ⚠️ Advertencia: Este juego tiene partes<br>donde hay luces intermitentes,<br>movimiento visual fuerte y efectos<br>que pueden afectar a personas sensibles.<br>Por favor proceda con precaución.
+
+
+  <p style="max-width: 400px; margin-bottom: 3rem;">
+    Advertencia: Este juego tiene partes<br>donde hay luces intermitentes,<br>movimiento visual fuerte y efectos<br>que pueden afectar a personas sensibles.<br>Por favor proceda con precaución.
   </p>
   <div style="display: flex; gap: 1rem;">
     <button onclick="enterSite()" style="
@@ -84,8 +88,7 @@ body { font-family: Arial, sans-serif; text-align: center;
   </div>
 </div>
 
-
-<p id="warning-note" style="margin-top: 1rem; font-size: 0.9rem; color: #ccc;"></p>
+<p id="warning-note" style="margin-top: 0rem; font-size: 0.9rem; color: orange;font-style: heavy"></p>
 
 </body>
 
@@ -105,7 +108,7 @@ function exitSite() {
     /*alert("Para salir, por favor cierre esta aplicación manualmente desde su dispositivo.");*/
  /* } else {*/
     // Works in Safari/Chrome browser mode
-    window.location.href = "https://tichy05.github.io/Wandering-mind-games/A_Bordo_Salida.html"; // or your site’s home
+    window.location.href = "A_Bordo_Salida.html"; // or your site’s home
 /* }*/
 }
 
