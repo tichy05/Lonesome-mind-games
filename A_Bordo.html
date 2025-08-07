@@ -513,7 +513,7 @@ let timeExpired = false
 /*let difficultyLevel = 0; */
 let currentCorrect = [];
 let clickCount = 0;
-let timeInMs=3000;
+let timeInMs=4000;
 let firstStrike = false;
 let countDownInterval;
 let flicker;
@@ -577,16 +577,16 @@ if (durationTB => durationFL, durationTB > 0) {
     timeInMs = durationFL * 1000
   } else {
     if (durationTB === 0, durationFL === 0, difficultyLevel === 1) {
-  timeInMs = 3000
+  timeInMs = 4000
 }
 if (durationTB === 0, durationFL === 0, difficultyLevel === 2) {
-  timeInMs = 7000
+  timeInMs = 8000
 }
 if (durationTB === 0, durationFL === 0, difficultyLevel === 3) {
-  timeInMs = 12000
+  timeInMs = 13000
 }
 if (durationTB === 0, durationFL === 0, difficultyLevel === 4) {
-  timeInMs = 18000
+  timeInMs = 19000
 }
 if (totalTime  > timeInMs/1000) {
   timeInMs = totalTime
